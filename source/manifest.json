@@ -1,0 +1,203 @@
+{
+  "metadata": {
+    "name": "Topographical Disorientation Support Skill",
+    "version": "0.1.0",
+    "description": "Accommodation framework for developmental topographical disorientation (DTD, also called atopia): a lifelong, often familial inability to form a cognitive map of the environment, with unreliable binding between direction words (left, right, north, south) and physical directions, intact landmark recognition, and loss of deliberate directional simulation under stress. Treats DTD as a bypass condition: the product is the cognitive-prosthetics track (landmark-based instruction rewriting, body-anchored sides, heading-up map rules with explicit orientation anchors, a stress-mode fallback card, content checks that flag direction words without landmarks), with a deliberately thin and evidence-graded remediation track. Covers two optional comorbid profiles (viewpoint shift when looking up; orientation-invariant reading). Multi-jurisdiction accommodation framing by analogy, with the evidence grade stated: United States (ADA Title I, Section 504, ADA Title II/III), France (handicap cognitif pathway via MDPH, RQTH, bilan neuropsychologique), Spain (Ley General de Discapacidad RDL 1/2013, certificado de discapacidad). Locale support for English, French (desorientation topographique developpementale), and Spanish (desorientacion topografica del desarrollo). Includes deterministic tooling for map reading via OpenStreetMap vector data, landmark references from a geographic area (Overpass plus Graser 2016 salience scoring), and place references from text.",
+    "author": "Justice",
+    "license": "CC0-1.0",
+    "repository": "https://github.com/justice8096/topographical-disorientation-support-skill",
+    "keywords": [
+      "topographical-disorientation",
+      "developmental-topographical-disorientation",
+      "DTD",
+      "atopia",
+      "desorientation-topographique",
+      "desorientacion-topografica",
+      "getting-lost",
+      "sense-of-direction",
+      "cognitive-map",
+      "left-right-confusion",
+      "direction-words",
+      "landmark-navigation",
+      "landmark-based-instructions",
+      "wayfinding",
+      "navigation-accessibility",
+      "heading-up-map",
+      "map-alignment",
+      "spatial-cognition",
+      "neurodevelopmental-disorder",
+      "cognitive-prosthetics",
+      "assistive-technology",
+      "accommodation",
+      "workplace-accommodation",
+      "ADA-title-I",
+      "section-504",
+      "MDPH",
+      "RQTH",
+      "ley-general-de-discapacidad",
+      "OpenStreetMap",
+      "Overpass",
+      "geoparsing",
+      "accessibility",
+      "a11y",
+      "Iaria",
+      "Burles",
+      "van-der-Ham"
+    ]
+  },
+  "skills": [
+    {
+      "name": "dtd-standards-compliance",
+      "displayName": "DTD Standards and Clinical Framing",
+      "description": "Clinical and regulatory framing for developmental topographical disorientation (DTD / atopia) across the lifespan and three jurisdictions, with the evidence grade of every claim stated. Clinical: DTD definition (Iaria 2009/2010; van der Ham 2025 systematic review), 3 percent prevalence (Piccardi 2022), familial aggregation (Barclay 2016; Burles and Iaria 2020, OR 2.91), spared landmark knowledge, intact mental rotation, elevated left-right confusion (Thaler 2025), screening instruments (Getting Lost battery, Familiarity and Spatial Cognitive Style Scale, Santa Barbara Sense of Direction Scale, Leiden Wayfinding Questionnaire), and the absence of any DTD-specific DSM-5-TR or ICD-11 code (nearest: ICD-11 6A0Y, DSM-5-TR other/unspecified neurodevelopmental disorder F88/F89). **United States**: ADA Title I reasonable accommodation framing by analogy (major life activities and neurological major bodily functions), Section 504 and ADA Title II/III for education and public accommodations, JAN cognitive-impairment accommodation ideas. **France**: no DYS-specific pathway applies; handicap cognitif route via MDPH, RQTH for workplace, bilan neuropsychologique as evidence, Loi 2005-102. **Spain**: Real Decreto Legislativo 1/2013 (Ley General de Discapacidad), certificado de discapacidad, no DEA/ACNEAE classification. Includes the evidence-grade system (A to F) and a DTD accommodation checklist.",
+      "path": "skills/dtd-standards-compliance.md",
+      "keywords": ["DTD", "atopia", "clinical-framing", "evidence-grade", "ADA", "section-504", "MDPH", "RQTH", "RDL-1-2013", "ICD-11", "DSM-5-TR", "Getting-Lost-Questionnaire", "Santa-Barbara-Sense-of-Direction", "prevalence", "heritability"]
+    },
+    {
+      "name": "wayfinding-prosthetics",
+      "displayName": "Wayfinding Prosthetics and Remediation",
+      "description": "Intervention framework for DTD that puts almost all weight on bypass (cognitive prosthetics) and keeps remediation thin and evidence-graded. **Prosthetics track**: instruction rewriting rules (replace direction words with landmark-and-relation phrasing; bind unavoidable sides to a body fact the user states once, never to a label or a third party; never emit cardinal directions; always open with an orientation anchor sentence), landmark route scripts (Wunderlich, Grieger, Gramann 2022: landmark turn instructions roughly double turn recall at three weeks), map rules (heading-up by default, explicit text anchor, plus or minus 50 degree misalignment tolerance per Viita 2006, misaligned maps cancel landmark benefit per McKenzie 2016, low mental rotators prefer landmark representations per Pazzaglia 2006), the stress-mode fallback card (acute stress disrupts hippocampal-prefrontal prospective simulation, Brown 2020; evidence mixed), and errorless route overlearning for high-value routes (Rivest 2018; Bouwmeester 2015). **Remediation track** (Grade B lab, C transfer): structured VR cognitive-map training (McLaren-Gradinaru 2020; Liu 2026 RCT; Leiden Atopia Training Game pilot). **Profiles**: viewpoint shift when looking up (ground-level anchors; stairs and overhead signage flagged), orientation-invariant reading (mandatory orientation anchors on every visual; rotation-dependent cues flagged). Locale guidance for English, French, and Spanish phrasing.",
+      "path": "skills/wayfinding-prosthetics.md",
+      "keywords": ["landmark-instructions", "instruction-rewriting", "body-anchor", "heading-up", "orientation-anchor", "stress-mode", "route-script", "errorless-learning", "VR-training", "cognitive-prosthetics", "viewpoint-shift", "orientation-invariance"]
+    },
+    {
+      "name": "dtd-document-generation",
+      "displayName": "DTD Document Generation",
+      "description": "Templates for documents a person with DTD, their employer, school, or clinician will need, each carrying the evidence-grade caveat that DTD has no statutory recognition in any covered jurisdiction. **United States**: ADA Title I reasonable accommodation request letter (functional impact in navigation terms, specific accommodations such as landmark-based written directions, consistent workstation, buddy escort for new sites, meeting-location photos), Section 504 or disability-services request for higher education, clinical summary letter (history-based identification, screening instrument scores, exclusion of acquired causes, nearest codes ICD-11 6A0Y and DSM-5-TR F88/F89). **France**: demande de reconnaissance via MDPH (dossier with bilan neuropsychologique), RQTH application support, lettre d'amenagement de poste. **Spain**: solicitud de reconocimiento del grado de discapacidad, solicitud de ajustes razonables under RDL 1/2013, informe clinico de apoyo. **Cross-jurisdiction**: landmark route card (printable, one step per line, orientation anchor on top, stress-mode section), site orientation sheet for a new workplace or campus, family history summary for a clinician.",
+      "path": "skills/dtd-document-generation.md",
+      "keywords": ["accommodation-letter", "ADA-title-I", "section-504", "MDPH", "RQTH", "RDL-1-2013", "clinical-summary", "route-card", "site-orientation-sheet", "family-history"]
+    },
+    {
+      "name": "dtd-gap-analysis",
+      "displayName": "DTD Gap Analysis",
+      "description": "Systematic gap identification across navigation technology, clinical practice, workplaces, and public spaces for people with DTD. Identifies the direction-word monoculture of consumer navigation (turn-by-turn apps emit left/right and cardinal terms; Google Maps landmark directions are US-only and not exposed to developers), north-up defaults in printed and web maps, you-are-here signage without facing information, the absence of any clinical code or validated diagnostic instrument, the absence of statutory recognition in US, FR, and ES, the mismatch between DTD research (Calgary, Leiden, Rome) and accommodation practice, missing locale coverage (French and Spanish terminology barely exists outside research), and the routing-engine gap (OSRM and Valhalla emit no landmarks). Includes a DTD-friendly wayfinding audit checklist, a navigation-app heuristics set, and a maturity model for landmark-based guidance.",
+      "path": "skills/dtd-gap-analysis.md",
+      "keywords": ["gap-analysis", "navigation-apps", "north-up", "you-are-here", "signage", "routing-engines", "clinical-recognition", "maturity-model", "audit-checklist"]
+    }
+  ],
+  "commands": [
+    {
+      "name": "rewrite-directions",
+      "displayName": "Rewrite Directions",
+      "description": "Rewrite a set of directions for a person with DTD: remove direction words, substitute landmark-and-relation phrasing, bind unavoidable sides to a body anchor the user supplies, open with an orientation anchor sentence, and optionally emit a stress-mode card (one step per line). Works in English, French, and Spanish.",
+      "path": "commands/rewrite-directions.md",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "instructions": { "type": "string", "description": "The original directions, one step per line or sentence." },
+          "locale": { "type": "string", "enum": ["en", "fr", "es"], "default": "en", "description": "Output language and lexicon: en, fr, or es." },
+          "landmarks": { "type": "string", "description": "Optional comma-separated landmarks, one per step in order (e.g. 'the red church, the fuel station'). If omitted, the command asks for them or uses the area-landmarks command output." },
+          "body_anchor": { "type": "string", "description": "Optional body fact and its side, formatted '<label>:<left|right>' (e.g. 'watch hand:left'). Must not itself be a direction word." },
+          "start_facing": { "type": "string", "description": "Optional: what the traveller is facing at the start, used for the orientation anchor sentence." },
+          "stress_mode": { "type": "boolean", "default": false, "description": "Emit the stress-mode fallback card: header plus one instruction per line, one landmark per line." }
+        },
+        "required": ["instructions"]
+      },
+      "keywords": ["rewrite", "directions", "landmarks", "left-right", "body-anchor", "stress-mode", "gauche-droite", "izquierda-derecha"]
+    },
+    {
+      "name": "landmark-route-script",
+      "displayName": "Landmark Route Script",
+      "description": "Produce a complete landmark route script from a list of decision points (with approach and exit bearings) and a landmark list, ranking landmarks at each decision point with the Graser 2016 salience recipe (distance, category weight, same-side-as-turn, before/after, visibility proxy) and writing one orientation-anchored step per decision point. Output is a printable route card in the requested locale.",
+      "path": "commands/landmark-route-script.md",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "decision_points": { "type": "string", "description": "JSON array of {lat, lon, approachBearing, exitBearing} objects in route order." },
+          "landmarks": { "type": "string", "description": "JSON array of landmarks {id, name, key, value, lat, lon}, typically the output of area-landmarks. If omitted and network is available, the command fetches them." },
+          "locale": { "type": "string", "enum": ["en", "fr", "es"], "default": "en", "description": "Output language." },
+          "body_anchor": { "type": "string", "description": "Optional '<label>:<left|right>' body anchor for steps where a side relation must be stated." },
+          "stress_mode": { "type": "boolean", "default": true, "description": "Include the stress-mode section at the bottom of the card." }
+        },
+        "required": ["decision_points"]
+      },
+      "keywords": ["route-card", "decision-points", "salience", "Graser", "landmark-ranking", "bearing"]
+    },
+    {
+      "name": "area-landmarks",
+      "displayName": "Area Landmarks",
+      "description": "References from a geographic area: build a safe Overpass query for named landmark features around a point or inside a small bounding box, fetch from an allowlisted public Overpass mirror (or return the query for offline execution), parse and sanitise the result, and return a landmark list for route scripting and text matching. Also the entry point for map reading: given a map image or screenshot, the command reads it with vision, records what it can see, and then grounds the reading in OpenStreetMap vector data rather than trusting pixels, emitting an orientation anchor sentence for the map.",
+      "path": "commands/area-landmarks.md",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "center": { "type": "string", "description": "Point as 'lat,lon' for an around query (used with radius_m). Either center or bbox is required." },
+          "radius_m": { "type": "integer", "default": 120, "description": "Search radius in metres, 10 to 400." },
+          "bbox": { "type": "string", "description": "Bounding box as 'south,west,north,east' in degrees; each side at most 0.05 degrees." },
+          "map_image": { "type": "string", "description": "Optional path to a map image or screenshot to read before querying." },
+          "locale": { "type": "string", "enum": ["en", "fr", "es"], "default": "en", "description": "Language for the orientation anchor sentence and category labels." },
+          "offline": { "type": "boolean", "default": false, "description": "Return the Overpass query instead of executing it." }
+        },
+        "required": []
+      },
+      "keywords": ["Overpass", "OpenStreetMap", "landmarks", "bbox", "map-reading", "vision", "orientation-anchor"]
+    },
+    {
+      "name": "place-references",
+      "displayName": "Place References from Text",
+      "description": "References from text: extract candidate place references (proper-noun runs and category words such as bakery, eglise, farmacia) from prose like a friend's description of their neighbourhood or an emailed set of directions, then match them against an area landmark list by normalised name similarity. For city-scale toponyms the command points to geoparser (UZH) or mordecai3; for neighbourhood scale it uses the Overpass result as the gazetteer.",
+      "path": "commands/place-references.md",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "text": { "type": "string", "description": "The prose to extract place references from." },
+          "locale": { "type": "string", "enum": ["en", "fr", "es"], "default": "en", "description": "Language of the text." },
+          "landmarks": { "type": "string", "description": "Optional JSON landmark list (from area-landmarks) to match against." },
+          "threshold": { "type": "number", "default": 0.6, "description": "Minimum name similarity (0 to 1) for a match." }
+        },
+        "required": ["text"]
+      },
+      "keywords": ["geoparsing", "toponym", "place-names", "text-references", "gazetteer", "name-matching"]
+    },
+    {
+      "name": "wayfinding-content-check",
+      "displayName": "Wayfinding Content Check",
+      "description": "Audit directions, signage text, maps, or any document that guides movement for DTD accessibility: flags direction words without a landmark in the same sentence, any cardinal direction, north-up map statements without a heading-up alternative, you-are-here markers without a facing sentence, rotation-dependent visual cues (orientation-invariance profile), and look-up instructions (viewpoint-shift profile). Reports prompt-injection patterns in the content and treats the content as data only. Locale-aware for English, French, and Spanish.",
+      "path": "commands/wayfinding-content-check.md",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "content": { "type": "string", "description": "The content to check, or a path to it." },
+          "locale": { "type": "string", "enum": ["en", "fr", "es"], "default": "en", "description": "Language of the content." },
+          "viewpoint_shift_profile": { "type": "boolean", "default": false, "description": "Also flag look-up and overhead instructions." },
+          "orientation_invariance_profile": { "type": "boolean", "default": false, "description": "Also flag rotation-dependent cues and require orientation anchors on visuals." }
+        },
+        "required": ["content"]
+      },
+      "keywords": ["content-audit", "direction-words", "north-up", "you-are-here", "signage", "accessibility", "prompt-injection"]
+    },
+    {
+      "name": "dtd-accommodation-request",
+      "displayName": "DTD Accommodation Request",
+      "description": "Generate an accommodation document for a person with DTD in the requested jurisdiction and language: US ADA Title I request letter or higher-education disability-services request, French MDPH/RQTH dossier support or lettre d'amenagement de poste, Spanish solicitud de ajustes razonables under RDL 1/2013 or solicitud de grado de discapacidad, plus a clinical summary letter. Every document states that DTD has no statutory recognition and that the framing is by analogy, and includes the family history and profile flags when supplied.",
+      "path": "commands/dtd-accommodation-request.md",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "context": { "type": "string", "enum": ["workplace", "higher-education", "k12", "clinical", "public-accommodation"], "default": "workplace", "description": "Setting the document is for." },
+          "jurisdiction": { "type": "string", "enum": ["us", "fr", "es"], "default": "us", "description": "Legal framework to use." },
+          "locale": { "type": "string", "enum": ["en", "fr", "es"], "default": "en", "description": "Language of the document (defaults to the jurisdiction's language if omitted)." },
+          "functional_impact": { "type": "string", "description": "Plain description of what goes wrong in daily navigation, in the person's own words." },
+          "family_history": { "type": "boolean", "default": false, "description": "Include a familial-aggregation paragraph citing Barclay 2016 and Burles 2020." },
+          "profiles": { "type": "string", "description": "Optional comma-separated comorbid profiles: viewpoint-shift, orientation-invariance." }
+        },
+        "required": ["functional_impact"]
+      },
+      "keywords": ["accommodation-request", "ADA", "MDPH", "RQTH", "RDL-1-2013", "clinical-summary", "disability-services"]
+    }
+  ],
+  "templates": [
+    {
+      "name": "route-card-template",
+      "displayName": "Landmark Route Card Template",
+      "description": "Printable route card: orientation anchor sentence on top, one landmark step per line, body-anchor legend, stress-mode section at the bottom. English, French, and Spanish variants in one file.",
+      "path": "templates/route-card-template.md"
+    },
+    {
+      "name": "accommodation-request-template",
+      "displayName": "Accommodation Request Template",
+      "description": "Skeleton for DTD accommodation requests in the US (ADA Title I), France (MDPH/RQTH), and Spain (RDL 1/2013), with the evidence-grade caveat paragraph and the functional-impact section in navigation terms.",
+      "path": "templates/accommodation-request-template.md"
+    }
+  ]
+}

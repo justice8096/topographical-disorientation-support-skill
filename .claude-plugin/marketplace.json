@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "topographical-disorientation-support-skill",
+  "description": "Single-plugin marketplace for the topographical-disorientation-support-skill plugin.",
+  "owner": {
+    "name": "Justice"
+  },
+  "plugins": [
+    {
+      "name": "topographical-disorientation-support-skill",
+      "description": "Accommodation framework and tooling for developmental topographical disorientation (DTD / atopia): landmark-based direction rewriting, OpenStreetMap landmark route scripts, wayfinding content checks, and accommodation documents for US, FR, and ES, with evidence grades.",
+      "category": "accessibility",
+      "source": "./",
+      "homepage": "https://github.com/justice8096/topographical-disorientation-support-skill"
+    }
+  ]
+}

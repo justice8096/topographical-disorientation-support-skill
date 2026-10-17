@@ -1,0 +1,53 @@
+{
+    "name": "topographical-disorientation-support-skill",
+    "version": "0.1.0",
+    "description": "Multi-format distribution system for developmental topographical disorientation (DTD / atopia) accommodation: landmark-based instruction rewriting, heading-up map rules, stress-mode fallback, content checks, and accommodation documents across US, FR, ES",
+    "license": "CC0-1.0",
+    "author": "Justice",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "tsx build.ts",
+        "build:claude-plugin": "tsx build.ts --format claude-plugin",
+        "build:mcp": "tsx build.ts --format mcp && cd dist/mcp-server && npm install",
+        "build:openai": "tsx build.ts --format openai",
+        "build:n8n": "tsx build.ts --format n8n",
+        "build:prompts": "tsx build.ts --format prompts",
+        "clean": "rm -rf ../dist",
+        "dev": "tsx build.ts --watch",
+        "lint": "eslint ../source/ build.ts",
+        "test": "tsx test-build.ts && tsx test-lib.ts && tsx test-security.ts",
+        "audit": "npm audit --audit-level=high",
+        "sbom": "npx @cyclonedx/cyclonedx-npm --output-file sbom.cdx.json --output-reproducible",
+        "prepack": "npm run build",
+        "build:cli": "tsx build.ts --format cli",
+        "build:root-canonical": "tsx build.ts --format root-canonical",
+        "test:security": "tsx test-security.ts",
+        "test:lib": "tsx test-lib.ts"
+    },
+    "devDependencies": {
+        "@types/js-yaml": "^4.0.5",
+        "@types/node": "^20.0.0",
+        "glob": "^10.0.0",
+        "js-yaml": "^4.1.0",
+        "tsx": "^4.23.15",
+        "typescript": "^7.0.2"
+    },
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "keywords": [
+        "topographical-disorientation",
+        "DTD",
+        "atopia",
+        "navigation",
+        "wayfinding",
+        "accessibility",
+        "accommodation",
+        "landmarks",
+        "mcp",
+        "openai",
+        "n8n",
+        "claude"
+    ]
+}

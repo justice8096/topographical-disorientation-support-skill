@@ -1,0 +1,61 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18, 20, 22]
+
+    defaults:
+      run:
+        working-directory: tooling
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+          cache-dependency-path: tooling/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type check
+        run: npx tsc --noEmit
+
+      - name: Build all formats
+        run: npx tsx build.ts --clean
+
+      - name: Run integration tests
+        run: npx tsx test-build.ts --verbose
+
+      - name: Library tests
+        run: npx tsx test-lib.ts --verbose
+
+      - name: Security tests
+        run: npx tsx test-security.ts --verbose
+
+      - name: Security audit
+        run: npm audit --audit-level=high
+
+      - name: Validate SBOM
+        run: |
+          if [ -f sbom.cdx.json ]; then
+            echo "SBOM present: $(python3 -c "import json; d=json.load(open('sbom.cdx.json')); print(f'{d[\"bomFormat\"]} {d[\"specVersion\"]}, {len(d.get(\"components\",[]))} components')")"
+          else
+            echo "::warning::SBOM not found Ã¢â‚¬â€ run: npx @cyclonedx/cyclonedx-npm --output-file sbom.cdx.json"
+          fi
+

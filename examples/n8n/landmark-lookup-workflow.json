@@ -1,0 +1,72 @@
+{
+  "name": "DTD landmark lookup and route card",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "dtd-route-card",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [200, 300],
+      "webhookId": "dtd-route-card"
+    },
+    {
+      "parameters": {
+        "jsCode": "// Validate input and build the Overpass query. Mirrors lib/overpass.ts guards.\nconst b = $input.first().json.body || {};\nconst lat = Number(b.lat), lon = Number(b.lon), radius = Math.round(Number(b.radius ?? 120));\nif (!Number.isFinite(lat) || !Number.isFinite(lon) || lat < -90 || lat > 90 || lon < -180 || lon > 180) throw new Error('bad coordinates');\nif (!(radius >= 10 && radius <= 400)) throw new Error('radius must be 10..400');\nconst keys = ['amenity','shop','tourism','historic','leisure','building','man_made','natural','public_transport','railway'];\nconst clauses = keys.map(k => `  nwr[\"${k}\"][\"name\"](around:${radius},${lat.toFixed(6)},${lon.toFixed(6)});`).join('\\n');\nconst query = `[out:json][timeout:20];\\n(\\n${clauses}\\n);\\nout center tags 200;`;\nreturn [{ json: { query, lat, lon, locale: ['en','fr','es'].includes(b.locale) ? b.locale : 'en', anchor: b.anchor || '' } }];"
+      },
+      "name": "Build Overpass query",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [420, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://overpass-api.de/api/interpreter",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            { "name": "data", "value": "={{ $json.query }}" }
+          ]
+        },
+        "options": {
+          "timeout": 25000,
+          "redirect": { "redirect": { "followRedirects": false } }
+        }
+      },
+      "name": "Overpass (allowlisted endpoint)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [640, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Parse and sanitise, then score landmarks around the point (approach bearing from input, default 0).\nconst input = $('Build Overpass query').first().json;\nconst res = $input.first().json;\nconst elements = Array.isArray(res.elements) ? res.elements.slice(0, 2000) : [];\nconst clean = s => String(s ?? '').replace(/[\\u0000-\\u001f\\u007f<>`{}\\[\\]]/g, '').trim().slice(0, 120);\nconst keys = ['amenity','shop','tourism','historic','leisure','building','man_made','natural','public_transport','railway'];\nconst R = 6371000, toRad = d => d * Math.PI / 180;\nconst dist = (a, b) => { const dLat = toRad(b.lat - a.lat), dLon = toRad(b.lon - a.lon); const s = Math.sin(dLat/2)**2 + Math.cos(toRad(a.lat))*Math.cos(toRad(b.lat))*Math.sin(dLon/2)**2; return 2*R*Math.asin(Math.min(1, Math.sqrt(s))); };\nconst weight = (k, v) => ({'amenity:place_of_worship':1,'amenity:fuel':0.9,'amenity:pharmacy':0.85,'amenity:bank':0.8,'amenity:cafe':0.75,'shop:supermarket':0.85,'leisure:park':0.8,'man_made:tower':0.9,'railway:station':0.9})[k+':'+v] ?? 0.4;\nconst center = { lat: input.lat, lon: input.lon };\nconst out = [];\nfor (const e of elements) {\n  if (!e || typeof e !== 'object') continue;\n  const tags = e.tags && typeof e.tags === 'object' ? e.tags : {};\n  const name = clean(tags.name); if (!name) continue;\n  const lat = typeof e.lat === 'number' ? e.lat : e.center?.lat, lon = typeof e.lon === 'number' ? e.lon : e.center?.lon;\n  if (!Number.isFinite(lat) || !Number.isFinite(lon)) continue;\n  const key = keys.find(k => typeof tags[k] === 'string'); if (!key) continue;\n  const value = String(tags[key]).replace(/[^a-z0-9_:-]/gi, '').slice(0, 60);\n  const d = dist(center, { lat, lon }); if (d > 120) continue;\n  const score = 0.5 * (1 - d / 120) + 0.5 * weight(key, value);\n  out.push({ name, key, value, lat, lon, distanceM: Math.round(d), score: Math.round(score * 1000) / 1000 });\n}\nout.sort((a, b) => b.score - a.score);\nconst top = out.slice(0, 3);\nconst phr = { en: ['You are facing ', 'Turn toward '], fr: ['Vous faites face a ', 'Tournez vers '], es: ['Estas mirando hacia ', 'Gira hacia '] }[input.locale];\nconst card = top.length ? [phr[0] + top[0].name + '.', '1. ' + phr[1] + top[0].name + '.'] : ['[no landmark available; confirm with a person or a photo]'];\nreturn [{ json: { landmarks: out, top, card: card.join('\\n'), locale: input.locale } }];"
+      },
+      "name": "Score and write card",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ $json }}"
+      },
+      "name": "Respond",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1080, 300]
+    }
+  ],
+  "connections": {
+    "Webhook": { "main": [[{ "node": "Build Overpass query", "type": "main", "index": 0 }]] },
+    "Build Overpass query": { "main": [[{ "node": "Overpass (allowlisted endpoint)", "type": "main", "index": 0 }]] },
+    "Overpass (allowlisted endpoint)": { "main": [[{ "node": "Score and write card", "type": "main", "index": 0 }]] },
+    "Score and write card": { "main": [[{ "node": "Respond", "type": "main", "index": 0 }]] }
+  },
+  "settings": { "executionOrder": "v1" }
+}
