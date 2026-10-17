@@ -8,7 +8,7 @@
 
 ## Reporting a Vulnerability
 
-Do not open a public GitHub issue for security vulnerabilities. Email **security@justice8096.dev**. You should receive an acknowledgment within 48 hours.
+Do not open a public GitHub issue for security vulnerabilities. Use GitHub private vulnerability reporting on this repository (Security tab, "Report a vulnerability"), or email **justice8096@gmail.com** with "SECURITY" in the subject. You should receive an acknowledgment within 48 hours.
 
 Include: a description, steps to reproduce, affected versions, and an impact assessment.
 
