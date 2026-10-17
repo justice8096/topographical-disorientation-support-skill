@@ -19,6 +19,10 @@ DTD is treated as a **bypass condition**, not a remediation condition. The produ
 
 Two optional comorbid profiles are supported and labelled Grade C: **viewpoint shift when looking up** and **orientation-invariant reading** (not noticing that a page or map is rotated).
 
+## Scope and limits
+
+This is a reading aid for a person on foot or as a passenger. It is not a driving aid and must not be used as the sole guidance in a vehicle or anywhere a wrong turn is dangerous. The area-landmarks command sends the coordinates you give it to a public OpenStreetMap Overpass mirror, so do not query a location you would not want a third party to see; use `--offline` to get the query text instead. Family-history paragraphs in generated documents describe relatives; their information is theirs to disclose, so confirm with them before sending such a document anywhere.
+
 ## Skills and commands
 
 | Skill | Purpose |

@@ -30,6 +30,11 @@ This plugin (a) echoes user text and OpenStreetMap tag values into route cards a
 - **Generated documents** never include identification numbers, account numbers, or addresses; placeholders are left for the person.
 - **Supply chain**: `tooling/package-lock.json` pins dependencies; `npm audit --audit-level=high` runs in CI; an SBOM is generated with `npm run sbom`.
 
+## Overpass mirror allowlist rotation
+
+If a mirror in `OVERPASS_ENDPOINTS` (lib/overpass.ts) is reported compromised or goes away: remove it from the array, add the replacement from the public mirror list at wiki.openstreetmap.org/wiki/Overpass_API, run 
+px tsx test-security.ts (the allowlist tests assert https and the exact path), bump the patch version, tag, and note it in CHANGELOG under [security]. The samples (n8n workflow, Python port) carry their own copy of the list and must be updated in the same commit.
+
 ## Known accepted risks
 
 | CWE | Description | Justification |

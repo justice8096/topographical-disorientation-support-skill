@@ -74,7 +74,7 @@ Use `templates/route-card-template.md`. Rules: orientation anchor sentence first
 One page per site: photo of the main entrance taken from the approach; anchor sentence for the entrance; route cards for entrance to desk, desk to toilets, desk to the three most used rooms, desk to exit; a named contact; profile accommodations (ground-level cues; no overhead-sign dependence) where flagged.
 
 ### 5c. Family history summary (for a clinician)
-Pedigree in prose: affected relatives by relationship and generation, which traits each shares (direction-word binding; viewpoint shift; orientation invariance), ages of onset as reported; citations to Barclay 2016 and Burles 2020 for familial aggregation; explicit Grade F label; no inference about mode of inheritance.
+Pedigree in prose: affected relatives by relationship and generation, which traits each shares (direction-word binding; viewpoint shift; orientation invariance), ages of onset as reported; citations to Barclay 2016 and Burles 2020 for familial aggregation; explicit Grade F label; no inference about mode of inheritance. The relatives' information is theirs: the summary names relationships, not people, and the person confirms with the relatives before the document leaves their hands.
 
 ## 6. Document hygiene
 - Never include the person's address, identification numbers, or account numbers in a generated document; leave placeholders.

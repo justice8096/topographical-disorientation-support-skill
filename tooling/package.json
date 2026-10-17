@@ -1,6 +1,6 @@
 {
     "name": "topographical-disorientation-support-skill",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Multi-format distribution system for developmental topographical disorientation (DTD / atopia) accommodation: landmark-based instruction rewriting, heading-up map rules, stress-mode fallback, content checks, and accommodation documents across US, FR, ES",
     "license": "CC0-1.0",
     "author": "Justice",

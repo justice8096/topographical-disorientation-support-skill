@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18, 20, 22]
+        node-version: [18, 20, 22, 24]
 
     defaults:
       run:
@@ -50,6 +50,19 @@ jobs:
 
       - name: Security audit
         run: npm audit --audit-level=high
+
+      - name: SBOM drift check
+        if: matrix.node-version == 22
+        run: |
+          npx --yes @cyclonedx/cyclonedx-npm --output-file sbom.ci.cdx.json --output-reproducible
+          python3 - <<'PY'
+          import json, sys
+          a = json.load(open('sbom.cdx.json')); b = json.load(open('sbom.ci.cdx.json'))
+          key = lambda d: sorted((c.get('purl') or c.get('name')) for c in d.get('components', []))
+          if key(a) != key(b):
+              print('::error::sbom.cdx.json is out of date; run: cd tooling && npm run sbom'); sys.exit(1)
+          print('SBOM components match:', len(key(a)))
+          PY
 
       - name: Validate SBOM
         run: |

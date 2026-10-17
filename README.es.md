@@ -17,6 +17,10 @@ La DTD se trata como una condicion de **evitacion**, no de remediacion. El produ
 
 Se admiten dos perfiles comorbidos opcionales, clasificados en grado C: **desplazamiento del punto de vista al mirar hacia arriba** y **lectura invariante a la orientacion** (no notar que una pagina o un mapa estan girados).
 
+## Alcance y limites
+
+Es una ayuda de lectura para una persona a pie o como pasajera. No es una ayuda a la conduccion y no debe ser la unica guia en un vehiculo ni donde un giro equivocado sea peligroso. El comando area-landmarks envia las coordenadas que indiques a un servidor Overpass publico de OpenStreetMap; no consultes un lugar que no quieras que un tercero conozca (usa `--offline` para obtener solo el texto de la consulta). Los parrafos de antecedentes familiares describen a familiares; esa informacion es suya, confirma con ellos antes de enviar el documento.
+
 ## Terminologia
 
 Desorientacion topografica del desarrollo (DTD). El termino aparece en la divulgacion cientifica (psyciencia.com) pero no es una categoria administrativa. La clasificacion DEA/ACNEAE no se aplica (cubre dificultades de aprendizaje en la etapa escolar); la via es la general de la discapacidad con informe clinico.

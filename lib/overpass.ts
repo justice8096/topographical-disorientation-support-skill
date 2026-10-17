@@ -112,8 +112,12 @@ function sanitizeName(name: unknown): string {
   return name.replace(/[\u0000-\u001f\u007f<>`{}\[\]]/g, "").trim().slice(0, 120);
 }
 
-/** Parse an Overpass JSON response into landmarks. Tolerates garbage; never throws on element shape. */
-export function parseOverpassResponse(json: unknown): OsmLandmark[] {
+/**
+ * Parse an Overpass JSON response into landmarks. Tolerates garbage; never
+ * throws on element shape. When `locale` is given, a `name:<locale>` tag is
+ * preferred over `name` so French and Spanish users see local-language names.
+ */
+export function parseOverpassResponse(json: unknown, locale?: "en" | "fr" | "es"): OsmLandmark[] {
   const out: OsmLandmark[] = [];
   if (!json || typeof json !== "object") return out;
   const elements = (json as { elements?: unknown }).elements;
@@ -122,7 +126,8 @@ export function parseOverpassResponse(json: unknown): OsmLandmark[] {
     if (!el || typeof el !== "object") continue;
     const e = el as Record<string, unknown>;
     const tags = (e.tags && typeof e.tags === "object" ? e.tags : {}) as Record<string, unknown>;
-    const name = sanitizeName(tags.name);
+    const localized = locale ? sanitizeName(tags["name:" + locale]) : "";
+    const name = localized || sanitizeName(tags.name);
     if (!name) continue;
     let lat: unknown = e.lat;
     let lon: unknown = e.lon;

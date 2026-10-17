@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here. Tags: [evidence] research-driven content change, [regulatory] legal or standards change, [defect] correction, [security] security fix or test, [tooling] build or test infrastructure.
 
+## [0.1.1] - 2026-10-17
+
+### Added
+- [evidence] parseOverpassResponse(json, locale) prefers 
+ame:fr / 
+ame:es tags when a locale is given; `/area-landmarks` passes its locale through.
+- README scope-and-limits section (not a driving aid; Overpass receives the coordinates you query; relatives' information in family-history paragraphs is theirs to disclose) in en, fr, es.
+- SECURITY.md procedure for rotating the Overpass mirror allowlist.
+- [tooling] CI matrix adds Node 24; CI fails when tooling/sbom.cdx.json drifts from the lockfile.
+
 ## [0.1.0] - 2026-10-17
 
 First release: core plus English, French, and Spanish locales, both comorbid profiles, security test suite.

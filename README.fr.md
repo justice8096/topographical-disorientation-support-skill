@@ -17,6 +17,10 @@ La DTD est traitee comme une condition de **contournement**, non de remediation.
 
 Deux profils comorbides optionnels sont pris en charge et classes grade C : **decalage du point de vue en levant les yeux** et **lecture invariante a l'orientation** (ne pas remarquer qu'une page ou une carte est retournee).
 
+## Portee et limites
+
+Il s'agit d'une aide a la lecture pour une personne a pied ou passagere. Ce n'est pas une aide a la conduite et elle ne doit pas servir de guidage unique dans un vehicule ni la ou une erreur de direction serait dangereuse. La commande area-landmarks envoie les coordonnees fournies a un serveur Overpass public d'OpenStreetMap ; n'interrogez pas un lieu que vous ne voudriez pas voir connu d'un tiers (option `--offline` pour obtenir seulement le texte de la requete). Les paragraphes d'antecedents familiaux decrivent des proches ; ces informations leur appartiennent, confirmez avec eux avant tout envoi.
+
 ## Terminologie
 
 Desorientation topographique developpementale (DTD). Le terme apparait dans la litterature de recherche mais n'est pas une categorie MDPH. Le parcours PAP ne s'applique pas (il concerne les troubles des apprentissages) ; la voie est celle du handicap cognitif avec un bilan neuropsychologique.

@@ -25,7 +25,7 @@ References from a geographic area, and the plugin's entry point for map reading.
 5. **Return** the landmark list as JSON plus a short human-readable summary in the requested locale, grouped by category with translated category labels.
 
 ## Locale behaviour
-Category labels and the orientation anchor sentence are written in `en`, `fr`, or `es`. The query itself is language-independent; OpenStreetMap `name` tags are returned as stored, and `name:fr` / `name:es` are not requested in this version (planned for 0.2.0).
+Category labels and the orientation anchor sentence are written in `en`, `fr`, or `es`. The query itself is language-independent; When `--locale fr` or `--locale es` is given, a `name:fr` or `name:es` tag is preferred over `name` where OpenStreetMap has one; otherwise the stored `name` is used.
 
 ## Output Format
 ```

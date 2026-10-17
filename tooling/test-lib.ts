@@ -102,6 +102,13 @@ test("place references match landmarks", () => {
   assert(nameSimilarity("Eglise Saint-Pierre", "Église Saint Pierre") > 0.9, "accent-insensitive similarity");
 });
 
+test("overpass parser prefers localized name tag when asked", () => {
+  const json = { elements: [{ type: "node", id: 1, lat: 1, lon: 1, tags: { name: "Saint Mary Church", "name:fr": "Eglise Sainte-Marie", amenity: "place_of_worship" } }] };
+  assert(parseOverpassResponse(json, "fr")[0].name === "Eglise Sainte-Marie", "fr name not preferred");
+  assert(parseOverpassResponse(json, "es")[0].name === "Saint Mary Church", "fallback to name when name:es is absent");
+  assert(parseOverpassResponse(json)[0].name === "Saint Mary Church", "no locale keeps name");
+});
+
 test("overpass query shape", () => {
   const q = buildAroundQuery({ lat: 48.8584, lon: 2.2945 }, 100, ["amenity", "tourism"]);
   assert(q.includes('nwr["amenity"]["name"](around:100,48.858400,2.294500);'), q);
