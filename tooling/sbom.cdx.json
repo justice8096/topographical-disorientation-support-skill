@@ -1,0 +1,3198 @@
+{
+  "$schema": "http://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "version": 1,
+  "metadata": {
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "npm",
+          "version": "12.2.0"
+        },
+        {
+          "type": "library",
+          "name": "cyclonedx-library",
+          "group": "@cyclonedx",
+          "version": "10.0.0",
+          "author": "Jan Kowalleck",
+          "description": "Core functionality of CycloneDX for JavaScript (Node.js or WebBrowser).",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-javascript-library.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-javascript-library#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ]
+        },
+        {
+          "type": "application",
+          "name": "cyclonedx-npm",
+          "group": "@cyclonedx",
+          "version": "6.0.1",
+          "author": "Jan Kowalleck",
+          "description": "Create CycloneDX Software Bill of Materials (SBOM) from NPM projects.",
+          "licenses": [
+            {
+              "license": {
+                "id": "Apache-2.0"
+              }
+            }
+          ],
+          "externalReferences": [
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-node-npm/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/CycloneDX/cyclonedx-node-npm.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/CycloneDX/cyclonedx-node-npm#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ]
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "name": "topographical-disorientation-support-skill",
+      "version": "0.1.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0",
+      "author": "Justice",
+      "description": "Multi-format distribution system for developmental topographical disorientation (DTD / atopia) accommodation: landmark-based instruction rewriting, heading-up map rules, stress-mode fallback, content checks, and accommodation documents across US, FR, ES",
+      "licenses": [
+        {
+          "license": {
+            "id": "CC0-1.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/topographical-disorientation-support-skill@0.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:path",
+          "value": ""
+        },
+        {
+          "name": "cdx:npm:package:private",
+          "value": "true"
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "cdx:reproducible",
+        "value": "true"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "win32-x64",
+      "group": "@esbuild",
+      "version": "0.28.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|@esbuild/win32-x64@0.28.2",
+      "description": "The Windows 64-bit binary for esbuild, a JavaScript bundler.",
+      "scope": "optional",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40esbuild/win32-x64@0.28.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.28.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e5e6e9c6bde758cceb2ffae7508ef9e4992e79ed1b1cbfc6ab459317d96f729bfbdf0029e5ebbc31f0548162bd6e15af6638fbc97f1eb5fffcb48f0d7b2ebde6"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/evanw/esbuild/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/evanw/esbuild.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/evanw/esbuild#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@esbuild/win32-x64"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cliui",
+      "group": "@isaacs",
+      "version": "8.0.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|@isaacs/cliui@8.0.2",
+      "author": "Ben Coe",
+      "description": "easily create complex multi-column command-line-interfaces",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40isaacs/cliui@8.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@isaacs/cliui/-/cliui-8.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "3bc8dc8da6d76a578e1bd0d0d3e0115d66414df9cfe16340ab3ba224aee5978e009b118abff2763384cf8f18d8df39c109fbc15c5cee726d6dc1dc85c9b16a10"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/yargs/cliui/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/yargs/cliui.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/yargs/cliui#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@isaacs/cliui"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "parseargs",
+      "group": "@pkgjs",
+      "version": "0.11.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|@pkgjs/parseargs@0.11.0",
+      "description": "Polyfill of future proposal for `util.parseArgs()`",
+      "scope": "optional",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40pkgjs/parseargs@0.11.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@pkgjs/parseargs/-/parseargs-0.11.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "fb55648dd0f44012cfa1d1ab2547aa6ab1fc54022f40e0c86f087d5e93f94b28ac7fb628420b0928f345a2aa8b425bbe550fed552b21311ea5a0f327f14f9d3e"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/pkgjs/parseargs/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+ssh://git@github.com/pkgjs/parseargs.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/pkgjs/parseargs#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@pkgjs/parseargs"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "js-yaml",
+      "group": "@types",
+      "version": "4.0.9",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|@types/js-yaml@4.0.9",
+      "description": "TypeScript definitions for js-yaml",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40types/js-yaml@4.0.9",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@types/js-yaml/-/js-yaml-4.0.9.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "9383066909794c6a3f8a2a6a6f65031b65308d7ce2496921d2ecac41e953949a57d6a1a5a546589bc3e73b80f11b5a81a26b4951d609eaa47ac5d21a875d092e"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/js-yaml",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/js-yaml",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@types/js-yaml"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "node",
+      "group": "@types",
+      "version": "20.19.39",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|@types/node@20.19.39",
+      "description": "TypeScript definitions for node",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40types/node@20.19.39",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@types/node/-/node-20.19.39.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a2baeb0fbe0c054c8af233800ffaf4fa57dad48d8c3ba23ebc0926016ccc61b09c82b378942ae62b9da044542afc94717d83dfa2792be1bd23718ece96a76a6f"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/DefinitelyTyped/DefinitelyTyped.git#types/node",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\" and \"repository.directory\""
+        },
+        {
+          "url": "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/node",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@types/node"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "typescript-win32-x64",
+      "group": "@typescript",
+      "version": "7.0.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|@typescript/typescript-win32-x64@7.0.2",
+      "author": "Microsoft Corp.",
+      "description": "TypeScript is a language for application scale JavaScript development",
+      "scope": "optional",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/%40typescript/typescript-win32-x64@7.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/@typescript/typescript-win32-x64/-/typescript-win32-x64-7.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "d014371e40071e528b4a9d6a46f7f7494846a46b03ba107f8e0170ef982ecaa6f126a11a4b40b0fd514ef22da71e094953340246d30c47f20100a137113302e2"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/microsoft/TypeScript/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/microsoft/TypeScript.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://www.typescriptlang.org/",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/@typescript/typescript-win32-x64"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ansi-regex",
+      "version": "6.2.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|ansi-regex@6.2.2",
+      "author": "Sindre Sorhus",
+      "description": "Regular expression for matching ANSI escape codes",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ansi-regex@6.2.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.2.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "06add2992a721476968cf93c21ff7273ab2f33c739e9d079040b56e106f0e631d3c305d77132e844c9290c9a7a54bd17ce559a0874d7ae415444c6260f4b0baa"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/chalk/ansi-regex/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/chalk/ansi-regex.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/chalk/ansi-regex#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ansi-regex"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "ansi-styles",
+      "version": "6.2.3",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|ansi-styles@6.2.3",
+      "author": "Sindre Sorhus",
+      "description": "ANSI escape codes for styling strings in the terminal",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/ansi-styles@6.2.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "e038fa336f0907ea001fc9059132d4a3e6b68f038592ea9bdf2b9c53408035c45151bc52d1c3f49d96021a371cdc1357c1122c5159831a0cdac267bbcef247be"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/chalk/ansi-styles/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/chalk/ansi-styles.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/chalk/ansi-styles#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/ansi-styles"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "argparse",
+      "version": "2.0.1",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|argparse@2.0.1",
+      "description": "CLI arguments parser. Native port of python's argparse.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Python-2.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/argparse@2.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/argparse/-/argparse-2.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f3ef56a9e6db173a57f4e47e59ae8edbd6ac22881e44ccdc1ad00835da4c1c7c80835d1fd3969215505b704a867ff3d7c35123019faadbf6c4060dc3beeacadd"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/nodeca/argparse/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/nodeca/argparse.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/nodeca/argparse#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/argparse"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "balanced-match",
+      "version": "1.0.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|balanced-match@1.0.2",
+      "author": "Julian Gruber",
+      "description": "Match balanced character pairs, like \"{\" and \"}\"",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/balanced-match@1.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "de849e50ed13315ebb84dd4099b5ec2b8c9aa94eed8e21e56f144364ea47d0a5bdf82797e1b440697d009f1b74b71d8cae94695b041a3f02252121098585393f"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/juliangruber/balanced-match/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git://github.com/juliangruber/balanced-match.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/juliangruber/balanced-match",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/balanced-match"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "brace-expansion",
+      "version": "2.1.7",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|brace-expansion@2.1.7",
+      "author": "Julian Gruber",
+      "description": "Brace expansion as known from sh/bash",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/brace-expansion@2.1.7",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.1.7.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b996dec3536a7663c34cc27c6a1d72f9bfbd40426b7e45c593745c4d0c375f48d6ff1454bc52ac83509f41d49819d4db5d9584c6d53727771cc6d9dfc35162d2"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/juliangruber/brace-expansion/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git://github.com/juliangruber/brace-expansion.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/juliangruber/brace-expansion",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/brace-expansion"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "color-convert",
+      "version": "2.0.1",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|color-convert@2.0.1",
+      "author": "Heather Arthur",
+      "description": "Plain color conversion functions",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/color-convert@2.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/color-convert/-/color-convert-2.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "4511023ec8fb8aeff16f9a0a61cb051d2a6914d9ec8ffe763954d129be333f9a275f0545df3566993a0d70e7c60be0910e97cafd4e7ce1f320dfc64709a12529"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/Qix-/color-convert/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/Qix-/color-convert.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/Qix-/color-convert#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/color-convert"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "color-name",
+      "version": "1.1.4",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|color-name@1.1.4",
+      "author": "DY",
+      "description": "A list of color names and its values",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/color-name@1.1.4",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/color-name/-/color-name-1.1.4.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "74ecbedc0b96ddadb035b64722e319a537208c6b8b53fb812ffb9b71917d3976c3a3c7dfe0ef32569e417f479f4bcb84a18a39ab8171edd63d3a04065e002c40"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/colorjs/color-name/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+ssh://git@github.com/colorjs/color-name.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/colorjs/color-name",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/color-name"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "cross-spawn",
+      "version": "7.0.6",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|cross-spawn@7.0.6",
+      "author": "André Cruz",
+      "description": "Cross platform child_process#spawn and child_process#spawnSync",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/cross-spawn@7.0.6",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/cross-spawn/-/cross-spawn-7.0.6.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b95d903963f69d6ceccb668ca7c69189b862f5d9731791e0879487681f4e893184c834e2249cb1d2ecb9d505ddc966ed00736e6b85c9cd429c6b73b3294777bc"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/moxystudio/node-cross-spawn/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+ssh://git@github.com/moxystudio/node-cross-spawn.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/moxystudio/node-cross-spawn",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/cross-spawn"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "eastasianwidth",
+      "version": "0.2.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|eastasianwidth@0.2.0",
+      "author": "Masaki Komagata",
+      "description": "Get East Asian Width from a character.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/eastasianwidth@0.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/eastasianwidth/-/eastasianwidth-0.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "23cf1361959cf578981d1438ff7739ae38df8248e12f25b696e18885e18445b350e8e63bc93c9b6a74a90d765af32ed550ff589837186be7b2ab871aee22ea58"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/komagata/eastasianwidth/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git://github.com/komagata/eastasianwidth.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/komagata/eastasianwidth#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/eastasianwidth"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "emoji-regex",
+      "version": "9.2.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|emoji-regex@9.2.2",
+      "author": "Mathias Bynens",
+      "description": "A regular expression to match all Emoji-only symbols as per the Unicode Standard.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/emoji-regex@9.2.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-9.2.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "2f5f03689b17494936fb8da9bfc98bb398c94f686a164144e23db5c0e9a06d4aac67684bef636c514efce60f515e0a37b3464d815978d93887a7766d3affd5ca"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/mathiasbynens/emoji-regex/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/mathiasbynens/emoji-regex.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://mths.be/emoji-regex",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/emoji-regex"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "esbuild",
+      "version": "0.28.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|esbuild@0.28.2",
+      "description": "An extremely fast JavaScript and CSS bundler and minifier.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/esbuild@0.28.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/esbuild/-/esbuild-0.28.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1ca54b4bc76f208fb1a0a5bd926ab16d12ab9d61177c926bfc56618499a2a880747b4e7740d605a8e068b9330efe4e6c203e0cbc28940afbfc6fd338877db020"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/evanw/esbuild/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/evanw/esbuild.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/evanw/esbuild#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/esbuild"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "foreground-child",
+      "version": "3.3.1",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|foreground-child@3.3.1",
+      "author": "Isaac Z. Schlueter",
+      "description": "Run a child as if it's the foreground process. Give it stdio. Exit when it exits.",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/foreground-child@3.3.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/foreground-child/-/foreground-child-3.3.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "8085e32aab45b96120cc544903d58241e4892d90e380950e302333c6dbc5abfdfb2a88ccd41146b9faac0b2d2be2a4909982ec65831ec91ab321638cba9d37b3"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/tapjs/foreground-child/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/tapjs/foreground-child.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/tapjs/foreground-child#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/foreground-child"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "glob",
+      "version": "10.5.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|glob@10.5.0",
+      "author": "Isaac Z. Schlueter",
+      "description": "the most correct and second fastest glob implementation in JavaScript",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/glob@10.5.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/glob/-/glob-10.5.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "0df5cdf037e127b347dce7bb7059aedcd0aed7029b911789f13a2bcd20056d22ab94d69048a7c8cea62a558f3395bb3634b05b5a9462539d865f63db68154d92"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/isaacs/node-glob/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git://github.com/isaacs/node-glob.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/isaacs/node-glob#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/glob"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "is-fullwidth-code-point",
+      "version": "3.0.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|is-fullwidth-code-point@3.0.0",
+      "author": "Sindre Sorhus",
+      "description": "Check if the character represented by a given Unicode code point is fullwidth",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/is-fullwidth-code-point@3.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "cf29a6e7ebbeb02b125b20fda8d69e8d5dc316f84229c94a762cd868952e1c0f3744b8dbee74ae1a775d0871afd2193e298ec130096c59e2b851e83a115e9742"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/is-fullwidth-code-point/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/sindresorhus/is-fullwidth-code-point.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/is-fullwidth-code-point#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/is-fullwidth-code-point"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "isexe",
+      "version": "2.0.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|isexe@2.0.0",
+      "author": "Isaac Z. Schlueter",
+      "description": "Minimal module to check if a file is executable.",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/isexe@2.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "447c4c2e9f659ca1c61d19e0f5016144231b600715a67ebdb2648672addfdfac638155564e18f8aaa2db4cb96aed2b23f01f9f210d44b8210623694ab3241e23"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/isaacs/isexe/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/isaacs/isexe.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/isaacs/isexe#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/isexe"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "jackspeak",
+      "version": "3.4.3",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|jackspeak@3.4.3",
+      "author": "Isaac Z. Schlueter",
+      "description": "A very strict and proper argument parser.",
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/jackspeak@3.4.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/jackspeak/-/jackspeak-3.4.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "386959429cf6c9f6a103f45dd58f0277d48812caaf5e42d5a12c3f720c219e114c0dbb1015e658a0927b6c86414bd05c6a6516f7a6acabf9e93d6ba033e45007"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/isaacs/jackspeak/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/isaacs/jackspeak.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/isaacs/jackspeak#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/jackspeak"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "js-yaml",
+      "version": "4.3.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|js-yaml@4.3.2",
+      "author": "Vladimir Zapparov",
+      "description": "YAML 1.2 parser and serializer",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/js-yaml@4.3.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/js-yaml/-/js-yaml-4.3.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "48534ebd227e0e07fff409fdd38631f828129483c2908a5aa38aa8e7596979edb94c845e8dd1f7ae1478119306a0dc77fd33f73bec335ae893165e2ca9b96dcc"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/nodeca/js-yaml/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/nodeca/js-yaml.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/nodeca/js-yaml#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/js-yaml"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "lru-cache",
+      "version": "10.4.3",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|lru-cache@10.4.3",
+      "author": "Isaac Z. Schlueter",
+      "description": "A cache object that deletes the least-recently-used items.",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/lru-cache@10.4.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/lru-cache/-/lru-cache-10.4.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "24d03365c5eb0ade365462ee633d337c0cc37c0bc9596e807d8943050c835790c2948da6e6c0262be3883bbb39f577ec46c587a74da3009ad169d3d1193b7a49"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/isaacs/node-lru-cache/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git://github.com/isaacs/node-lru-cache.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/isaacs/node-lru-cache#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/lru-cache"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minimatch",
+      "version": "9.0.9",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|minimatch@9.0.9",
+      "author": "Isaac Z. Schlueter",
+      "description": "a glob matcher in javascript",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/minimatch@9.0.9",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/minimatch/-/minimatch-9.0.9.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "381c0137d00be1daa61139694b6cdab31faf4de59c956ce46e57d993b2930398f78de38e373fed4429d9a26532bcd83cdf02f966ff52b3a1cc2570202fc47662"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/isaacs/minimatch/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git://github.com/isaacs/minimatch.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/isaacs/minimatch#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/minimatch"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "minipass",
+      "version": "7.1.3",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|minipass@7.1.3",
+      "author": "Isaac Z. Schlueter",
+      "description": "minimal implementation of a PassThrough stream",
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/minipass@7.1.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/minipass/-/minipass-7.1.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b44047a839c8a0cff5ad7304d738246bd83a43695ca029311cbb9cece0c9e41c5b3f977873667970682d5c092ee7ddb4d02c7b762b874ce61f4810fc9fa9a6f0"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/isaacs/minipass/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/isaacs/minipass.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/isaacs/minipass#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/minipass"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "package-json-from-dist",
+      "version": "1.0.1",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|package-json-from-dist@1.0.1",
+      "author": "Isaac Z. Schlueter",
+      "description": "Load the local package.json from either src or dist folder",
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/package-json-from-dist@1.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/package-json-from-dist/-/package-json-from-dist-1.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5046484b7fdbcb8382f2f2f73f67535d1113a5e6cb236362239bc8ae3683ff952dae4157fed35bc234d2440182ffeec2028da921c05a4605a670104772c68223"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/isaacs/package-json-from-dist/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/isaacs/package-json-from-dist.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/isaacs/package-json-from-dist#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/package-json-from-dist"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path-key",
+      "version": "3.1.1",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|path-key@3.1.1",
+      "author": "Sindre Sorhus",
+      "description": "Get the PATH environment variable key cross-platform",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/path-key@3.1.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "a2399e374a9dfb2d23b3312da18e3caf43deab97703049089423aee90e5fe3595f92cc17b8ab58ae18284e92e7c887079b6e1486ac7ee53aa6d889d2c0b844e9"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/path-key/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/sindresorhus/path-key.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/path-key#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/path-key"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "path-scurry",
+      "version": "1.11.1",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|path-scurry@1.11.1",
+      "author": "Isaac Z. Schlueter",
+      "description": "walk paths fast and efficiently",
+      "licenses": [
+        {
+          "license": {
+            "id": "BlueOak-1.0.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/path-scurry@1.11.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/path-scurry/-/path-scurry-1.11.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "5dae0dc35ec54bd02940527dba62e2252e28ac68e6ed9cf052bc1a99c190b874b30f2b61f5ba0a0dac9c61d0dc643baa6004d7c381c55e06aa59372d5bfbf51c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/isaacs/path-scurry/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/isaacs/path-scurry.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/isaacs/path-scurry#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/path-scurry"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shebang-command",
+      "version": "2.0.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|shebang-command@2.0.0",
+      "author": "Kevin Mårtensson",
+      "description": "Get the command from a shebang",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/shebang-command@2.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/shebang-command/-/shebang-command-2.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "907c6bdb366962d766acdd6a0e3aeb5ff675ad1d641bc0f1fa09292b51b87979af5ecc26704d614d6056614ce5ada630d7fc99a7a62e0d8efb62dbdb3747660c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/kevva/shebang-command/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/kevva/shebang-command.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/kevva/shebang-command#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/shebang-command"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "shebang-regex",
+      "version": "3.0.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|shebang-regex@3.0.0",
+      "author": "Sindre Sorhus",
+      "description": "Regular expression for matching a shebang line",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/shebang-regex@3.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/shebang-regex/-/shebang-regex-3.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "efef9d161b5cc77df9dee05aabc0c347836ec417ad0730bb6503a19934089c711de9b4ab5dd884cb30af1b4ed9e3851874b4a1594c97b7933fca1cfc7a471bd4"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/shebang-regex/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/sindresorhus/shebang-regex.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/shebang-regex#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/shebang-regex"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "signal-exit",
+      "version": "4.1.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|signal-exit@4.1.0",
+      "author": "Ben Coe",
+      "description": "when you want to fire an event no matter how a process exits.",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/signal-exit@4.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/signal-exit/-/signal-exit-4.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6f3c99d5ef3cc3d3b588d25b2a73a5bd84eb58f0e5e3a3b56c6d03dd7227bfef6d90faf1acdf235144e21650e4926296827d4ce827c8035dd2b86a8e6bd2a8af"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/tapjs/signal-exit/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/tapjs/signal-exit.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/tapjs/signal-exit#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/signal-exit"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "string-width",
+      "version": "4.2.3",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3",
+      "author": "Sindre Sorhus",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/string-width@4.2.3",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "c0ac90450a63274b08a7ad84ad265d1ac8cc256b1aa79a1136284786ee86ec954effd8c807a5327af2feb57b8eaab9e0f23fdcc4a4d6c96530bd24eb8a2673fe"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/string-width/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/sindresorhus/string-width.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/string-width#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/string-width-cjs"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ansi-regex",
+          "version": "5.0.1",
+          "bom-ref": "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3|ansi-regex@5.0.1",
+          "author": "Sindre Sorhus",
+          "description": "Regular expression for matching ANSI escape codes",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ansi-regex@5.0.1",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "aae2505e54d25062f62c7f52517a3c570b18e2ca1a9e1828e8b3529bce04d4b05c13cb373b4c29762473c91f73fd9649325316bf7eea38e6fda5d26531410a15"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-regex/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/chalk/ansi-regex.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-regex#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:development",
+              "value": "true"
+            },
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/string-width-cjs/node_modules/ansi-regex"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "emoji-regex",
+          "version": "8.0.0",
+          "bom-ref": "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3|emoji-regex@8.0.0",
+          "author": "Mathias Bynens",
+          "description": "A regular expression to match all Emoji-only symbols as per the Unicode Standard.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/emoji-regex@8.0.0",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "3128d8cdc58d380d1ec001e9cf4331a5816fc20eb28f2d4d1b7c6d7a8ab3eb8e150a8fd13e09ebd7f186b7e89cde2253cd0f04bb74dd335e126b09d5526184e8"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            },
+            {
+              "url": "https://github.com/mathiasbynens/emoji-regex/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/mathiasbynens/emoji-regex.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://mths.be/emoji-regex",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:development",
+              "value": "true"
+            },
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/string-width-cjs/node_modules/emoji-regex"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "strip-ansi",
+          "version": "6.0.1",
+          "bom-ref": "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3|strip-ansi@6.0.1",
+          "author": "Sindre Sorhus",
+          "description": "Strip ANSI escape codes from a string",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/strip-ansi@6.0.1",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "637f153d21dcaa416b0a916743dbee4979aabaebf9a1738aa46793e9a1abaf7a3719cf409556ba2417d448e0a76f1186645fbfd28a08ecaacfb944b3b54754e4"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            },
+            {
+              "url": "https://github.com/chalk/strip-ansi/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/chalk/strip-ansi.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/strip-ansi#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:development",
+              "value": "true"
+            },
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/string-width-cjs/node_modules/strip-ansi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "string-width",
+      "version": "5.1.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|string-width@5.1.2",
+      "author": "Sindre Sorhus",
+      "description": "Get the visual width of a string - the number of columns required to display it",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/string-width@5.1.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/string-width/-/string-width-5.1.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "1e72ce091def8dc63c6dea0d2ed723679fe7c67d9a7e6304ea586b0eb79ba24a8c6a9f976de5bc9fd4d7a4f0cea9d18ae6a708de84f418a4d6eb00bb10c895a8"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/string-width/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/sindresorhus/string-width.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/sindresorhus/string-width#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/string-width"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "strip-ansi",
+      "version": "6.0.1",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|strip-ansi@6.0.1",
+      "author": "Sindre Sorhus",
+      "description": "Strip ANSI escape codes from a string",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/strip-ansi@6.0.1",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "637f153d21dcaa416b0a916743dbee4979aabaebf9a1738aa46793e9a1abaf7a3719cf409556ba2417d448e0a76f1186645fbfd28a08ecaacfb944b3b54754e4"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/chalk/strip-ansi/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/chalk/strip-ansi.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/chalk/strip-ansi#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/strip-ansi-cjs"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ansi-regex",
+          "version": "5.0.1",
+          "bom-ref": "topographical-disorientation-support-skill@0.1.0|strip-ansi@6.0.1|ansi-regex@5.0.1",
+          "author": "Sindre Sorhus",
+          "description": "Regular expression for matching ANSI escape codes",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ansi-regex@5.0.1",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "aae2505e54d25062f62c7f52517a3c570b18e2ca1a9e1828e8b3529bce04d4b05c13cb373b4c29762473c91f73fd9649325316bf7eea38e6fda5d26531410a15"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-regex/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/chalk/ansi-regex.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-regex#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:development",
+              "value": "true"
+            },
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/strip-ansi-cjs/node_modules/ansi-regex"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "strip-ansi",
+      "version": "7.2.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|strip-ansi@7.2.0",
+      "author": "Sindre Sorhus",
+      "description": "Strip ANSI escape codes from a string",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/strip-ansi@7.2.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "c833cc363a785b27d80641e78c844b7dc6b58ba28cc860adb1582829eff3d7eeafba481a10d76018166df9998a3dce206afbc46793a01df1ddadace180dc86ef"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/chalk/strip-ansi/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/chalk/strip-ansi.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/chalk/strip-ansi#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/strip-ansi"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "tsx",
+      "version": "4.23.15",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|tsx@4.23.15",
+      "author": "Hiroki Osame",
+      "description": "TypeScript Execute (tsx): Node.js enhanced with esbuild to run TypeScript & ESM files",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/tsx@4.23.15",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/tsx/-/tsx-4.23.15.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6227b1d4ebe7f33db13e9396724222cac575492c91318f4190b17efaad322a20f10aa461a2c29f320de36a72a488b07067973f62bca5a0ac0665cac49adc312b"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/privatenumber/tsx/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/privatenumber/tsx.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://tsx.hirok.io",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/tsx"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "typescript",
+      "version": "7.0.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|typescript@7.0.2",
+      "author": "Microsoft Corp.",
+      "description": "TypeScript is a language for application scale JavaScript development",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/typescript@7.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/typescript/-/typescript-7.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "f0561abbdea8dcd28e85b8ca8bfa8dbc6fd6e63873c646dd9b9b23f406d9ff94f9b16aa7de12602df1b1dbbb11299593bf2cc23fc74b4414dfe6d05349155434"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/microsoft/TypeScript/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/microsoft/TypeScript.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://www.typescriptlang.org/",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/typescript"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "undici-types",
+      "version": "6.21.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|undici-types@6.21.0",
+      "description": "A stand-alone types package for Undici",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/undici-types@6.21.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "8b00d9aa0d10006ae0f516afe47e27d0ceb87379a4479f5c27ac10a7eec2e2723482c984c5a79d6982cd3b8e1e4f802d041c236d38863cc96dd8c7744fd1fd25"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/nodejs/undici/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/nodejs/undici.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://undici.nodejs.org",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/undici-types"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "which",
+      "version": "2.0.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|which@2.0.2",
+      "author": "Isaac Z. Schlueter",
+      "description": "Like which(1) unix command. Find the first instance of an executable in the PATH.",
+      "licenses": [
+        {
+          "license": {
+            "id": "ISC",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/which@2.0.2",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/which/-/which-2.0.2.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "04b2374e5d535b73ef97bd25df2ab763ae22f9ac29c17aac181616924a8cb676d782b303fb28fbae15b492e103c7325a6171a3116e6881aa4a34c10a34c8e26c"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/isaacs/node-which/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git://github.com/isaacs/node-which.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/isaacs/node-which#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/which"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "wrap-ansi",
+      "version": "7.0.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0",
+      "author": "Sindre Sorhus",
+      "description": "Wordwrap a string with ANSI escape codes",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/wrap-ansi@7.0.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-7.0.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "6151888f691a98b493c70e8db198e80717d2c2c9f4c9c75eb26738a7e436d5ce733ee675a65f8d7f155dc4fb5d1ef98d54e43a5d2606e0052dcadfc58bb0f5e9"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/chalk/wrap-ansi/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/chalk/wrap-ansi.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/chalk/wrap-ansi#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/wrap-ansi-cjs"
+        }
+      ],
+      "components": [
+        {
+          "type": "library",
+          "name": "ansi-regex",
+          "version": "5.0.1",
+          "bom-ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|ansi-regex@5.0.1",
+          "author": "Sindre Sorhus",
+          "description": "Regular expression for matching ANSI escape codes",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ansi-regex@5.0.1",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-5.0.1.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "aae2505e54d25062f62c7f52517a3c570b18e2ca1a9e1828e8b3529bce04d4b05c13cb373b4c29762473c91f73fd9649325316bf7eea38e6fda5d26531410a15"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-regex/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/chalk/ansi-regex.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-regex#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:development",
+              "value": "true"
+            },
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/wrap-ansi-cjs/node_modules/ansi-regex"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "ansi-styles",
+          "version": "4.3.0",
+          "bom-ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|ansi-styles@4.3.0",
+          "author": "Sindre Sorhus",
+          "description": "ANSI escape codes for styling strings in the terminal",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/ansi-styles@4.3.0",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-4.3.0.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "cdb07dac22404f5adb8e25436f686a2851cd60bc60b64f0d511c59dc86700f717a36dc5b5d94029e74a2d4b931f880e885d3e5169db6db05402c885e64941212"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/chalk/ansi-styles.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/ansi-styles#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:development",
+              "value": "true"
+            },
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/wrap-ansi-cjs/node_modules/ansi-styles"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "emoji-regex",
+          "version": "8.0.0",
+          "bom-ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|emoji-regex@8.0.0",
+          "author": "Mathias Bynens",
+          "description": "A regular expression to match all Emoji-only symbols as per the Unicode Standard.",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/emoji-regex@8.0.0",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-8.0.0.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "3128d8cdc58d380d1ec001e9cf4331a5816fc20eb28f2d4d1b7c6d7a8ab3eb8e150a8fd13e09ebd7f186b7e89cde2253cd0f04bb74dd335e126b09d5526184e8"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            },
+            {
+              "url": "https://github.com/mathiasbynens/emoji-regex/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/mathiasbynens/emoji-regex.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://mths.be/emoji-regex",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:development",
+              "value": "true"
+            },
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/wrap-ansi-cjs/node_modules/emoji-regex"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "string-width",
+          "version": "4.2.3",
+          "bom-ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|string-width@4.2.3",
+          "author": "Sindre Sorhus",
+          "description": "Get the visual width of a string - the number of columns required to display it",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/string-width@4.2.3",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/string-width/-/string-width-4.2.3.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "c0ac90450a63274b08a7ad84ad265d1ac8cc256b1aa79a1136284786ee86ec954effd8c807a5327af2feb57b8eaab9e0f23fdcc4a4d6c96530bd24eb8a2673fe"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/string-width/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/sindresorhus/string-width.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/sindresorhus/string-width#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:development",
+              "value": "true"
+            },
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/wrap-ansi-cjs/node_modules/string-width"
+            }
+          ]
+        },
+        {
+          "type": "library",
+          "name": "strip-ansi",
+          "version": "6.0.1",
+          "bom-ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|strip-ansi@6.0.1",
+          "author": "Sindre Sorhus",
+          "description": "Strip ANSI escape codes from a string",
+          "licenses": [
+            {
+              "license": {
+                "id": "MIT",
+                "acknowledgement": "declared"
+              }
+            }
+          ],
+          "purl": "pkg:npm/strip-ansi@6.0.1",
+          "externalReferences": [
+            {
+              "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-6.0.1.tgz",
+              "type": "distribution",
+              "hashes": [
+                {
+                  "alg": "SHA-512",
+                  "content": "637f153d21dcaa416b0a916743dbee4979aabaebf9a1738aa46793e9a1abaf7a3719cf409556ba2417d448e0a76f1186645fbfd28a08ecaacfb944b3b54754e4"
+                }
+              ],
+              "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+            },
+            {
+              "url": "https://github.com/chalk/strip-ansi/issues",
+              "type": "issue-tracker",
+              "comment": "as detected from PackageJson property \"bugs.url\""
+            },
+            {
+              "url": "git+https://github.com/chalk/strip-ansi.git",
+              "type": "vcs",
+              "comment": "as detected from PackageJson property \"repository.url\""
+            },
+            {
+              "url": "https://github.com/chalk/strip-ansi#readme",
+              "type": "website",
+              "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:development",
+              "value": "true"
+            },
+            {
+              "name": "cdx:npm:package:path",
+              "value": "node_modules/wrap-ansi-cjs/node_modules/strip-ansi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "wrap-ansi",
+      "version": "8.1.0",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@8.1.0",
+      "author": "Sindre Sorhus",
+      "description": "Wordwrap a string with ANSI escape codes",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT",
+            "acknowledgement": "declared"
+          }
+        }
+      ],
+      "purl": "pkg:npm/wrap-ansi@8.1.0",
+      "externalReferences": [
+        {
+          "url": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-8.1.0.tgz",
+          "type": "distribution",
+          "hashes": [
+            {
+              "alg": "SHA-512",
+              "content": "b22ed0588eb350cab9e9b11216f6a0b66ccc7463ada317d1f927b3d753286df73bb66f9591472493d6d6d9479f7d319551b3a4b31992c34000da0b3c83bd4d09"
+            }
+          ],
+          "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
+        },
+        {
+          "url": "https://github.com/chalk/wrap-ansi/issues",
+          "type": "issue-tracker",
+          "comment": "as detected from PackageJson property \"bugs.url\""
+        },
+        {
+          "url": "git+https://github.com/chalk/wrap-ansi.git",
+          "type": "vcs",
+          "comment": "as detected from PackageJson property \"repository.url\""
+        },
+        {
+          "url": "https://github.com/chalk/wrap-ansi#readme",
+          "type": "website",
+          "comment": "as detected from PackageJson property \"homepage\""
+        }
+      ],
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        },
+        {
+          "name": "cdx:npm:package:path",
+          "value": "node_modules/wrap-ansi"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|@types/js-yaml@4.0.9",
+        "topographical-disorientation-support-skill@0.1.0|@types/node@20.19.39",
+        "topographical-disorientation-support-skill@0.1.0|glob@10.5.0",
+        "topographical-disorientation-support-skill@0.1.0|js-yaml@4.3.2",
+        "topographical-disorientation-support-skill@0.1.0|tsx@4.23.15",
+        "topographical-disorientation-support-skill@0.1.0|typescript@7.0.2"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|@esbuild/win32-x64@0.28.2"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|@isaacs/cliui@8.0.2",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3",
+        "topographical-disorientation-support-skill@0.1.0|string-width@5.1.2",
+        "topographical-disorientation-support-skill@0.1.0|strip-ansi@6.0.1",
+        "topographical-disorientation-support-skill@0.1.0|strip-ansi@7.2.0",
+        "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0",
+        "topographical-disorientation-support-skill@0.1.0|wrap-ansi@8.1.0"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|@pkgjs/parseargs@0.11.0"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|@types/js-yaml@4.0.9"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|@types/node@20.19.39",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|undici-types@6.21.0"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|@typescript/typescript-win32-x64@7.0.2"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|ansi-regex@6.2.2"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|ansi-styles@6.2.3"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|argparse@2.0.1"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|balanced-match@1.0.2"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|brace-expansion@2.1.7",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|balanced-match@1.0.2"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|color-convert@2.0.1",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|color-name@1.1.4"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|color-name@1.1.4"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|cross-spawn@7.0.6",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|path-key@3.1.1",
+        "topographical-disorientation-support-skill@0.1.0|shebang-command@2.0.0",
+        "topographical-disorientation-support-skill@0.1.0|which@2.0.2"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|eastasianwidth@0.2.0"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|emoji-regex@9.2.2"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|esbuild@0.28.2",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|@esbuild/win32-x64@0.28.2"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|foreground-child@3.3.1",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|cross-spawn@7.0.6",
+        "topographical-disorientation-support-skill@0.1.0|signal-exit@4.1.0"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|glob@10.5.0",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|foreground-child@3.3.1",
+        "topographical-disorientation-support-skill@0.1.0|jackspeak@3.4.3",
+        "topographical-disorientation-support-skill@0.1.0|minimatch@9.0.9",
+        "topographical-disorientation-support-skill@0.1.0|minipass@7.1.3",
+        "topographical-disorientation-support-skill@0.1.0|package-json-from-dist@1.0.1",
+        "topographical-disorientation-support-skill@0.1.0|path-scurry@1.11.1"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|is-fullwidth-code-point@3.0.0"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|isexe@2.0.0"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|jackspeak@3.4.3",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|@isaacs/cliui@8.0.2",
+        "topographical-disorientation-support-skill@0.1.0|@pkgjs/parseargs@0.11.0"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|js-yaml@4.3.2",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|argparse@2.0.1"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|lru-cache@10.4.3"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|minimatch@9.0.9",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|brace-expansion@2.1.7"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|minipass@7.1.3"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|package-json-from-dist@1.0.1"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|path-key@3.1.1"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|path-scurry@1.11.1",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|lru-cache@10.4.3",
+        "topographical-disorientation-support-skill@0.1.0|minipass@7.1.3"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|shebang-command@2.0.0",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|shebang-regex@3.0.0"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|shebang-regex@3.0.0"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|signal-exit@4.1.0"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|is-fullwidth-code-point@3.0.0",
+        "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3|emoji-regex@8.0.0",
+        "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3|strip-ansi@6.0.1"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3|ansi-regex@5.0.1"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3|emoji-regex@8.0.0"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3|strip-ansi@6.0.1",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|string-width@4.2.3|ansi-regex@5.0.1"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|string-width@5.1.2",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|eastasianwidth@0.2.0",
+        "topographical-disorientation-support-skill@0.1.0|emoji-regex@9.2.2",
+        "topographical-disorientation-support-skill@0.1.0|strip-ansi@7.2.0"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|strip-ansi@6.0.1",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|strip-ansi@6.0.1|ansi-regex@5.0.1"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|strip-ansi@6.0.1|ansi-regex@5.0.1"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|strip-ansi@7.2.0",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|ansi-regex@6.2.2"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|tsx@4.23.15",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|esbuild@0.28.2"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|typescript@7.0.2",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|@typescript/typescript-win32-x64@7.0.2"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|undici-types@6.21.0"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|which@2.0.2",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|isexe@2.0.0"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|ansi-styles@4.3.0",
+        "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|string-width@4.2.3",
+        "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|strip-ansi@6.0.1"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|ansi-regex@5.0.1"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|ansi-styles@4.3.0",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|color-convert@2.0.1"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|emoji-regex@8.0.0"
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|string-width@4.2.3",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|is-fullwidth-code-point@3.0.0",
+        "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|emoji-regex@8.0.0",
+        "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|strip-ansi@6.0.1"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|strip-ansi@6.0.1",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|wrap-ansi@7.0.0|ansi-regex@5.0.1"
+      ]
+    },
+    {
+      "ref": "topographical-disorientation-support-skill@0.1.0|wrap-ansi@8.1.0",
+      "dependsOn": [
+        "topographical-disorientation-support-skill@0.1.0|ansi-styles@6.2.3",
+        "topographical-disorientation-support-skill@0.1.0|string-width@5.1.2",
+        "topographical-disorientation-support-skill@0.1.0|strip-ansi@7.2.0"
+      ]
+    }
+  ]
+}

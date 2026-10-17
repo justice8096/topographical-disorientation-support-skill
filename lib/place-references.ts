@@ -33,7 +33,7 @@ function escapeRegex(s: string): string {
 }
 
 /** Proper-noun runs: two or more capitalised tokens, or one capitalised token following a category word. */
-const NAMED_RUN = /(?<![\p{L}])(?:\p{Lu}[\p{L}\p{N}'’-]+)(?:\s+(?:de|du|des|la|le|les|del|of|the|y|et|and)\s+)?(?:\s+\p{Lu}[\p{L}\p{N}'’-]+)+/gu;
+const NAMED_RUN = /(?<![\p{L}])(?:\p{Lu}[\p{L}\p{N}'\u2019-]+)(?:\s+(?:de|du|des|la|le|les|del|of|the|y|et|and)\s+)?(?:\s+\p{Lu}[\p{L}\p{N}'\u2019-]+)+/gu;
 
 export function extractPlaceReferences(text: string, locale: Locale): PlaceReference[] {
   if (typeof text !== "string") throw new TypeError("text must be a string");

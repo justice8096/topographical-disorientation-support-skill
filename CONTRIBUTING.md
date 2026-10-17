@@ -25,12 +25,12 @@ npm install
 
 ## Source Structure
 
-All content lives in `source/`. The build system (`tooling/build.ts`, run from the `tooling/` directory so the plugin root carries no package.json) generates 6 output formats from this single source. Never edit files in `dist/` directly — they are overwritten on every build.
+All content lives in `source/`. The build system (`tooling/build.ts`, run from the `tooling/` directory so the plugin root carries no package.json) generates 6 output formats from this single source. Never edit files in `dist/` directly - they are overwritten on every build.
 
-- `source/manifest.json` — Central definition of skills and commands
-- `source/skills/*.md` — Skill content (one file per skill)
-- `source/commands/*.md` — Command content (one file per command)
-- `source/templates/*.md` — Document templates
+- `source/manifest.json` - Central definition of skills and commands
+- `source/skills/*.md` - Skill content (one file per skill)
+- `source/commands/*.md` - Command content (one file per command)
+- `source/templates/*.md` - Document templates
 
 ## Testing
 
@@ -52,4 +52,4 @@ npx tsx test-build.ts --format openai    # Test a single format
 
 ## Code of Conduct
 
-Be respectful and constructive. This project serves educators and students with learning differences — keep that mission in mind.
+Be respectful and constructive. This project serves educators and students with learning differences - keep that mission in mind.

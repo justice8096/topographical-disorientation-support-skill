@@ -2,12 +2,12 @@
  * Integration test suite for multi-format build outputs.
  *
  * Tests each of the 5 (soon 6) output formats:
- *   1. Claude Plugin — structure, plugin.json schema, skill/command markdown presence
- *   2. OpenAI Functions — JSON schema compliance, parameter validation
- *   3. n8n Node — node definition structure, operation definitions
- *   4. Prompt Library — YAML validity, index references, per-command files
- *   5. MCP Server — TypeScript compilation, tool registration, knowledge loading
- *   6. CLI (future) — binary presence, --help flag, dry-run
+ *   1. Claude Plugin - structure, plugin.json schema, skill/command markdown presence
+ *   2. OpenAI Functions - JSON schema compliance, parameter validation
+ *   3. n8n Node - node definition structure, operation definitions
+ *   4. Prompt Library - YAML validity, index references, per-command files
+ *   5. MCP Server - TypeScript compilation, tool registration, knowledge loading
+ *   6. CLI (future) - binary presence, --help flag, dry-run
  *
  * Usage: tsx test-build.ts [--format <name>] [--verbose]
  * Requires: build has been run first (dist/ exists)
@@ -52,10 +52,10 @@ function test(name: string, fn: () => void) {
   try {
     fn();
     results.push({ name, suite: currentSuite, passed: true, duration: Date.now() - start });
-    if (verbose) console.log(`    ✓ ${name}`);
+    if (verbose) console.log(`    ok ${name}`);
   } catch (e: any) {
     results.push({ name, suite: currentSuite, passed: false, error: e.message, duration: Date.now() - start });
-    if (verbose) console.log(`    ✗ ${name}: ${e.message}`);
+    if (verbose) console.log(`    x ${name}: ${e.message}`);
   }
 }
 
@@ -111,7 +111,7 @@ function readText(path: string): string {
 const manifestPath = resolve(ROOT, "source/manifest.json");
 const manifest = readJSON(manifestPath);
 
-// Normalize manifest access — handle both dyslexia (metadata wrapper) and dyscalculia (flat) shapes
+// Normalize manifest access - handle both dyslexia (metadata wrapper) and dyscalculia (flat) shapes
 const meta = manifest.metadata || manifest;
 const skills: any[] = manifest.skills || [];
 const commands: any[] = manifest.commands || [];
@@ -553,7 +553,7 @@ function testSourceIntegrity() {
 // ============================================================================
 
 console.log(`\n${"=".repeat(60)}`);
-console.log(`  Integration Test Suite — ${meta.name || meta.description?.slice(0, 40)}`);
+console.log(`  Integration Test Suite - ${meta.name || meta.description?.slice(0, 40)}`);
 console.log(`${"=".repeat(60)}`);
 
 const suiteMap: Record<string, () => void> = {
@@ -601,7 +601,7 @@ for (const s of suiteNames) {
   const suiteResults = results.filter(r => r.suite === s);
   const sPassed = suiteResults.filter(r => r.passed).length;
   const sTotal = suiteResults.length;
-  const icon = sPassed === sTotal ? "✓" : "✗";
+  const icon = sPassed === sTotal ? "ok" : "x";
   console.log(`  ${icon} ${s}: ${sPassed}/${sTotal}`);
 }
 

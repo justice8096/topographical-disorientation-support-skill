@@ -22,3 +22,6 @@ venv/
 dist/
 build/
 *.plugin.zip
+
+.pytest_cache/
+

@@ -1,0 +1,22 @@
+POST-COMMIT AUDIT SUMMARY (FIRST PASS, v0.1.0)
+===============================================
+Date: 2026-10-17
+Commit: 1f4f06f (code state audited; gate fixes and audits land in the next commit)
+Branch: main
+Project: topographical-disorientation-support-skill v0.1.0
+
+1. SAST/DAST Scan:        PASS - 5 findings (0 critical, 0 high, 0 medium, 3 LOW, 2 INFO); 72 pattern-scanner matches triaged as false positives (the token "DTD" trips the XXE rule)
+2. Supply Chain Audit:     PASS - SLSA Level 1, 2 LOW (SBOM drift not enforced in CI; runtime data source is a public Overpass mirror, allowlisted)
+3. CWE Mapping:           PASS - 11 CWEs or LLM risks tracked (9 mitigated, 2 accepted), 8 frameworks mapped
+4. LLM Compliance:        90/100 - EXCELLENT (first audit, no delta)
+5. Contribution Analysis:  25% Human / 75% AI (domain knowledge and architecture mostly human; code, tests, docs mostly AI)
+
+Overall: PASS
+Grade: A-
+Action Required: no for release; next cycle: SBOM drift check in CI, driving-use statement, Overpass location-disclosure note, relatives' consent note in family-history paragraph, name:fr/name:es tags, salience weight review
+
+Changes This Cycle (v0.1.0):
+  - Initial release: 4 skills, 6 commands, 2 templates, deterministic lib, CLI, en/fr/es
+  - Security test suite (51 tests) added alongside build (42) and library (10) tests; pytest sample tests (8)
+  - SECURITY.md contact corrected to a real channel
+  - Gate fixes: ASCII, CRLF, SHA-pinned actions, samples layout

@@ -14,6 +14,9 @@ First release: core plus English, French, and Spanish locales, both comorbid pro
 - [security] `tooling/test-security.ts`: ReDoS resistance, input size limits, Overpass QL injection, SSRF endpoint allowlist, untrusted OSM data handling, rewriter output sanitisation, prompt-injection detection in en/fr/es, path containment, lexicon integrity, repository hygiene (secrets, dynamic code, markup in sources, manifest schema).
 - [tooling] `tooling/test-lib.ts` functional tests; `wayfinding-audit` CLI template; CI step for security tests.
 - README in English, French, and Spanish.
+- [security] SECURITY.md points to GitHub private vulnerability reporting plus a real contact address.
+- [tooling] GitHub Actions pinned to commit SHAs; samples/ laid out for gate-check (Python, n8n, Codex, Ollama); pytest tests for the Python sample; CycloneDX SBOM in tooling/.
+- [security] First post-commit audit in audits/ (SAST/DAST PASS, supply chain PASS, CWE mapping, LLM compliance 90/100, contribution analysis).
 
 ### Known limits
 - Overpass `name:fr` and `name:es` tags are not requested yet (planned 0.2.0).
