@@ -58,7 +58,9 @@ jobs:
           python3 - <<'PY'
           import json, sys
           a = json.load(open('sbom.cdx.json')); b = json.load(open('sbom.ci.cdx.json'))
-          key = lambda d: sorted((c.get('purl') or c.get('name')) for c in d.get('components', []))
+          import re
+          platform = re.compile(r'^(@esbuild/|@rollup/rollup-|fsevents$)')
+          key = lambda d: sorted((c.get('purl') or c.get('name')) for c in d.get('components', []) if not platform.match(c.get('name', '')))
           if key(a) != key(b):
               print('::error::sbom.cdx.json is out of date; run: cd tooling && npm run sbom'); sys.exit(1)
           print('SBOM components match:', len(key(a)))
