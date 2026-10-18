@@ -114,7 +114,7 @@ test("overpass parser prefers localized name tag when asked", () => {
 
 test("overpass parser handles a captured real response", () => {
   // tests/fixtures/*.json are raw Overpass responses captured with
-  // `bin/wayfinding-audit.ts landmarks --center ... --raw`.
+  // `cli/wayfinding-audit.ts landmarks --center ... --raw`.
   const here = dirname(fileURLToPath(import.meta.url));
   const raw = readFileSync(resolve(here, "../tests/fixtures/overpass-fairfax-38.861_-77.362-r200.json"), "utf8");
   const parsed = JSON.parse(raw);

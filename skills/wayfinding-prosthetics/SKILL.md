@@ -1,6 +1,6 @@
 ---
 name: wayfinding-prosthetics
-description: Intervention framework for DTD that puts almost all weight on bypass (cognitive prosthetics) and keeps remediation thin and evidence-graded. **Prosthetics track**: instruction rewriting rules (replace direction words with landmark-and-relation phrasing; bind unavoidable sides to a body fact the user states once, never to a label or a third party; never emit cardinal directions; always open with an orientation anchor sentence), landmark route scripts (Wunderlich, Grieger, Gramann 2022: landmark turn instructions roughly double turn recall at three weeks), map rules (heading-up by default, explicit text anchor, plus or minus 50 degree misalignment tolerance per Viita 2006, misaligned maps cancel landmark benefit per McKenzie 2016, low mental rotators prefer landmark representations per Pazzaglia 2006), the stress-mode fallback card (acute stress disrupts hippocampal-prefrontal prospective simulation, Brown 2020; evidence mixed), and errorless route overlearning for high-value routes (Rivest 2018; Bouwmeester 2015). **Remediation track** (Grade B lab, C transfer): structured VR cognitive-map training (McLaren-Gradinaru 2020; Liu 2026 RCT; Leiden Atopia Training Game pilot). **Profiles**: viewpoint shift when looking up (ground-level anchors; stairs and overhead signage flagged), orientation-invariant reading (mandatory orientation anchors on every visual; rotation-dependent cues flagged). Locale guidance for English, French, and Spanish phrasing.
+description: Wayfinding support for DTD: rewrite directions into landmark form with no left, right, or compass words, build landmark route scripts, apply heading-up map rules, and write stress-mode cards. Use when someone with topographical disorientation or getting lost needs landmark directions in English, French, or Spanish.
 ---
 # Wayfinding Prosthetics and Remediation Skill
 
@@ -29,8 +29,8 @@ Trigger this skill when the user asks to:
 
 ### Locale phrasing
 - **English**: "Turn toward the X." "Keep the X on your <anchor> side." "You are facing the X."
-- **French**: "Tournez vers le/la X." "Gardez le/la X du cote de votre <ancre>." "Vous faites face a X." Avoid "a gauche/a droite" entirely; where unavoidable, "du cote de votre montre" (watch side). French prose often uses "en face de" for "opposite"; keep it, it is a landmark relation.
-- **Spanish**: "Gira hacia el/la X." "Manten el/la X del lado de tu <ancla>." "Estas mirando hacia X." Avoid "a la izquierda/derecha"; where unavoidable, "del lado de tu reloj". "Todo recto" (straight on) is acceptable because it is relative to the body, not a label; "de frente a" is a landmark relation.
+- **French**: "Tournez vers le/la X." "Gardez le/la X du côté de votre <ancre>." "Vous faites face à X." Avoid "à gauche/à droite" entirely; where unavoidable, "du côté de votre montre" (watch side). French prose often uses "en face de" for "opposite"; keep it, it is a landmark relation.
+- **Spanish**: "Gira hacia el/la X." "Mantén el/la X del lado de tu <ancla>." "Estás mirando hacia X." Avoid "a la izquierda/derecha"; where unavoidable, "del lado de tu reloj". "Todo recto" (straight on) is acceptable because it is relative to the body, not a label; "de frente a" is a landmark relation.
 
 ## 2. Landmark route scripts (Grade B)
 A route script is a sequence of decision points, each with one chosen landmark, in the form:

@@ -8,6 +8,9 @@
  *   wayfinding-audit query --center lat,lon [--radius 120] | --bbox s,w,n,e
  *   wayfinding-audit landmarks --center lat,lon [--radius 120] [--locale en|fr|es]
  *
+ * check, rewrite and refs read <file>, or standard input with --stdin (2 MB cap), so
+ * untrusted text never has to appear on a shell command line.
+ *
  * Exit codes: 0 ok, 1 findings with errors (check), 2 usage or input error.
  * "query" prints the Overpass QL for you to run elsewhere and makes no network
  * call. "landmarks" is the one subcommand that touches the network: it posts
@@ -17,7 +20,7 @@
  * subcommand passes through stripUnsafe, so control and format characters
  * from an audited document cannot reach the terminal.
  */
-import { readFileSync, statSync } from "fs";
+import { readFileSync, readSync, statSync } from "fs";
 import { resolve } from "path";
 import { checkContent } from "../src/lib/content-check";
 import { rewriteInstructions } from "../src/lib/instruction-rewriter";
@@ -28,7 +31,7 @@ import { stripUnsafe, type Locale } from "../src/lib/direction-lexicon";
 const MAX_FILE_BYTES = 2 * 1024 * 1024;
 
 function usage(code: number): never {
-  console.error("usage: wayfinding-audit <check|rewrite|refs|query> [args] (see file header)");
+  console.error("usage: wayfinding-audit <check|rewrite|refs|query|landmarks> [<file>|--stdin] [args] (see file header)");
   process.exit(code);
 }
 
@@ -46,6 +49,26 @@ function readInput(path: string | undefined): string {
   if (!st.isFile()) { console.error("not a file: " + path); process.exit(2); }
   if (st.size > MAX_FILE_BYTES) { console.error("file too large (max 2 MB)"); process.exit(2); }
   return readFileSync(full, "utf-8");
+}
+
+function readStdin(): string {
+  if (process.stdin.isTTY) { console.error("--stdin needs piped input"); process.exit(2); }
+  const chunks: Buffer[] = []; let total = 0; const buf = Buffer.alloc(65536);
+  for (;;) {
+    let n = 0;
+    try { n = readSync(0, buf, 0, buf.length, null); }
+    catch (e) {
+      const code = (e as NodeJS.ErrnoException).code;
+      if (code === "EAGAIN") continue;
+      if (code === "EOF") break;
+      throw e;
+    }
+    if (n === 0) break;
+    total += n;
+    if (total > MAX_FILE_BYTES) { console.error("input too large (max 2 MB)"); process.exit(2); }
+    chunks.push(Buffer.from(buf.subarray(0, n)));
+  }
+  return Buffer.concat(chunks).toString("utf-8");
 }
 
 function locale(): Locale {
@@ -67,7 +90,7 @@ function out(line: string): void { console.log(stripUnsafe(line)); }
 const cmd = process.argv[2];
 try {
   if (cmd === "check") {
-    const text = readInput(process.argv[3]);
+    const text = flag("stdin") ? readStdin() : readInput(process.argv[3]);
     const report = checkContent(text, { locale: locale(), viewpointShiftProfile: flag("viewpoint-shift"), orientationInvarianceProfile: flag("orientation-invariance") });
     if (flag("json")) console.log(JSON.stringify(report, null, 2));
     else {
@@ -77,7 +100,7 @@ try {
     }
     process.exit(report.counts.error > 0 ? 1 : 0);
   } else if (cmd === "rewrite") {
-    const text = readInput(process.argv[3]);
+    const text = flag("stdin") ? readStdin() : readInput(process.argv[3]);
     const lms = (arg("landmarks") ?? "").split(",").map((s) => s.trim()).filter(Boolean).map((name, i) => ({ name, step: i + 1 }));
     const r = rewriteInstructions(text, { locale: locale(), landmarks: lms, bodyAnchor: parseAnchor(arg("anchor")), startFacing: arg("facing"), stressMode: flag("stress") });
     out(r.anchorSentence);
@@ -85,7 +108,7 @@ try {
     if (r.notes.length) out("Notes:\n  " + r.notes.join("\n  "));
     out("Residual direction words: " + (r.residualDirectionWords.length ? r.residualDirectionWords.map((h) => h.text).join(", ") : "none"));
   } else if (cmd === "refs") {
-    const text = readInput(process.argv[3]);
+    const text = flag("stdin") ? readStdin() : readInput(process.argv[3]);
     const refs = extractPlaceReferences(text, locale());
     const lmPath = arg("landmarks");
     out("References: " + refs.length);

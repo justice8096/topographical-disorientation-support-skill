@@ -16,18 +16,21 @@
         "clean": "rm -rf ../dist",
         "dev": "tsx build.ts --watch",
         "lint": "eslint ../source/ build.ts",
-        "test": "tsx test-build.ts && tsx test-lib.ts && tsx test-security.ts",
+        "test": "tsx test-build.ts && tsx test-lib.ts && tsx test-security.ts && tsx test-cli.ts",
         "audit": "npm audit --audit-level=high",
         "sbom": "npx @cyclonedx/cyclonedx-npm --output-file sbom.cdx.json --output-reproducible",
         "prepack": "npm run build",
         "build:cli": "tsx build.ts --format cli",
+        "bundle:cli": "tsx bundle-cli.ts",
         "build:root-canonical": "tsx build.ts --format root-canonical",
         "test:security": "tsx test-security.ts",
-        "test:lib": "tsx test-lib.ts"
+        "test:lib": "tsx test-lib.ts",
+        "test:cli": "tsx test-cli.ts"
     },
     "devDependencies": {
         "@types/js-yaml": "^4.0.5",
         "@types/node": "^20.0.0",
+        "esbuild": "^0.28.2",
         "glob": "^10.0.0",
         "js-yaml": "^4.1.0",
         "tsx": "^4.23.15",

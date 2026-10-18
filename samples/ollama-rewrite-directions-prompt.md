@@ -29,7 +29,7 @@ CARD:
 Check the result with the CLI before giving it to anyone:
 
 ```bash
-tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts check result.txt --locale en
+node scripts/wayfinding-audit.mjs check result.txt --locale en
 ```
 
 A non-zero exit code means the model reintroduced a direction word.

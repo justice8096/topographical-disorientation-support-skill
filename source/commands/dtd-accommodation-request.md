@@ -3,6 +3,8 @@
 Generate an accommodation document for a person with developmental topographical disorientation (DTD / atopia) in the requested jurisdiction and language.
 
 ## Usage
+
+Arguments received: `$ARGUMENTS` (map them to the CLI flags shown under Step 0).
 ```
 /dtd-accommodation-request --functional-impact "<in the person's words>" [--context workplace|higher-education|k12|clinical|public-accommodation] [--jurisdiction us|fr|es] [--locale en|fr|es] [--family-history] [--profiles "viewpoint-shift,orientation-invariance"]
 ```

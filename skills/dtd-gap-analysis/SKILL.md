@@ -1,6 +1,6 @@
 ---
 name: dtd-gap-analysis
-description: Systematic gap identification across navigation technology, clinical practice, workplaces, and public spaces for people with DTD. Identifies the direction-word monoculture of consumer navigation (turn-by-turn apps emit left/right and cardinal terms; Google Maps landmark directions are US-only and not exposed to developers), north-up defaults in printed and web maps, you-are-here signage without facing information, the absence of any clinical code or validated diagnostic instrument, the absence of statutory recognition in US, FR, and ES, the mismatch between DTD research (Calgary, Leiden, Rome) and accommodation practice, missing locale coverage (French and Spanish terminology barely exists outside research), and the routing-engine gap (OSRM and Valhalla emit no landmarks). Includes a DTD-friendly wayfinding audit checklist, a navigation-app heuristics set, and a maturity model for landmark-based guidance.
+description: Gap analysis for DTD across navigation apps, clinical practice, workplaces, and public spaces: direction-word-only guidance, north-up maps, signs without facing information, missing codes and statutory recognition, and routing engines that emit no landmarks. Use for audits, product reviews, or research gaps.
 ---
 # DTD Gap Analysis Skill
 
@@ -17,7 +17,7 @@ Trigger when the user asks:
 ## The gaps
 
 ### G1. Direction-word monoculture in consumer navigation (Grade A for the problem)
-Turn-by-turn products emit "turn left in 200 m" and cardinal terms ("head north on Oak St"). For DTD readers the label-to-direction binding is the unreliable step (Burles and Iaria 2020; Thaler et al. 2025). Google Maps began rolling out landmark-based spoken directions ("turn right after the Thai Siam Restaurant") in the US in 2026, but it is US-only, still pairs the landmark with a direction word, and is not exposed through any developer API. Apple Maps and Waze have no landmark mode. Lever: Wunderlich, Grieger and Gramann 2022 show landmark instructions roughly double turn recall; the rewrite-directions command demonstrates the form.
+Turn-by-turn products emit "turn left in 200 m" and cardinal terms ("head north on Oak St"). For DTD readers the label-to-direction binding is the unreliable step (Burles and Iaria 2020; Thaler et al. 2025). Google announced landmark-based spoken directions for Maps in November 2025, US first (9to5Google, 2025-11-05; last checked 2026-10-18). The reported examples still pair the landmark with a direction word ("turn right after the Thai Siam Restaurant"), and no developer API for the feature was found in that check; confirm both before quoting. Apple Maps and Waze have no landmark mode. Lever: Wunderlich, Grieger and Gramann 2022 show landmark instructions roughly double turn recall; the rewrite-directions command demonstrates the form.
 
 ### G2. North-up defaults (Grade A)
 Printed maps, campus maps, transit maps, and most embedded web maps default to north-up. Misaligned maps produce lawful errors and cancel the benefit of landmarks (Rossano and Warren 1989; McKenzie and Klippel 2016). Heading-up is standard in car navigation but rare on foot and absent on paper. Lever: heading-up rendering (MapLibre bearing), printed maps oriented to the reading direction, and a text anchor sentence under every map.
@@ -29,7 +29,7 @@ Mall, hospital, campus, and transit boards mark position but not heading, forcin
 There is no DSM-5-TR or ICD-11 code for DTD and no diagnostic test; the Getting Lost battery, the Familiarity and Spatial Cognitive Style Scale, the Santa Barbara Sense of Direction Scale, and the Leiden Wayfinding Questionnaire are screening tools. Van der Ham et al. 2025 (Neurocase) document repeated misdiagnosis. Consequence: clinicians cannot easily document the condition, which blocks every downstream accommodation pathway. Lever: the clinical summary letter template; the 2025 systematic review's call for a behavioural assessment tool.
 
 ### G5. No statutory recognition in US, FR, or ES (Grade C)
-All three jurisdictions accommodate cognitive impairment generically. None names topographical disorientation. France's DYS pathway (PAP) explicitly does not cover it; Spain's DEA/ACNEAE framework does not either. Lever: framing by analogy (ADA Title I major bodily functions; MDPH handicap cognitif; RDL 1/2013) with the caveat paragraph.
+All three jurisdictions accommodate cognitive impairment generically. None names topographical disorientation. France's DYS pathway (PAP) explicitly does not cover it; Spain's DEA/ACNEAE framework does not either. The framing itself is owned by dtd-standards-compliance section 5; this gap only records that no statute names DTD. Lever: the caveat paragraph in dtd-document-generation section 0.
 
 ### G6. Research-to-practice gap (Grade B)
 Three active research groups (Iaria and Burles, Calgary; van der Ham, Leiden; Piccardi and Bianchini, Rome) and a 2025 systematic review, but no accommodation guideline, no occupational-health guidance, and no HR or disability-services material mentions DTD. The Leiden awareness effort (atopia, De Weg Kwijt, 2025 onward) is the first public-facing programme. Lever: this plugin's document templates; the gap is the audience for them.
@@ -53,6 +53,8 @@ Clearance environments, hospitals, courts, and exam halls often prohibit the dev
 Familial aggregation is well established (Barclay 2016; Burles 2020) but clinicians rarely ask, and no intake form includes it. Lever: the family history summary template.
 
 ## DTD-friendly wayfinding audit checklist
+
+Items 1 to 4 are the checks the wayfinding-content-check command runs deterministically; items 5 to 9 map to wayfinding-prosthetics sections 4 and 7. Run the command for text it can read; use this list for products and spaces it cannot.
 1. Are there direction words with no landmark in the same sentence? (error)
 2. Are there cardinal directions in traveller-facing text? (error)
 3. Is any map north-up without a heading-up alternative or a text anchor? (error)

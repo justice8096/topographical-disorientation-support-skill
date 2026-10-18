@@ -48,6 +48,9 @@ jobs:
       - name: Security tests
         run: npx tsx test-security.ts --verbose
 
+      - name: Bundled CLI tests
+        run: npx tsx test-cli.ts --verbose
+
       - name: Security audit
         run: npm audit --audit-level=high
 

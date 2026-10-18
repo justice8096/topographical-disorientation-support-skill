@@ -9,13 +9,13 @@
         {
           "type": "application",
           "name": "npm",
-          "version": "12.2.0"
+          "version": "10.9.8"
         },
         {
           "type": "library",
           "name": "cyclonedx-library",
           "group": "@cyclonedx",
-          "version": "10.0.0",
+          "version": "10.3.0",
           "author": "Jan Kowalleck",
           "description": "Core functionality of CycloneDX for JavaScript (Node.js or WebBrowser).",
           "licenses": [
@@ -40,6 +40,12 @@
               "url": "https://github.com/CycloneDX/cyclonedx-javascript-library#readme",
               "type": "website",
               "comment": "as detected from PackageJson property \"homepage\""
+            }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=20.18.0"
             }
           ]
         },
@@ -73,6 +79,16 @@
               "type": "website",
               "comment": "as detected from PackageJson property \"homepage\""
             }
+          ],
+          "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=20.18.0"
+            },
+            {
+              "name": "cdx:npm:package:constraint:engine:npm",
+              "value": ">=9"
+            }
           ]
         }
       ]
@@ -95,6 +111,10 @@
       "purl": "pkg:npm/topographical-disorientation-support-skill@0.1.1",
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=18.0.0"
+        },
+        {
           "name": "cdx:npm:package:path",
           "value": ""
         },
@@ -114,11 +134,11 @@
   "components": [
     {
       "type": "library",
-      "name": "win32-x64",
+      "name": "linux-x64",
       "group": "@esbuild",
       "version": "0.28.2",
-      "bom-ref": "topographical-disorientation-support-skill@0.1.1|@esbuild/win32-x64@0.28.2",
-      "description": "The Windows 64-bit binary for esbuild, a JavaScript bundler.",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.1|@esbuild/linux-x64@0.28.2",
+      "description": "The Linux 64-bit binary for esbuild, a JavaScript bundler.",
       "scope": "optional",
       "licenses": [
         {
@@ -128,15 +148,15 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40esbuild/win32-x64@0.28.2",
+      "purl": "pkg:npm/%40esbuild/linux-x64@0.28.2",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/@esbuild/win32-x64/-/win32-x64-0.28.2.tgz",
+          "url": "https://registry.npmjs.org/@esbuild/linux-x64/-/linux-x64-0.28.2.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "e5e6e9c6bde758cceb2ffae7508ef9e4992e79ed1b1cbfc6ab459317d96f729bfbdf0029e5ebbc31f0548162bd6e15af6638fbc97f1eb5fffcb48f0d7b2ebde6"
+              "content": "e314d9af5154992a105b85c85a68addedcd0ad44d933e3773f45d5f3144e298179d177c8ef178ef74fb56d9bcdc3122e7d0f610d0551247e588603d517c03f1d"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -159,12 +179,16 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=18"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/@esbuild/win32-x64"
+          "value": "node_modules/@esbuild/linux-x64"
         }
       ]
     },
@@ -214,6 +238,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=12"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -270,6 +298,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=14"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -392,10 +424,10 @@
     },
     {
       "type": "library",
-      "name": "typescript-win32-x64",
+      "name": "typescript-linux-x64",
       "group": "@typescript",
       "version": "7.0.2",
-      "bom-ref": "topographical-disorientation-support-skill@0.1.1|@typescript/typescript-win32-x64@7.0.2",
+      "bom-ref": "topographical-disorientation-support-skill@0.1.1|@typescript/typescript-linux-x64@7.0.2",
       "author": "Microsoft Corp.",
       "description": "TypeScript is a language for application scale JavaScript development",
       "scope": "optional",
@@ -407,15 +439,15 @@
           }
         }
       ],
-      "purl": "pkg:npm/%40typescript/typescript-win32-x64@7.0.2",
+      "purl": "pkg:npm/%40typescript/typescript-linux-x64@7.0.2",
       "externalReferences": [
         {
-          "url": "https://registry.npmjs.org/@typescript/typescript-win32-x64/-/typescript-win32-x64-7.0.2.tgz",
+          "url": "https://registry.npmjs.org/@typescript/typescript-linux-x64/-/typescript-linux-x64-7.0.2.tgz",
           "type": "distribution",
           "hashes": [
             {
               "alg": "SHA-512",
-              "content": "d014371e40071e528b4a9d6a46f7f7494846a46b03ba107f8e0170ef982ecaa6f126a11a4b40b0fd514ef22da71e094953340246d30c47f20100a137113302e2"
+              "content": "11875fd9c360eeb8025899f109d27e177577f4ef2285bdfb78702ed4b2bca00162ce04d06cf38aef31c75db3edf2b5f6e023aa3835de237b087f47c25c6ec7fc"
             }
           ],
           "comment": "as detected from npm-ls property \"resolved\" and property \"integrity\""
@@ -438,12 +470,16 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=16.20.0"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
         {
           "name": "cdx:npm:package:path",
-          "value": "node_modules/@typescript/typescript-win32-x64"
+          "value": "node_modules/@typescript/typescript-linux-x64"
         }
       ]
     },
@@ -492,6 +528,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=12"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -547,6 +587,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=12"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -767,6 +811,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=7.0.0"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -876,6 +924,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">= 8"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -1041,6 +1093,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=18"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -1095,6 +1151,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=14"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -1205,6 +1265,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=8"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -1481,6 +1545,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=16 || 14 >=14.17"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -1535,6 +1603,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=16 || 14 >=14.17"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -1646,6 +1718,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=8"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -1700,6 +1776,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=16 || 14 >=14.18"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -1756,6 +1836,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=8"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -1810,6 +1894,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=8"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -1866,6 +1954,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=14"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -1921,6 +2013,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=8"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -1975,6 +2071,10 @@
             }
           ],
           "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=8"
+            },
             {
               "name": "cdx:npm:package:development",
               "value": "true"
@@ -2086,6 +2186,10 @@
           ],
           "properties": [
             {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=8"
+            },
+            {
               "name": "cdx:npm:package:development",
               "value": "true"
             },
@@ -2143,6 +2247,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=12"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -2198,6 +2306,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=8"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -2252,6 +2364,10 @@
             }
           ],
           "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=8"
+            },
             {
               "name": "cdx:npm:package:development",
               "value": "true"
@@ -2310,6 +2426,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=12"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -2365,6 +2485,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=18.0.0"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -2419,6 +2543,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=16.20.0"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -2529,6 +2657,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">= 8"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -2583,6 +2715,10 @@
         }
       ],
       "properties": [
+        {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=10"
+        },
         {
           "name": "cdx:npm:package:development",
           "value": "true"
@@ -2639,6 +2775,10 @@
           ],
           "properties": [
             {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=8"
+            },
+            {
               "name": "cdx:npm:package:development",
               "value": "true"
             },
@@ -2693,6 +2833,10 @@
             }
           ],
           "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=8"
+            },
             {
               "name": "cdx:npm:package:development",
               "value": "true"
@@ -2804,6 +2948,10 @@
           ],
           "properties": [
             {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=8"
+            },
+            {
               "name": "cdx:npm:package:development",
               "value": "true"
             },
@@ -2858,6 +3006,10 @@
             }
           ],
           "properties": [
+            {
+              "name": "cdx:npm:package:constraint:engine:node",
+              "value": ">=8"
+            },
             {
               "name": "cdx:npm:package:development",
               "value": "true"
@@ -2916,6 +3068,10 @@
       ],
       "properties": [
         {
+          "name": "cdx:npm:package:constraint:engine:node",
+          "value": ">=12"
+        },
+        {
           "name": "cdx:npm:package:development",
           "value": "true"
         },
@@ -2932,6 +3088,7 @@
       "dependsOn": [
         "topographical-disorientation-support-skill@0.1.1|@types/js-yaml@4.0.9",
         "topographical-disorientation-support-skill@0.1.1|@types/node@20.19.39",
+        "topographical-disorientation-support-skill@0.1.1|esbuild@0.28.2",
         "topographical-disorientation-support-skill@0.1.1|glob@10.5.0",
         "topographical-disorientation-support-skill@0.1.1|js-yaml@4.3.2",
         "topographical-disorientation-support-skill@0.1.1|tsx@4.23.15",
@@ -2939,7 +3096,7 @@
       ]
     },
     {
-      "ref": "topographical-disorientation-support-skill@0.1.1|@esbuild/win32-x64@0.28.2"
+      "ref": "topographical-disorientation-support-skill@0.1.1|@esbuild/linux-x64@0.28.2"
     },
     {
       "ref": "topographical-disorientation-support-skill@0.1.1|@isaacs/cliui@8.0.2",
@@ -2965,7 +3122,7 @@
       ]
     },
     {
-      "ref": "topographical-disorientation-support-skill@0.1.1|@typescript/typescript-win32-x64@7.0.2"
+      "ref": "topographical-disorientation-support-skill@0.1.1|@typescript/typescript-linux-x64@7.0.2"
     },
     {
       "ref": "topographical-disorientation-support-skill@0.1.1|ansi-regex@6.2.2"
@@ -3011,7 +3168,7 @@
     {
       "ref": "topographical-disorientation-support-skill@0.1.1|esbuild@0.28.2",
       "dependsOn": [
-        "topographical-disorientation-support-skill@0.1.1|@esbuild/win32-x64@0.28.2"
+        "topographical-disorientation-support-skill@0.1.1|@esbuild/linux-x64@0.28.2"
       ]
     },
     {
@@ -3140,7 +3297,7 @@
     {
       "ref": "topographical-disorientation-support-skill@0.1.1|typescript@7.0.2",
       "dependsOn": [
-        "topographical-disorientation-support-skill@0.1.1|@typescript/typescript-win32-x64@7.0.2"
+        "topographical-disorientation-support-skill@0.1.1|@typescript/typescript-linux-x64@7.0.2"
       ]
     },
     {

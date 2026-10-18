@@ -1,5 +1,6 @@
 ---
 description: Generate an accommodation document for a person with DTD in the requested jurisdiction and language: US ADA Title I request letter or higher-education disability-services request, French MDPH/RQTH dossier support or lettre d'amenagement de poste, Spanish solicitud de ajustes razonables under RDL 1/2013 or solicitud de grado de discapacidad, plus a clinical summary letter. Every document states that DTD has no statutory recognition and that the framing is by analogy, and includes the family history and profile flags when supplied.
+argument-hint: '--functional-impact "<text>" [--context workplace|higher-education|k12|clinical|public-accommodation] [--jurisdiction us|fr|es] [--locale en|fr|es]'
 allowed-tools: Read
 ---
 # /dtd-accommodation-request
@@ -7,6 +8,8 @@ allowed-tools: Read
 Generate an accommodation document for a person with developmental topographical disorientation (DTD / atopia) in the requested jurisdiction and language.
 
 ## Usage
+
+Arguments received: `$ARGUMENTS` (map them to the CLI flags shown under Step 0).
 ```
 /dtd-accommodation-request --functional-impact "<in the person's words>" [--context workplace|higher-education|k12|clinical|public-accommodation] [--jurisdiction us|fr|es] [--locale en|fr|es] [--family-history] [--profiles "viewpoint-shift,orientation-invariance"]
 ```

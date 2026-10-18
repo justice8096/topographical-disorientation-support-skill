@@ -18,7 +18,7 @@ This plugin (a) echoes user text and OpenStreetMap tag values into route cards a
 
 ## Where the controls run
 
-The controls below live in `lib/` and run only when that code runs. The plugin ships as Markdown plus the library; the commands therefore start by invoking the repository CLI (`tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts ...`) and print `NOT RUN` when they could not. A route card, content report, or landmark list produced by the model alone carries none of these guarantees and is labelled "model-only, unverified". Untrusted content (pasted directions, map images, OSM names) is always quoted inside labelled data blocks so the model does not mistake it for instructions.
+The controls below live in `lib/` and run only when that code runs. The plugin ships as Markdown plus the library; the commands therefore start by invoking the bundled CLI (`node ${CLAUDE_PLUGIN_ROOT}/scripts/wayfinding-audit.mjs ...`) and print `NOT RUN` when they could not. A route card, content report, or landmark list produced by the model alone carries none of these guarantees and is labelled "model-only, unverified". Untrusted content (pasted directions, map images, OSM names) is always quoted inside labelled data blocks so the model does not mistake it for instructions.
 
 ## Controls
 

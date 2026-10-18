@@ -161,7 +161,7 @@ export function parseOverpassResponse(json: unknown, locale?: "en" | "fr" | "es"
 /**
  * POST a query to one allowlisted mirror and return the raw response text,
  * size-capped. Exposed so a real response can be captured as a test fixture
- * (bin/wayfinding-audit.ts landmarks --raw); callers that want landmarks use
+ * (cli/wayfinding-audit.ts landmarks --raw); callers that want landmarks use
  * fetchLandmarks, which parses and sanitises.
  */
 export async function fetchOverpassRaw(

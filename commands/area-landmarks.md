@@ -1,12 +1,15 @@
 ---
 description: References from a geographic area: build a safe Overpass query for named landmark features around a point or inside a small bounding box, fetch from an allowlisted public Overpass mirror (or return the query for offline execution), parse and sanitise the result, and return a landmark list for route scripting and text matching. Also the entry point for map reading: given a map image or screenshot, the command reads it with vision, records what it can see, and then grounds the reading in OpenStreetMap vector data rather than trusting pixels, emitting an orientation anchor sentence for the map.
-allowed-tools: Read, Bash(tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts:*)
+argument-hint: '--center "lat,lon" [--radius-m 120] [--locale en|fr|es] [--offline] | --bbox "s,w,n,e"'
+allowed-tools: Read, Bash(node */scripts/wayfinding-audit.mjs *)
 ---
 # /area-landmarks
 
 References from a geographic area, and the entry point for map reading. Returns a sanitised landmark list for route scripting and text matching.
 
 ## Usage
+
+Arguments received: `$ARGUMENTS` (map them to the CLI flags shown under Step 0).
 ```
 /area-landmarks --center "38.861,-77.362" [--radius-m 120] [--locale en|fr|es] [--offline]
 /area-landmarks --bbox "38.80,-77.40,38.84,-77.36" [--locale en|fr|es] [--offline]
@@ -17,9 +20,9 @@ References from a geographic area, and the entry point for map reading. Returns 
 All network access goes through the shipped CLI. Never fetch Overpass yourself with curl, WebFetch, or any other tool, and never use an endpoint the CLI does not use. The CLI tries the three allowlisted mirrors in order and nothing else. It is the only place where the endpoint allowlist, the redirect refusal, the 25 s timeout, the 5 MB cap, and the name sanitising exist. If the CLI cannot run, return the query text for offline use and say that no fetch was made.
 
 ```
-tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts landmarks --center <lat,lon> [--radius <10..400>] [--locale en|fr|es]
-tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts query --center <lat,lon> [--radius N]      (offline: prints the Overpass QL)
-tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts query --bbox <s,w,n,e>
+node ${CLAUDE_PLUGIN_ROOT}/scripts/wayfinding-audit.mjs landmarks --center <lat,lon> [--radius <10..400>] [--locale en|fr|es]
+node ${CLAUDE_PLUGIN_ROOT}/scripts/wayfinding-audit.mjs query --center <lat,lon> [--radius N]      (offline: prints the Overpass QL)
+node ${CLAUDE_PLUGIN_ROOT}/scripts/wayfinding-audit.mjs query --bbox <s,w,n,e>
 ```
 
 ## Map reading (when `--map-image` is given)
@@ -54,7 +57,7 @@ Category labels and the orientation anchor sentence are written in `en`, `fr`, o
 ## Output Format
 ```
 Map orientation anchor: <sentence or "no map supplied">
-Fetch: ran via bin/wayfinding-audit.ts | NOT RUN (query printed for offline use)
+Fetch: ran via scripts/wayfinding-audit.mjs | NOT RUN (query printed for offline use)
 Landmarks (N found within R m of lat,lon):
 - <name> (<category label>) at <lat>,<lon>
 JSON: [ {id, name, key, value, lat, lon}, ... ]

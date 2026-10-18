@@ -1,12 +1,15 @@
 ---
 description: Produce a complete landmark route script from a list of decision points (with approach and exit bearings) and a landmark list, ranking landmarks at each decision point with the Graser 2016 salience recipe (distance, category weight, same-side-as-turn, before/after, visibility proxy) and writing one orientation-anchored step per decision point. Output is a printable route card in the requested locale.
-allowed-tools: Read, Bash(tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts:*)
+argument-hint: '--decision-points <json> [--landmarks <json>] [--locale en|fr|es] [--body-anchor "watch hand:left"] [--stress-mode]'
+allowed-tools: Read
 ---
 # /landmark-route-script
 
 Produce a complete, printable landmark route script from decision points and a landmark list, ranking landmarks at each decision point with the Graser 2016 salience recipe and writing one orientation-anchored step per decision point.
 
 ## Usage
+
+Arguments received: `$ARGUMENTS` (map them to the CLI flags shown under Step 0).
 ```
 /landmark-route-script --decision-points '<json>' [--landmarks '<json>'] [--locale en|fr|es] [--body-anchor "watch hand:left"] [--stress-mode]
 ```

@@ -3,6 +3,8 @@
 Produce a complete, printable landmark route script from decision points and a landmark list, ranking landmarks at each decision point with the Graser 2016 salience recipe and writing one orientation-anchored step per decision point.
 
 ## Usage
+
+Arguments received: `$ARGUMENTS` (map them to the CLI flags shown under Step 0).
 ```
 /landmark-route-script --decision-points '<json>' [--landmarks '<json>'] [--locale en|fr|es] [--body-anchor "watch hand:left"] [--stress-mode]
 ```

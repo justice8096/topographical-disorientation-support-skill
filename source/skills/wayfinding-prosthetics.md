@@ -25,8 +25,8 @@ Trigger this skill when the user asks to:
 
 ### Locale phrasing
 - **English**: "Turn toward the X." "Keep the X on your <anchor> side." "You are facing the X."
-- **French**: "Tournez vers le/la X." "Gardez le/la X du cote de votre <ancre>." "Vous faites face a X." Avoid "a gauche/a droite" entirely; where unavoidable, "du cote de votre montre" (watch side). French prose often uses "en face de" for "opposite"; keep it, it is a landmark relation.
-- **Spanish**: "Gira hacia el/la X." "Manten el/la X del lado de tu <ancla>." "Estas mirando hacia X." Avoid "a la izquierda/derecha"; where unavoidable, "del lado de tu reloj". "Todo recto" (straight on) is acceptable because it is relative to the body, not a label; "de frente a" is a landmark relation.
+- **French**: "Tournez vers le/la X." "Gardez le/la X du côté de votre <ancre>." "Vous faites face à X." Avoid "à gauche/à droite" entirely; where unavoidable, "du côté de votre montre" (watch side). French prose often uses "en face de" for "opposite"; keep it, it is a landmark relation.
+- **Spanish**: "Gira hacia el/la X." "Mantén el/la X del lado de tu <ancla>." "Estás mirando hacia X." Avoid "a la izquierda/derecha"; where unavoidable, "del lado de tu reloj". "Todo recto" (straight on) is acceptable because it is relative to the body, not a label; "de frente a" is a landmark relation.
 
 ## 2. Landmark route scripts (Grade B)
 A route script is a sequence of decision points, each with one chosen landmark, in the form:

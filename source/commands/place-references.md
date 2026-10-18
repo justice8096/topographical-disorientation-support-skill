@@ -3,13 +3,15 @@
 References from text: extract candidate place references from prose (a friend's description of their neighbourhood, an emailed set of directions, a meeting invitation) and match them against an area landmark list.
 
 ## Usage
+
+Arguments received: `$ARGUMENTS` (map them to the CLI flags shown under Step 0).
 ```
 /place-references "<text>" [--locale en|fr|es] [--landmarks '<json from /area-landmarks>'] [--threshold 0.6]
 ```
 
 ## Step 0: run the deterministic extractor first
 ```
-tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts refs <file> --locale <en|fr|es> [--landmarks landmarks.json]
+node ${CLAUDE_PLUGIN_ROOT}/scripts/wayfinding-audit.mjs refs <file> --locale <en|fr|es> [--landmarks landmarks.json]
 ```
 If it cannot run, say so and label the result "model-only, unverified".
 

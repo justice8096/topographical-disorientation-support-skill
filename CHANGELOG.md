@@ -2,6 +2,30 @@
 
 All notable changes to this project are documented here. Tags: [evidence] research-driven content change, [regulatory] legal or standards change, [defect] correction, [security] security fix or test, [tooling] build or test infrastructure.
 
+## [0.1.5] - 2026-10-18
+
+Applies the skill-doctor treatment from audits/skill-doctor-2026-10-18.md.
+
+### Fixed
+- [defect] The commands now work after a marketplace install. They called `tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts`, which only resolved inside this repository's checkout after `npm ci`; elsewhere every Step 0 printed NOT RUN. The CLI is now bundled into one dependency-free file, `scripts/wayfinding-audit.mjs` (built by `npm run bundle:cli`), and the commands call `node ${CLAUDE_PLUGIN_ROOT}/scripts/wayfinding-audit.mjs`. `tooling/test-cli.ts` fails the build if the committed bundle is stale and runs it from an empty directory with no node_modules.
+- [defect] The CLI source moved from `bin/` to `cli/`. A plugin-root `bin/` directory puts its files on PATH and prevents installation in Claude.ai and Cowork; the plugin has no `bin/` now, and a test keeps it that way.
+- allowed-tools narrowed to `Read, Bash(node */scripts/wayfinding-audit.mjs *)` on the four commands that run the CLI. landmark-route-script no longer requests Bash (it never called the CLI). `${CLAUDE_PLUGIN_ROOT}` is substituted in command bodies but not in allowed-tools, so the rule matches the script by its relative tail; a project that contains its own `scripts/wayfinding-audit.mjs` would match it too.
+- All six commands gained `argument-hint` and a `$ARGUMENTS` line.
+- Skill descriptions shortened to about 330 characters each (manifest-driven, so the MCP, OpenAI and prompt formats get them too). The full detail stays in the skill bodies.
+- Date-sensitive claims carry a last-checked date: A.J.T. v. Osseo Area Schools (June 2025), the DOJ Title II web rule dates (extended April 2026), and Google's landmark directions (announced November 2025, US first; developer API availability unconfirmed).
+- dtd-standards-compliance section 5 is the single owner of the legal framing; dtd-document-generation and dtd-gap-analysis point to it. The gap-analysis checklist says which items the content-check command covers.
+- French and Spanish caveat paragraphs in dtd-document-generation and the locale phrasing in wayfinding-prosthetics are written with accents.
+- The route-card template path in dtd-document-generation is given as `${CLAUDE_PLUGIN_ROOT}/templates/route-card-template.md`, with a fallback to the rules in the skill.
+
+### Added
+- `--stdin` for `check`, `rewrite` and `refs` (2 MB cap) so untrusted text never has to appear on a shell command line.
+- esbuild as an explicit devDependency (it was already present through tsx); SBOM regenerated.
+
+### Known
+- French and Spanish text in the READMEs, commands, templates and the rewriter phrase tables in lib/ is still unaccented; only the skill caveats and phrasing above were fixed here. The CLI output ("Vous faites face a ...") therefore still differs from the accented phrasing the skill describes.
+- Not done from the skill-doctor report: moving citations and the remediation-evidence section into `references/`, frontmatter in `source/commands/` (it is still synced into the root copies by the build), and generating the usage blocks from the CLI's `--help`.
+- Unverified in a live Claude Code session: that the `Bash(node */scripts/wayfinding-audit.mjs *)` rule suppresses the permission prompt for the plugin-root path.
+
 ## [0.1.4] - 2026-10-18
 
 Audit round: plugin security scan (SAFE TO USE), skill-doctor checkup, full dyslexia and dyscalculia content checks, n8n and Ollama sample runs on the homelab. Reports under audits/.
