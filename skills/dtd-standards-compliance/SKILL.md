@@ -12,10 +12,10 @@ Give every other component of this plugin a single, honest statement of what dev
 ## When to Use
 Trigger this skill when the user mentions:
 - "developmental topographical disorientation", "DTD", "atopia", "topographical disorientation"
-- "desorientation topographique developpementale", "desorientacion topografica del desarrollo", "disorientamento topografico evolutivo"
+- "désorientation topographique développementale", "desorientación topográfica del desarrollo", "disorientamento topografico evolutivo"
 - "no sense of direction", "always getting lost", "can't read a map", "can't tell left from right", "left-right confusion"
 - "gettinglost", "Getting Lost Questionnaire", "Santa Barbara Sense of Direction", "Wayfinding Questionnaire"
-- "is this a disability", "accommodation for getting lost", "ADA" together with navigation, "MDPH" or "RQTH" together with orientation, "certificado de discapacidad" together with orientacion
+- "is this a disability", "accommodation for getting lost", "ADA" together with navigation, "MDPH" or "RQTH" together with orientation, "certificado de discapacidad" together with orientación
 - any request to cite the research on DTD or to grade the evidence for a navigation accommodation
 
 ## 0. Definition and naming
@@ -72,12 +72,12 @@ Owner: this section is the single source for the legal framing; dtd-document-gen
 - Title II web rule (WCAG 2.1 AA; DOJ extended the compliance dates in April 2026, now 26 April 2027 for entities serving 50,000 or more and 26 April 2028 for smaller; last checked 2026-10-18, confirm on ada.gov before quoting) governs public-sector maps and wayfinding pages; WCAG itself has no direction-word rule, so the plugin's content check is additive.
 
 ### France
-- No DYS-specific pathway applies. PAP (Circulaire 2015-016) is for learning disorders in schooling and a DTD request routed through PAP will be refused on scope. Use the general **handicap cognitif** route: dossier MDPH with a **bilan neuropsychologique** as evidence; **RQTH** (Reconnaissance de la Qualite de Travailleur Handicape) for workplace; **amenagement de poste** negotiated with the employer and, where present, the referent handicap (mandatory at 250 or more employees). Loi 2005-102 defines handicap broadly enough to include a lasting cognitive limitation on participation in social life; getting lost in one's own neighbourhood meets that description.
-- Terminology: desorientation topographique developpementale (DTD). The term is used in research reporting but is not an MDPH category.
+- No DYS-specific pathway applies. PAP (Circulaire 2015-016) is for learning disorders in schooling and a DTD request routed through PAP will be refused on scope. Use the general **handicap cognitif** route: dossier MDPH with a **bilan neuropsychologique** as evidence; **RQTH** (Reconnaissance de la Qualité de Travailleur Handicapé) for workplace; **aménagement de poste** negotiated with the employer and, where present, the référent handicap (mandatory at 250 or more employees). Loi 2005-102 defines handicap broadly enough to include a lasting cognitive limitation on participation in social life; getting lost in one's own neighbourhood meets that description.
+- Terminology: désorientation topographique développementale (DTD). The term is used in research reporting but is not an MDPH category.
 
 ### Spain
-- No DEA or ACNEAE classification applies (those cover specific learning difficulties in schooling). Use **Real Decreto Legislativo 1/2013** (Ley General de Discapacidad): **certificado de discapacidad** (33 percent threshold for most employment measures), **ajustes razonables** under article 40 for workplace, and the public-employment adaptations framework of Orden PJC/804/2025 where relevant. For universities, the servicio de atencion a la discapacidad handles requests with a clinical report.
-- Terminology: desorientacion topografica del desarrollo (DTD).
+- No DEA or ACNEAE classification applies (those cover specific learning difficulties in schooling). Use **Real Decreto Legislativo 1/2013** (Ley General de Discapacidad): **certificado de discapacidad** (33 percent threshold for most employment measures), **ajustes razonables** under article 40 for workplace, and the public-employment adaptations framework of Orden PJC/804/2025 where relevant. For universities, the servicio de atención a la discapacidad handles requests with a clinical report.
+- Terminology: desorientación topográfica del desarrollo (DTD).
 
 ## 6. DTD accommodation checklist (use in audits)
 1. Every written direction set has an orientation anchor sentence at the top.

@@ -1,8 +1,8 @@
 {
   "metadata": {
     "name": "Topographical Disorientation Support Skill",
-    "version": "0.1.5",
-    "description": "Accommodation framework for developmental topographical disorientation (DTD, also called atopia): a lifelong, often familial inability to form a cognitive map of the environment, with unreliable binding between direction words (left, right, north, south) and physical directions, intact landmark recognition, and loss of deliberate directional simulation under stress. Treats DTD as a bypass condition: the product is the cognitive-prosthetics track (landmark-based instruction rewriting, body-anchored sides, heading-up map rules with explicit orientation anchors, a stress-mode fallback card, content checks that flag direction words without landmarks), with a deliberately thin and evidence-graded remediation track. Covers two optional comorbid profiles (viewpoint shift when looking up; orientation-invariant reading). Multi-jurisdiction accommodation framing by analogy, with the evidence grade stated: United States (ADA Title I, Section 504, ADA Title II/III), France (handicap cognitif pathway via MDPH, RQTH, bilan neuropsychologique), Spain (Ley General de Discapacidad RDL 1/2013, certificado de discapacidad). Locale support for English, French (desorientation topographique developpementale), and Spanish (desorientacion topografica del desarrollo). Includes deterministic tooling for map reading via OpenStreetMap vector data, landmark references from a geographic area (Overpass plus Graser 2016 salience scoring), and place references from text.",
+    "version": "0.1.6",
+    "description": "Accommodation framework for developmental topographical disorientation (DTD, also called atopia): a lifelong, often familial inability to form a cognitive map of the environment, with unreliable binding between direction words (left, right, north, south) and physical directions, intact landmark recognition, and loss of deliberate directional simulation under stress. Treats DTD as a bypass condition: the product is the cognitive-prosthetics track (landmark-based instruction rewriting, body-anchored sides, heading-up map rules with explicit orientation anchors, a stress-mode fallback card, content checks that flag direction words without landmarks), with a deliberately thin and evidence-graded remediation track. Covers two optional comorbid profiles (viewpoint shift when looking up; orientation-invariant reading). Multi-jurisdiction accommodation framing by analogy, with the evidence grade stated: United States (ADA Title I, Section 504, ADA Title II/III), France (handicap cognitif pathway via MDPH, RQTH, bilan neuropsychologique), Spain (Ley General de Discapacidad RDL 1/2013, certificado de discapacidad). Locale support for English, French (désorientation topographique développementale), and Spanish (desorientación topográfica del desarrollo). Includes deterministic tooling for map reading via OpenStreetMap vector data, landmark references from a geographic area (Overpass plus Graser 2016 salience scoring), and place references from text.",
     "author": "Justice",
     "license": "CC0-1.0",
     "repository": "https://github.com/justice8096/topographical-disorientation-support-skill",
@@ -135,7 +135,7 @@
     {
       "name": "place-references",
       "displayName": "Place References from Text",
-      "description": "References from text: extract candidate place references (proper-noun runs and category words such as bakery, eglise, farmacia) from prose like a friend's description of their neighbourhood or an emailed set of directions, then match them against an area landmark list by normalised name similarity. For city-scale toponyms the command points to geoparser (UZH) or mordecai3; for neighbourhood scale it uses the Overpass result as the gazetteer.",
+      "description": "References from text: extract candidate place references (proper-noun runs and category words such as bakery, église, farmacia) from prose like a friend's description of their neighbourhood or an emailed set of directions, then match them against an area landmark list by normalised name similarity. For city-scale toponyms the command points to geoparser (UZH) or mordecai3; for neighbourhood scale it uses the Overpass result as the gazetteer.",
       "path": "commands/place-references.md",
       "parameters": {
         "type": "object",
@@ -169,7 +169,7 @@
     {
       "name": "dtd-accommodation-request",
       "displayName": "DTD Accommodation Request",
-      "description": "Generate an accommodation document for a person with DTD in the requested jurisdiction and language: US ADA Title I request letter or higher-education disability-services request, French MDPH/RQTH dossier support or lettre d'amenagement de poste, Spanish solicitud de ajustes razonables under RDL 1/2013 or solicitud de grado de discapacidad, plus a clinical summary letter. Every document states that DTD has no statutory recognition and that the framing is by analogy, and includes the family history and profile flags when supplied.",
+      "description": "Generate an accommodation document for a person with DTD in the requested jurisdiction and language: US ADA Title I request letter or higher-education disability-services request, French MDPH/RQTH dossier support or lettre d'aménagement de poste, Spanish solicitud de ajustes razonables under RDL 1/2013 or solicitud de grado de discapacidad, plus a clinical summary letter. Every document states that DTD has no statutory recognition and that the framing is by analogy, and includes the family history and profile flags when supplied.",
       "path": "commands/dtd-accommodation-request.md",
       "parameters": {
         "type": "object",

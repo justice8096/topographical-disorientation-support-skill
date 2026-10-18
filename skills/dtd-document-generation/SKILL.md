@@ -9,8 +9,8 @@ Produce the documents a person with developmental topographical disorientation (
 
 ## When to Use
 Trigger when the user asks for:
-- an accommodation request, "reasonable accommodation letter", "lettre d'amenagement de poste", "solicitud de ajustes razonables"
-- a disability-services request for a university, "demande au service handicap", "solicitud al servicio de atencion a la discapacidad"
+- an accommodation request, "reasonable accommodation letter", "lettre d'aménagement de poste", "solicitud de ajustes razonables"
+- a disability-services request for a university, "demande au service handicap", "solicitud al servicio de atención a la discapacidad"
 - an MDPH dossier, RQTH application, certificado de discapacidad request
 - a clinical summary letter, "letter for my doctor", "informe clinico", "courrier pour le neuropsychologue"
 - a route card, site orientation sheet, "directions for my first day", "plan for the new office"
@@ -58,18 +58,18 @@ Identification by history (childhood onset, lifelong, familiar environments affe
 ## 3. France
 
 ### 3a. Dossier MDPH (reconnaissance du handicap) and RQTH
-Route: certificat medical MDPH (Cerfa 15695*01) completed by the treating physician, with a **bilan neuropsychologique** attached that documents the navigation deficit on standardised measures and excludes acquired causes; projet de vie section written in functional terms from section 1; request RQTH for workplace purposes. State that no DYS-specific pathway (PAP, PPS) applies because the condition is not a learning disorder of reading, writing, or calculation.
+Route: certificat médical MDPH (Cerfa 15695*01) completed by the treating physician, with a **bilan neuropsychologique** attached that documents the navigation deficit on standardised measures and excludes acquired causes; projet de vie section written in functional terms from section 1; request RQTH for workplace purposes. State that no DYS-specific pathway (PAP, PPS) applies because the condition is not a learning disorder of reading, writing, or calculation.
 
-### 3b. Lettre d'amenagement de poste
-To the employer (and the referent handicap where one exists): caveat paragraph; impact fonctionnel; amenagements demandes (itineraires reperes ecrits avant toute premiere visite, poste de travail fixe, accompagnement lors de la premiere visite d'un site, photos des portes de salle de reunion, autorisation des aides a la navigation, pas d'objectif dependant d'une orientation sans aide); reference to RQTH if obtained and to the obligation d'amenagement raisonnable (Code du travail L5213-6).
+### 3b. Lettre d'aménagement de poste
+To the employer (and the référent handicap where one exists): caveat paragraph; impact fonctionnel; aménagements demandés (itinéraires repères écrits avant toute première visite, poste de travail fixe, accompagnement lors de la première visite d'un site, photos des portes de salle de réunion, autorisation des aides à la navigation, pas d'objectif dépendant d'une orientation sans aide); reference to RQTH if obtained and to the obligation d'aménagement raisonnable (Code du travail L5213-6).
 
 ## 4. Spain
 
 ### 4a. Solicitud de reconocimiento del grado de discapacidad
-To the Centro Base of the Comunidad Autonoma: informe clinico with the functional impact, neuropsychological evaluation, exclusion of acquired causes; caveat paragraph; note that classification under DEA/ACNEAE does not apply (it is a school-stage learning-difficulty framework); request assessment under RDL 1/2013.
+To the Centro Base of the Comunidad Autónoma: informe clínico with the functional impact, neuropsychological evaluation, exclusion of acquired causes; caveat paragraph; note that classification under DEA/ACNEAE does not apply (it is a school-stage learning-difficulty framework); request assessment under RDL 1/2013.
 
 ### 4b. Solicitud de ajustes razonables (RDL 1/2013, art. 40)
-To the employer: caveat paragraph; impacto funcional; ajustes solicitados (indicaciones escritas basadas en puntos de referencia antes de cualquier primera visita, puesto de trabajo fijo, acompanamiento en la primera visita a un centro nuevo, fotografias de las puertas de las salas de reunion, permiso para usar ayudas a la navegacion, ningun objetivo que dependa de orientarse sin ayuda); reference to the certificado de discapacidad if held; for public-employment selection processes cite Orden PJC/804/2025.
+To the employer: caveat paragraph; impacto funcional; ajustes solicitados (indicaciones escritas basadas en puntos de referencia antes de cualquier primera visita, puesto de trabajo fijo, acompañamiento en la primera visita a un centro nuevo, fotografías de las puertas de las salas de reunión, permiso para usar ayudas a la navegación, ningún objetivo que dependa de orientarse sin ayuda); reference to the certificado de discapacidad if held; for public-employment selection processes cite Orden PJC/804/2025.
 
 ## 5. Cross-jurisdiction documents
 

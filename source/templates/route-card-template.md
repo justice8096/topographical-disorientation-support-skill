@@ -1,4 +1,4 @@
-# Landmark Route Card / Fiche d'itineraire par reperes / Tarjeta de ruta por puntos de referencia
+# Landmark Route Card / Fiche d'itinéraire par repères / Tarjeta de ruta por puntos de referencia
 
 Print on one side. Fold once. The anchor sentence is the first thing read on every unfold.
 
@@ -33,48 +33,48 @@ Evidence: landmark instructions, Grade B (Wunderlich, Grieger, Gramann 2022). St
 
 ## FR
 
-**Itineraire :** de [depart] a [arrivee]    **Date :** [date]    **Prepare avec :** [personne qui l'a parcouru, ou "carte seule, non verifie"]
+**Itinéraire :** de [départ] à [arrivée]    **Date :** [date]    **Préparée avec :** [personne qui l'a parcouru, ou "carte seule, non vérifié"]
 
-**Vous faites face a [repere de depart].**
+**Vous faites face à [repère de départ].**
 
-Ancre corporelle : [votre montre] est du cote [gauche]. "Autre cote de [votre montre]" designe le cote oppose.
+Ancre corporelle : [votre montre] est du côté [gauche]. "Autre côté de [votre montre]" désigne le côté opposé.
 
-1. Marchez jusqu'a voir [repere A] devant vous. Tournez vers lui.
-2. Gardez [repere B] du cote de [votre montre]. Marchez jusqu'a ce que [repere C] soit juste devant.
-3. Tournez vers [repere C].
-4. Arretez-vous a [repere d'arrivee].
+1. Marchez jusqu'à voir [repère A] devant vous. Tournez vers lui.
+2. Gardez [repère B] du côté de [votre montre]. Marchez jusqu'à ce que [repère C] soit juste devant.
+3. Tournez vers [repère C].
+4. Arrêtez-vous à [repère d'arrivée].
 
-Si vous voyez [repere hors itineraire], vous avez depasse un tournant : arretez-vous, relisez la phrase en gras, relisez la derniere ligne numerotee.
+Si vous voyez [repère hors itinéraire], vous avez dépassé un tournant : arrêtez-vous, relisez la phrase en gras, relisez la dernière ligne numérotée.
 
 **MODE STRESS**
-1. Arretez-vous.
+1. Arrêtez-vous.
 2. Lisez la phrase en gras en haut de la fiche.
-3. Confirmez UN repere que vous voyez maintenant.
-4. Faites UNE ligne numerotee.
-5. Revenez a ce cadre.
-Si rien sur cette fiche n'est visible : restez sur place, appelez [contact], lisez-lui le dernier repere confirme.
+3. Confirmez UN repère que vous voyez maintenant.
+4. Faites UNE ligne numérotée.
+5. Revenez à ce cadre.
+Si rien sur cette fiche n'est visible : restez sur place, appelez [contact], lisez-lui le dernier repère confirmé.
 
 ---
 
 ## ES
 
-**Ruta:** de [origen] a [destino]    **Fecha:** [fecha]    **Preparada con:** [persona que la recorrio, o "solo mapa, sin verificar"]
+**Ruta:** de [origen] a [destino]    **Fecha:** [fecha]    **Preparada con:** [persona que la recorrió, o "solo mapa, sin verificar"]
 
-**Estas mirando hacia [punto de referencia inicial].**
+**Estás mirando hacia [punto de referencia inicial].**
 
-Ancla corporal: [tu reloj] esta en tu lado [izquierdo]. "El otro lado de [tu reloj]" es el lado opuesto.
+Ancla corporal: [tu reloj] está en tu lado [izquierdo]. "El otro lado de [tu reloj]" es el lado opuesto.
 
 1. Camina hasta ver [referencia A] delante. Gira hacia ella.
-2. Manten [referencia B] del lado de [tu reloj]. Camina hasta que [referencia C] quede justo delante.
+2. Mantén [referencia B] del lado de [tu reloj]. Camina hasta que [referencia C] quede justo delante.
 3. Gira hacia [referencia C].
-4. Parate en [referencia de destino].
+4. Párate en [referencia de destino].
 
-Si ves [referencia fuera de ruta], te has pasado un giro: parate, lee la frase en negrita, vuelve a leer la ultima linea numerada.
+Si ves [referencia fuera de ruta], te has pasado un giro: párate, lee la frase en negrita, vuelve a leer la última línea numerada.
 
-**MODO ESTRES**
-1. Parate.
+**MODO ESTRÉS**
+1. Párate.
 2. Lee la frase en negrita de arriba.
 3. Confirma UN punto de referencia que veas ahora.
-4. Haz UNA linea numerada.
+4. Haz UNA línea numerada.
 5. Vuelve a este recuadro.
-Si no ves nada de esta tarjeta: quedate quieto, llama a [contacto], leele el ultimo punto de referencia confirmado.
+Si no ves nada de esta tarjeta: quédate quieto, llama a [contacto], léele el último punto de referencia confirmado.

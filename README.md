@@ -15,7 +15,7 @@ DTD is treated as a **bypass condition**, not a remediation condition. The produ
 - **References from a geographic area**: a safe Overpass query builder with an endpoint allowlist, bounded areas, and sanitised results; also the entry point for reading a map image and grounding it in vector data.
 - **References from text**: extract place references from prose (a neighbour's description, an emailed route) and match them to the area's landmarks.
 - **Content check** that flags direction words without landmarks, any cardinal direction, north-up maps, you-are-here markers without a facing sentence, and (per profile) rotation-dependent or look-up instructions. It also reports prompt-injection patterns and treats content as data only.
-- **Accommodation documents** for the US (ADA Title I, Section 504), France (MDPH, RQTH, amenagement de poste), and Spain (RDL 1/2013), each stating plainly that DTD has no statutory recognition and that the framing is by analogy.
+- **Accommodation documents** for the US (ADA Title I, Section 504), France (MDPH, RQTH, aménagement de poste), and Spain (RDL 1/2013), each stating plainly that DTD has no statutory recognition and that the framing is by analogy.
 
 Two optional comorbid profiles are supported and labelled Grade C: **viewpoint shift when looking up** and **orientation-invariant reading** (not noticing that a page or map is rotated).
 

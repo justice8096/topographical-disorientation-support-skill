@@ -275,7 +275,7 @@ async function main(): Promise<void> {
   test("stress mode prepends the fallback header in each locale", () => {
     assert(rewriteInstructions("Go.", { locale: "en", stressMode: true }).steps[0].startsWith("STRESS MODE"), "en header missing");
     assert(rewriteInstructions("Allez.", { locale: "fr", stressMode: true }).steps[0].startsWith("MODE STRESS"), "fr header missing");
-    assert(rewriteInstructions("Ve.", { locale: "es", stressMode: true }).steps[0].startsWith("MODO ESTRES"), "es header missing");
+    assert(rewriteInstructions("Ve.", { locale: "es", stressMode: true }).steps[0].startsWith("MODO ESTRÉS"), "es header missing");
   });
 
   // ------------------------------------------------------------------

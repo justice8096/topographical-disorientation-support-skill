@@ -302,20 +302,20 @@ var PHRASES = {
     noLandmark: "[no landmark available for this step; confirm with a person or a photo before relying on it]"
   },
   fr: {
-    facing: (w) => "Vous faites face a " + w + ".",
+    facing: (w) => "Vous faites face \xE0 " + w + ".",
     facingUnknown: "Avant de partir : nommez une chose que vous voyez juste devant vous et notez-la ici.",
     towardLandmark: (lm) => "Tournez vers " + lm + ".",
-    keepOnSide: (lm, anchor) => "Gardez " + lm + " du cote de votre " + anchor + ".",
-    sideByAnchor: (anchor) => "du cote de votre " + anchor,
-    noLandmark: "[aucun repere disponible pour cette etape ; confirmez avec une personne ou une photo avant de vous y fier]"
+    keepOnSide: (lm, anchor) => "Gardez " + lm + " du c\xF4t\xE9 de votre " + anchor + ".",
+    sideByAnchor: (anchor) => "du c\xF4t\xE9 de votre " + anchor,
+    noLandmark: "[aucun rep\xE8re disponible pour cette \xE9tape ; confirmez avec une personne ou une photo avant de vous y fier]"
   },
   es: {
-    facing: (w) => "Estas mirando hacia " + w + ".",
-    facingUnknown: "Antes de salir: nombra una cosa que veas justo delante de ti y anotala aqui.",
+    facing: (w) => "Est\xE1s mirando hacia " + w + ".",
+    facingUnknown: "Antes de salir: nombra una cosa que veas justo delante de ti y an\xF3tala aqu\xED.",
     towardLandmark: (lm) => "Gira hacia " + lm + ".",
-    keepOnSide: (lm, anchor) => "Manten " + lm + " del lado de tu " + anchor + ".",
+    keepOnSide: (lm, anchor) => "Mant\xE9n " + lm + " del lado de tu " + anchor + ".",
     sideByAnchor: (anchor, hit) => (hit.startsWith("a la ") ? "hacia el lado de tu " : "el lado de tu ") + anchor,
-    noLandmark: "[no hay punto de referencia para este paso; confirmalo con una persona o una foto antes de fiarte]"
+    noLandmark: "[no hay punto de referencia para este paso; conf\xEDrmalo con una persona o una foto antes de fiarte]"
   }
 };
 function sanitizeName(name) {
@@ -392,7 +392,7 @@ function rewriteInstructions(instructions, opts) {
     steps.push(out2);
   });
   if (opts.stressMode) {
-    const header = opts.locale === "fr" ? "MODE STRESS : arretez-vous. Lisez la phrase de repere. Confirmez UN repere. Faites UNE etape. Recommencez." : opts.locale === "es" ? "MODO ESTRES: parate. Lee la frase de orientacion. Confirma UN punto de referencia. Haz UN paso. Repite." : "STRESS MODE: stop. Read the anchor sentence. Confirm ONE landmark. Take ONE step. Repeat.";
+    const header = opts.locale === "fr" ? "MODE STRESS : arr\xEAtez-vous. Lisez la phrase de rep\xE8re. Confirmez UN rep\xE8re. Faites UNE \xE9tape. Recommencez." : opts.locale === "es" ? "MODO ESTR\xC9S: p\xE1rate. Lee la frase de orientaci\xF3n. Confirma UN punto de referencia. Haz UN paso. Repite." : "STRESS MODE: stop. Read the anchor sentence. Confirm ONE landmark. Take ONE step. Repeat.";
     steps.unshift(header);
   }
   const anchorSentence = opts.startFacing ? p.facing(sanitizeName(opts.startFacing)) : p.facingUnknown;

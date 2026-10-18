@@ -35,52 +35,52 @@ Evidence grades: A replicated group studies or systematic review; B one large or
 
 ---
 
-## France : lettre de demande d'amenagement de poste
+## France : lettre de demande d'aménagement de poste
 
 [Date]
 
-A l'attention de : [responsable RH / referent handicap], [Organisation]
+À l'attention de : [responsable RH / référent handicap], [Organisation]
 De : [Nom], [Poste]
-Objet : demande d'amenagement raisonnable du poste de travail (Code du travail, art. L5213-6 ; loi 2005-102)
+Objet : demande d'aménagement raisonnable du poste de travail (Code du travail, art. L5213-6 ; loi 2005-102)
 
-**Situation.** La desorientation topographique developpementale (DTD) est un trouble neurodeveloppemental documente (Iaria et Barton 2010 ; revue systematique de van der Ham et al. 2025 ; prevalence d'environ 3 pour cent, Piccardi et al. 2022) a forte agregation familiale (Barclay et al. 2016 ; Burles et Iaria 2020). Il ne dispose d'aucun code diagnostique specifique ; les classements les plus proches sont CIM-11 6A0Y et, dans le DSM-5-TR, le trouble neurodeveloppemental autre ou non specifie. Il ne beneficie d'aucune reconnaissance legale specifique ; la presente demande s'appuie par analogie sur le cadre general du handicap cognitif. Les amenagements demandes relevent de la pratique courante et n'engendrent aucun cout au-dela du temps de personnel. [Si RQTH obtenue : "Je suis titulaire d'une RQTH delivree le [date]."]
+**Situation.** La désorientation topographique développementale (DTD) est un trouble neurodéveloppemental documenté (Iaria et Barton 2010 ; revue systématique de van der Ham et al. 2025 ; prévalence d'environ 3 pour cent, Piccardi et al. 2022) à forte agrégation familiale (Barclay et al. 2016 ; Burles et Iaria 2020). Il ne dispose d'aucun code diagnostique spécifique ; les classements les plus proches sont CIM-11 6A0Y et, dans le DSM-5-TR, le trouble neurodéveloppemental autre ou non spécifié. Il ne bénéficie d'aucune reconnaissance légale spécifique ; la présente demande s'appuie par analogie sur le cadre général du handicap cognitif. Les aménagements demandés relèvent de la pratique courante et n'engendrent aucun coût au-delà du temps de personnel. [Si RQTH obtenue : "Je suis titulaire d'une RQTH délivrée le [date]."]
 
-**Impact fonctionnel.** [Dans mes mots : ...] Concretement : je ne forme pas de carte mentale des lieux ; les termes de direction (gauche, droite, nord, sud) ne correspondent pas de maniere fiable aux directions reelles ; je m'oriente de maniere fiable par sequences de reperes ; sous pression, ma strategie de compensation echoue. [Profils.] [Antecedents familiaux.]
+**Impact fonctionnel.** [Dans mes mots : ...] Concrètement : je ne forme pas de carte mentale des lieux ; les termes de direction (gauche, droite, nord, sud) ne correspondent pas de manière fiable aux directions réelles ; je m'oriente de manière fiable par séquences de repères ; sous pression, ma stratégie de compensation échoue. [Profils.] [Antécédents familiaux.]
 
-**Amenagements demandes.**
-1. Itineraires ecrits bases sur des reperes, remis avant toute premiere visite d'un site. [Grade B]
-2. Poste de travail et salle de reunion fixes ; tout changement accompagne d'une photo de la porte. [Grade B]
-3. Accompagnement lors de la premiere visite d'un batiment, d'un site client ou d'un lieu d'evenement. [Grade B]
-4. Autorisation des aides a la navigation en deplacement, avec accompagnement lorsque les appareils sont interdits. [Grade B]
-5. Invitations de reunion comportant une photo de l'entree de la salle et une phrase indiquant ce que j'aurai en face de moi a l'arrivee. [Grade C]
-6. Aucun objectif de performance dependant d'une orientation sans aide. [Grade C]
+**Aménagements demandés.**
+1. Itinéraires écrits basés sur des repères, remis avant toute première visite d'un site. [Grade B]
+2. Poste de travail et salle de réunion fixes ; tout changement accompagné d'une photo de la porte. [Grade B]
+3. Accompagnement lors de la première visite d'un bâtiment, d'un site client ou d'un lieu d'événement. [Grade B]
+4. Autorisation des aides à la navigation en déplacement, avec accompagnement lorsque les appareils sont interdits. [Grade B]
+5. Invitations de réunion comportant une photo de l'entrée de la salle et une phrase indiquant ce que j'aurai en face de moi à l'arrivée. [Grade C]
+6. Aucun objectif de performance dépendant d'une orientation sans aide. [Grade C]
 
-Je reste a votre disposition pour en discuter et peux fournir un bilan neuropsychologique.
+Je reste à votre disposition pour en discuter et peux fournir un bilan neuropsychologique.
 
 [Nom]
 
 ---
 
-## Espana: solicitud de ajustes razonables (RDL 1/2013, art. 40)
+## España: solicitud de ajustes razonables (RDL 1/2013, art. 40)
 
 [Fecha]
 
-A la atencion de: [RR. HH. / responsable], [Organizacion]
+A la atención de: [RR. HH. / responsable], [Organización]
 De: [Nombre], [Puesto]
 Asunto: solicitud de ajustes razonables en el puesto de trabajo
 
-**Situacion.** La desorientacion topografica del desarrollo (DTD) es un trastorno del neurodesarrollo documentado (Iaria y Barton 2010; revision sistematica de van der Ham et al. 2025; prevalencia de alrededor del 3 por ciento, Piccardi et al. 2022) con fuerte agregacion familiar (Barclay et al. 2016; Burles e Iaria 2020). No cuenta con un codigo diagnostico propio; las ubicaciones mas cercanas son CIE-11 6A0Y y, en el DSM-5-TR, el trastorno del neurodesarrollo especificado o no especificado. No tiene reconocimiento legal especifico; esta solicitud se formula por analogia con el marco general de la discapacidad (Real Decreto Legislativo 1/2013). Los ajustes solicitados son practica habitual y no suponen coste mas alla del tiempo del personal. [Si procede: "Dispongo de certificado de discapacidad del [grado] por ciento, expedido el [fecha]."]
+**Situación.** La desorientación topográfica del desarrollo (DTD) es un trastorno del neurodesarrollo documentado (Iaria y Barton 2010; revisión sistemática de van der Ham et al. 2025; prevalencia de alrededor del 3 por ciento, Piccardi et al. 2022) con fuerte agregación familiar (Barclay et al. 2016; Burles e Iaria 2020). No cuenta con un código diagnóstico propio; las ubicaciones más cercanas son CIE-11 6A0Y y, en el DSM-5-TR, el trastorno del neurodesarrollo especificado o no especificado. No tiene reconocimiento legal específico; esta solicitud se formula por analogía con el marco general de la discapacidad (Real Decreto Legislativo 1 de 2013, RDL 1/2013). Los ajustes solicitados son práctica habitual y no suponen coste más allá del tiempo del personal. [Si procede: "Dispongo de certificado de discapacidad del [grado] por ciento, expedido el [fecha]."]
 
-**Impacto funcional.** [En mis palabras: ...] En la practica: no formo un mapa mental de los lugares; las palabras de direccion (izquierda, derecha, norte, sur) no se corresponden de forma fiable con las direcciones reales; me oriento de forma fiable por secuencias de puntos de referencia; bajo presion, mi estrategia de compensacion falla. [Perfiles.] [Antecedentes familiares.]
+**Impacto funcional.** [En mis palabras: ...] En la práctica: no formo un mapa mental de los lugares; las palabras de dirección (izquierda, derecha, norte, sur) no se corresponden de forma fiable con las direcciones reales; me oriento de forma fiable por secuencias de puntos de referencia; bajo presión, mi estrategia de compensación falla. [Perfiles.] [Antecedentes familiares.]
 
 **Ajustes solicitados.**
 1. Indicaciones escritas basadas en puntos de referencia, entregadas antes de cualquier primera visita. [Grado B]
-2. Puesto de trabajo y sala de reuniones fijos; cualquier cambio acompanado de una foto de la puerta. [Grado B]
-3. Acompanamiento en la primera visita a un edificio, centro de cliente o sede de evento. [Grado B]
-4. Permiso para usar ayudas a la navegacion en desplazamientos, con acompanamiento donde no se permitan dispositivos. [Grado B]
-5. Convocatorias de reunion con foto de la entrada de la sala y una frase que indique que tendre delante al llegar. [Grado C]
-6. Ningun objetivo de rendimiento que dependa de orientarse sin ayuda. [Grado C]
+2. Puesto de trabajo y sala de reuniones fijos; cualquier cambio acompañado de una foto de la puerta. [Grado B]
+3. Acompañamiento en la primera visita a un edificio, centro de cliente o sede de evento. [Grado B]
+4. Permiso para usar ayudas a la navegación en desplazamientos, con acompañamiento donde no se permitan dispositivos. [Grado B]
+5. Convocatorias de reunión con foto de la entrada de la sala y una frase que indique qué tendré delante al llegar. [Grado C]
+6. Ningún objetivo de rendimiento que dependa de orientarse sin ayuda. [Grado C]
 
-Quedo a su disposicion y puedo aportar un informe clinico.
+Quedo a su disposición y puedo aportar un informe clínico.
 
 [Nombre]

@@ -10,7 +10,7 @@ Trigger this skill when the user asks to:
 - design a map, signage, a you-are-here board, or a navigation prompt for DTD readers
 - build a stress fallback, "what to do when the directions stop making sense"
 - decide whether navigation training is worth trying
-- phrase any of the above in French (gauche/droite, repere, carte) or Spanish (izquierda/derecha, punto de referencia, mapa)
+- phrase any of the above in French (gauche/droite, repère, carte) or Spanish (izquierda/derecha, punto de referencia, mapa)
 
 ## 1. The instruction-rewriting rules (core; Grade A for the deficit, Grade B for the remedy)
 
@@ -61,7 +61,7 @@ STRESS MODE
 If nothing on the card is visible: stand still, call <contact>, read them the last landmark you confirmed.
 ```
 
-French: "MODE STRESS: arretez-vous. Lisez la phrase de repere. Confirmez UN repere. Faites UNE etape. Recommencez." Spanish: "MODO ESTRES: parate. Lee la frase de orientacion. Confirma UN punto de referencia. Haz UN paso. Repite."
+French: "MODE STRESS : arrêtez-vous. Lisez la phrase de repère. Confirmez UN repère. Faites UNE étape. Recommencez." Spanish: "MODO ESTRÉS: párate. Lee la frase de orientación. Confirma UN punto de referencia. Haz UN paso. Repite."
 
 Rationale: Brown et al. 2020 (stress disrupts hippocampal-prefrontal prospective simulation and replay), Akan 2023, Olver 2015, Goodman 2020; contrary results in van Gerven 2016 and Husa 2022. Do not tell the person to "think it through more carefully"; the point is to stop demanding the computation.
 

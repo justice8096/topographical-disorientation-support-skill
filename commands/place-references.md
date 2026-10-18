@@ -1,5 +1,5 @@
 ---
-description: References from text: extract candidate place references (proper-noun runs and category words such as bakery, eglise, farmacia) from prose like a friend's description of their neighbourhood or an emailed set of directions, then match them against an area landmark list by normalised name similarity. For city-scale toponyms the command points to geoparser (UZH) or mordecai3; for neighbourhood scale it uses the Overpass result as the gazetteer.
+description: References from text: extract candidate place references (proper-noun runs and category words such as bakery, église, farmacia) from prose like a friend's description of their neighbourhood or an emailed set of directions, then match them against an area landmark list by normalised name similarity. For city-scale toponyms the command points to geoparser (UZH) or mordecai3; for neighbourhood scale it uses the Overpass result as the gazetteer.
 argument-hint: '"<text or file>" [--locale en|fr|es] [--landmarks <json>] [--threshold 0.6]'
 allowed-tools: Read, Bash(node */scripts/wayfinding-audit.mjs *)
 ---

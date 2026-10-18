@@ -33,8 +33,8 @@ Its output is the card. Your job is to improve wording, never to add steps or di
 
 ## Locale behaviour
 - `en`: "Turn toward X." / "Keep X on your <anchor> side." / "You are facing X." Stress header "STRESS MODE: stop. Read the anchor sentence. Confirm ONE landmark. Take ONE step. Repeat."
-- `fr`: "Tournez vers X." / "Gardez X du cote de votre <ancre>." / "Vous faites face a X." Lexicon covers gauche, droite, nord, sud, est, ouest, tout droit, demi-tour and clock forms ("a 2 heures"). Stress header "MODE STRESS : arretez-vous. Lisez la phrase de repere. Confirmez UN repere. Faites UNE etape. Recommencez."
-- `es`: "Gira hacia X." / "Manten X del lado de tu <ancla>." / "Estas mirando hacia X." Lexicon covers izquierda, derecha, norte, sur, este, oeste, todo recto, media vuelta and clock forms ("a las 2 en punto"). Stress header "MODO ESTRES: parate. Lee la frase de orientacion. Confirma UN punto de referencia. Haz UN paso. Repite."
+- `fr`: "Tournez vers X." / "Gardez X du côté de votre <ancre>." / "Vous faites face à X." Lexicon covers gauche, droite, nord, sud, est, ouest, tout droit, demi-tour and clock forms ("à 2 heures"). Stress header "MODE STRESS : arrêtez-vous. Lisez la phrase de repère. Confirmez UN repère. Faites UNE étape. Recommencez."
+- `es`: "Gira hacia X." / "Mantén X del lado de tu <ancla>." / "Estás mirando hacia X." Lexicon covers izquierda, derecha, norte, sur, este, oeste, todo recto, media vuelta and clock forms ("a las 2 en punto"). Stress header "MODO ESTRÉS: párate. Lee la frase de orientación. Confirma UN punto de referencia. Haz UN paso. Repite."
 
 ## Example
 Input (en): "Head north on Oak Street. Turn left at the second light. The office is on the right after the bank."

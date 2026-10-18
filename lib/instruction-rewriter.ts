@@ -75,20 +75,20 @@ const PHRASES: Record<Locale, {
     noLandmark: "[no landmark available for this step; confirm with a person or a photo before relying on it]",
   },
   fr: {
-    facing: (w) => "Vous faites face a " + w + ".",
+    facing: (w) => "Vous faites face à " + w + ".",
     facingUnknown: "Avant de partir : nommez une chose que vous voyez juste devant vous et notez-la ici.",
     towardLandmark: (lm) => "Tournez vers " + lm + ".",
-    keepOnSide: (lm, anchor) => "Gardez " + lm + " du cote de votre " + anchor + ".",
-    sideByAnchor: (anchor) => "du cote de votre " + anchor,
-    noLandmark: "[aucun repere disponible pour cette etape ; confirmez avec une personne ou une photo avant de vous y fier]",
+    keepOnSide: (lm, anchor) => "Gardez " + lm + " du côté de votre " + anchor + ".",
+    sideByAnchor: (anchor) => "du côté de votre " + anchor,
+    noLandmark: "[aucun repère disponible pour cette étape ; confirmez avec une personne ou une photo avant de vous y fier]",
   },
   es: {
-    facing: (w) => "Estas mirando hacia " + w + ".",
-    facingUnknown: "Antes de salir: nombra una cosa que veas justo delante de ti y anotala aqui.",
+    facing: (w) => "Estás mirando hacia " + w + ".",
+    facingUnknown: "Antes de salir: nombra una cosa que veas justo delante de ti y anótala aquí.",
     towardLandmark: (lm) => "Gira hacia " + lm + ".",
-    keepOnSide: (lm, anchor) => "Manten " + lm + " del lado de tu " + anchor + ".",
+    keepOnSide: (lm, anchor) => "Mantén " + lm + " del lado de tu " + anchor + ".",
     sideByAnchor: (anchor, hit) => (hit.startsWith("a la ") ? "hacia el lado de tu " : "el lado de tu ") + anchor,
-    noLandmark: "[no hay punto de referencia para este paso; confirmalo con una persona o una foto antes de fiarte]",
+    noLandmark: "[no hay punto de referencia para este paso; confírmalo con una persona o una foto antes de fiarte]",
   },
 };
 
@@ -205,9 +205,9 @@ export function rewriteInstructions(instructions: string, opts: RewriteOptions):
     // One line per step, no compound sentences, and the fallback card
     // instructions at the top.
     const header = opts.locale === "fr"
-      ? "MODE STRESS : arretez-vous. Lisez la phrase de repere. Confirmez UN repere. Faites UNE etape. Recommencez."
+      ? "MODE STRESS : arrêtez-vous. Lisez la phrase de repère. Confirmez UN repère. Faites UNE étape. Recommencez."
       : opts.locale === "es"
-        ? "MODO ESTRES: parate. Lee la frase de orientacion. Confirma UN punto de referencia. Haz UN paso. Repite."
+        ? "MODO ESTRÉS: párate. Lee la frase de orientación. Confirma UN punto de referencia. Haz UN paso. Repite."
         : "STRESS MODE: stop. Read the anchor sentence. Confirm ONE landmark. Take ONE step. Repeat.";
     steps.unshift(header);
   }

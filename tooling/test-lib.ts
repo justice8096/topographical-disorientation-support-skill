@@ -39,7 +39,7 @@ test("rewrite with landmarks removes all lateral and cardinal words (en)", () =>
 
 test("rewrite binds sides to anchor when no landmark (fr, es)", () => {
   const fr = rewriteInstructions("Tournez a gauche au feu.", { locale: "fr", bodyAnchor: { label: "montre", side: "left" } });
-  assert(fr.steps[0] === "Tournez du cote de votre montre au feu.", fr.steps[0]);
+  assert(fr.steps[0] === "Tournez du côté de votre montre au feu.", fr.steps[0]);
   const es = rewriteInstructions("Gira a la derecha en el semaforo.", { locale: "es", bodyAnchor: { label: "reloj", side: "left" } });
   assert(es.steps[0] === "Gira hacia el lado de tu otro reloj en el semaforo.", es.steps[0]);
   const en = rewriteInstructions("The office is on the right after the bank. Then turn left.", { locale: "en", bodyAnchor: { label: "watch hand", side: "left" } });
@@ -87,9 +87,9 @@ test("content check scores a bad direction set", () => {
 });
 
 test("content check accepts a good direction set in fr and es", () => {
-  const fr = checkContent("Vous faites face a la gare. Tournez vers l'eglise. Gardez la riviere du cote de votre montre.", { locale: "fr" });
+  const fr = checkContent("Vous faites face à la gare. Tournez vers l'église. Gardez la riviere du côté de votre montre.", { locale: "fr" });
   assert(fr.counts.error === 0, "fr errors: " + JSON.stringify(fr.findings));
-  const es = checkContent("Estas mirando hacia la estacion. Gira hacia la iglesia. Sigue todo recto hasta la farmacia.", { locale: "es" });
+  const es = checkContent("Estás mirando hacia la estacion. Gira hacia la iglesia. Sigue todo recto hasta la farmacia.", { locale: "es" });
   assert(es.counts.error === 0, "es errors: " + JSON.stringify(es.findings));
 });
 
@@ -130,6 +130,25 @@ test("overpass parser handles a captured real response", () => {
   // Ways and relations carry a center in the fixture; the parser must use it.
   const way = lms.find((l) => l.id.startsWith("way/"));
   assert(!way || (Math.abs(way.lat - 38.861) < 0.01 && Math.abs(way.lon + 77.362) < 0.01), "way center used");
+});
+
+test("French and Spanish output phrases carry their accents", () => {
+  // Matching folds accents; output must not. A native reader or a screen reader gets the real spelling.
+  const fr = rewriteInstructions("Tournez a gauche au feu.", { locale: "fr", landmarks: [{ name: "la boulangerie", step: 1 }], startFacing: "la gare", stressMode: true });
+  const frText = [fr.anchorSentence, ...fr.steps].join("\n");
+  assert(/Vous faites face à la gare\./.test(frText), "fr facing: " + frText);
+  assert(/MODE STRESS : arrêtez-vous\. Lisez la phrase de repère\. Confirmez UN repère\. Faites UNE étape\./.test(frText), "fr stress header: " + frText);
+  const frNo = rewriteInstructions("Tournez a gauche.", { locale: "fr" });
+  assert(frNo.steps[0].includes("aucun repère disponible pour cette étape"), "fr noLandmark: " + frNo.steps[0]);
+  const es = rewriteInstructions("Gira a la derecha.", { locale: "es", landmarks: [{ name: "la farmacia", step: 1, side: "right" }], startFacing: "la estación", stressMode: true, bodyAnchor: { label: "reloj", side: "right" } });
+  const esText = [es.anchorSentence, ...es.steps].join("\n");
+  assert(/Estás mirando hacia la estación\./.test(esText), "es facing: " + esText);
+  assert(/Mantén la farmacia del lado de tu reloj\./.test(esText), "es keepOnSide: " + esText);
+  assert(/MODO ESTRÉS: párate\. Lee la frase de orientación\./.test(esText), "es stress header: " + esText);
+  const esUnknown = rewriteInstructions("Sigue.", { locale: "es" });
+  assert(esUnknown.anchorSentence.includes("anótala aquí"), "es facingUnknown: " + esUnknown.anchorSentence);
+  // Accented output must not be re-flagged as a residual direction word.
+  assert(fr.residualDirectionWords.length === 0 && es.residualDirectionWords.length === 0, "accented phrases flagged as residual");
 });
 
 test("overpass query shape", () => {

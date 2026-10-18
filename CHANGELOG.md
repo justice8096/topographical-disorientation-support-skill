@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented here. Tags: [evidence] research-driven content change, [regulatory] legal or standards change, [defect] correction, [security] security fix or test, [tooling] build or test infrastructure.
 
+## [0.1.6] - 2026-10-18
+
+### Fixed
+- [defect] French and Spanish text is now spelled with its accents everywhere a person reads it: README.fr.md, README.es.md, the FR and ES sections of both templates, the FR/ES passages of the skills and commands, the rewriter phrase tables in lib/instruction-rewriter.ts (so the CLI prints "Vous faites face à", "Estás mirando hacia", "Mantén", "MODE STRESS : arrêtez-vous", "MODO ESTRÉS: párate"), and the same tables in samples/rewrite_directions.py and the n8n sample. Matching still folds accents (lib/direction-lexicon.ts is unchanged), so "a gauche" and "à gauche" are both found. Closes the dyslexia-gate FAIL for fr and es from audits/accessibility-gates-2026-10-18.md.
+- The first Spanish statute citation in the accommodation template reads "Real Decreto Legislativo 1 de 2013, RDL 1/2013" so the fraction shape is explained once (dyscalculia note).
+
+### Added
+- Library test: French and Spanish output phrases carry their accents, and accented output is not re-flagged as a residual direction word.
+
+### Known
+- Manifest keywords and command flag values stay ASCII on purpose (they are identifiers). The dyscalculia notes on glossing the 14.6 and 42.9 percent figures and the odds ratio are still open.
+
 ## [0.1.5] - 2026-10-18
 
 Applies the skill-doctor treatment from audits/skill-doctor-2026-10-18.md.

@@ -33,7 +33,7 @@ def test_rewrite_with_landmarks_removes_cardinal_and_lateral():
 
 def test_anchor_binding_fr_es():
     _, fr, _ = rd.rewrite("Tournez a gauche au feu.", "fr", anchor=("montre", "left"))
-    assert fr == ["Tournez du cote de votre montre au feu."]
+    assert fr == ["Tournez du côté de votre montre au feu."]
     _, es, _ = rd.rewrite("Gira a la derecha en el semaforo.", "es", anchor=("reloj", "left"))
     assert es == ["Gira hacia el lado de tu otro reloj en el semaforo."]
 

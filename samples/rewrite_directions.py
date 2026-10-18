@@ -5,7 +5,7 @@ landmark rewriter, plus an Overpass query builder with the same guards as
 lib/overpass.ts. Standard library only.
 
     python3 rewrite_directions.py --locale fr --anchor "montre:left" \
-        --landmarks "l'eglise rouge,la station-service" < directions.txt
+        --landmarks "l'église rouge,la station-service" < directions.txt
 
     python3 rewrite_directions.py query --center 48.8584,2.2945 --radius 120
 """
@@ -56,14 +56,14 @@ PHRASES = {
            "toward": "Turn toward {}.", "keep": "Keep {} on your {} side.", "side": "toward your {} side", "side_on": "on your {} side", "other": "other-",
            "none": "[no landmark available for this step; confirm with a person or a photo before relying on it]",
            "stress": "STRESS MODE: stop. Read the anchor sentence. Confirm ONE landmark. Take ONE step. Repeat."},
-    "fr": {"facing": "Vous faites face a {}.", "unknown": "Avant de partir : nommez une chose que vous voyez juste devant vous et notez-la ici.",
-           "toward": "Tournez vers {}.", "keep": "Gardez {} du cote de votre {}.", "side": "du cote de votre {}", "side_on": "du cote de votre {}", "other": "autre ",
-           "none": "[aucun repere disponible pour cette etape ; confirmez avec une personne ou une photo avant de vous y fier]",
-           "stress": "MODE STRESS : arretez-vous. Lisez la phrase de repere. Confirmez UN repere. Faites UNE etape. Recommencez."},
-    "es": {"facing": "Estas mirando hacia {}.", "unknown": "Antes de salir: nombra una cosa que veas justo delante de ti y anotala aqui.",
-           "toward": "Gira hacia {}.", "keep": "Manten {} del lado de tu {}.", "side": "hacia el lado de tu {}", "side_on": "el lado de tu {}", "other": "otro ",
-           "none": "[no hay punto de referencia para este paso; confirmalo con una persona o una foto antes de fiarte]",
-           "stress": "MODO ESTRES: parate. Lee la frase de orientacion. Confirma UN punto de referencia. Haz UN paso. Repite."},
+    "fr": {"facing": "Vous faites face à {}.", "unknown": "Avant de partir : nommez une chose que vous voyez juste devant vous et notez-la ici.",
+           "toward": "Tournez vers {}.", "keep": "Gardez {} du côté de votre {}.", "side": "du côté de votre {}", "side_on": "du côté de votre {}", "other": "autre ",
+           "none": "[aucun repère disponible pour cette étape ; confirmez avec une personne ou une photo avant de vous y fier]",
+           "stress": "MODE STRESS : arrêtez-vous. Lisez la phrase de repère. Confirmez UN repère. Faites UNE étape. Recommencez."},
+    "es": {"facing": "Estás mirando hacia {}.", "unknown": "Antes de salir: nombra una cosa que veas justo delante de ti y anótala aquí.",
+           "toward": "Gira hacia {}.", "keep": "Mantén {} del lado de tu {}.", "side": "hacia el lado de tu {}", "side_on": "el lado de tu {}", "other": "otro ",
+           "none": "[no hay punto de referencia para este paso; confírmalo con una persona o una foto antes de fiarte]",
+           "stress": "MODO ESTRÉS: párate. Lee la frase de orientación. Confirma UN punto de referencia. Haz UN paso. Repite."},
 }
 
 
