@@ -1,13 +1,14 @@
 # Contribution Analysis Report
 
-## topographical-disorientation-support-skill v0.1.0
+## topographical-disorientation-support-skill v0.1.3 (second cycle)
 
-Date: 2026-10-17
+Date: 2026-10-18
+Commit: 5964921; 9 commits on main, all carrying the Claude co-author trailer; 53 files and 5,462 insertions since the first cycle (1f4f06f)
 Participants: Justice (owner), Claude (Fable 5.1, Cowork session)
 
 ## Executive Summary
 
-The project exists because of Justice's own condition and his family's history with it; the architecture (core trait plus two profiles, prosthetics over remediation, body-anchored sides) came out of his description of how the condition behaves and what has worked for him. Claude did the literature pull, wrote the code, tests, documents and translations, and ran the gates. Overall split: 25 percent human, 75 percent AI by volume; the decisions that determine whether the skill is any good are mostly human.
+The project exists because of Justice's own condition and his family's history with it; the architecture (core trait plus two profiles, prosthetics over remediation, body-anchored sides) came out of his description of how the condition behaves and what has worked for him. Claude did the literature pull, wrote the code, tests, documents and translations, and ran the gates. Overall split: 25 percent human, 75 percent AI by volume; the decisions that determine whether the skill is any good are mostly human. The second cycle (0.1.1 to 0.1.3) was driven by tool output (publish gate, plugin scan, skill-reviewer, Claude Security) and Justice's direction on which items to take, so the human share of this cycle sits in review and prioritisation rather than authorship.
 
 ## Attribution Matrix
 
@@ -18,13 +19,13 @@ Justice: the three-trait model (direction-word binding, viewpoint shift, orienta
 Claude wrote `lib/`, the tests, the CLI, the samples and the manifest. Justice set the stack and the sister-skill conventions the code had to match.
 
 ### Dimension 3: Security Auditing (10/90 Justice/Claude)
-Justice asked for security tests and caught the non-existent security contact address. Claude wrote the 51-test suite, triaged the scanner output and wrote these reports.
+Justice asked for security tests, caught the non-existent security contact address, asked for the same scan set that LLMComplianceSkill had, and chose to run the post-commit audit again. Claude wrote the 57-test suite, launched and triaged the Claude Security workflow (nine findings), triaged 269 pattern-scanner matches and wrote these reports.
 
 ### Dimension 4: Remediation Implementation (10/90 Justice/Claude)
-Fixes this cycle: SECURITY.md contact, ASCII and CRLF cleanup, action SHA pinning, samples layout for the gate, tsx bump for Node 24, in-place side replacement wording. All Claude, prompted by gate output and Justice's correction.
+Fixes this cycle: the nine Claude Security findings (new repository CLI, bounded regexes, fold-map offsets, stripUnsafe, Codex post-check), mirror walk over the allowlist, allowed-tools frontmatter, SBOM drift filter, fetchOverpassRaw and the captured fixture. All Claude, prompted by scan output and Justice's choice of which open items to take.
 
 ### Dimension 5: Testing and Validation (10/90 Justice/Claude)
-Claude ran build, library, security and pytest suites locally in the container and on Justice's machine. Justice's acceptance testing is pending.
+Claude ran build, library, security and pytest suites on Justice's machine, the live Overpass fetch, the publish gate and this audit. Justice's acceptance testing of the route cards against his own use is pending.
 
 ### Dimension 6: Documentation (15/85 Justice/Claude)
 Claude wrote the skills, commands, templates, READMEs (en/fr/es), CHANGELOG, SECURITY.md and research note. Justice supplied the first-person functional description that the document templates restate.
@@ -34,10 +35,10 @@ Justice: lived experience across four family members and three generations, the 
 
 ## Quality Assessment
 
-Grade: A-. Build 42/42, library 10/10, security 51/51, pytest 8/8, npm audit clean, publish gate WARN-only once the audits are committed. Deductions: the two comorbid profiles rest on Grade C evidence and say so; salience weights are provisional; project gates (dyslexia and dyscalculia content checks) returned advisory warnings about sentence length and legal citations that read as ratios.
+Grade: A. Build 42/42, library 12/12, security 57/57, pytest 11/11, npm audit clean, CI green on Node 18 to 24, publish gate WARN-only, plugin scan SAFE TO USE, Claude Security findings all closed. Deductions: the two comorbid profiles rest on Grade C evidence and say so; salience weights are provisional; project gates (dyslexia and dyscalculia content checks) returned advisory warnings about sentence length and legal citations that read as ratios.
 
 ## Remediation Cycle Section
-First cycle; nothing carried over. Next cycle should revisit: localized OSM name tags, SBOM drift in CI, the driving-use and Overpass location-disclosure notes, and a review of the salience weights against Graser's published rankings.
+Carried over from cycle 1 and closed: localized OSM name tags, SBOM drift in CI, driving-use statement, Overpass location-disclosure note, relatives' consent note, allowlist rotation procedure. Still open: salience weight review against Graser's published rankings, generated MCP server handlers (stubs), shorter skill descriptions, long sentences flagged by the dyslexia gate.
 
 ## Report Footer
 Generated by the post-commit-audit skill. Human review required before publication: Justice.

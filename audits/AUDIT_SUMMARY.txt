@@ -1,26 +1,26 @@
-POST-COMMIT AUDIT SUMMARY (FIRST PASS, v0.1.0)
-===============================================
-Date: 2026-10-17
-Commit: 1f4f06f (code state audited; gate fixes and audits land in the next commit)
+POST-COMMIT AUDIT SUMMARY (SECOND CYCLE, v0.1.3)
+==============================================
+Date: 2026-10-18
+Commit: 5964921
 Branch: main
-Project: topographical-disorientation-support-skill v0.1.0
+Project: topographical-disorientation-support-skill 0.1.3
+Previous cycle: 1f4f06f (v0.1.0), PASS, A-
 
-1. SAST/DAST Scan:        PASS - 5 findings (0 critical, 0 high, 0 medium, 3 LOW, 2 INFO); 72 pattern-scanner matches triaged as false positives (the token "DTD" trips the XXE rule)
-2. Supply Chain Audit:     PASS - SLSA Level 1, 2 LOW (SBOM drift not enforced in CI; runtime data source is a public Overpass mirror, allowlisted)
-3. CWE Mapping:           PASS - 11 CWEs or LLM risks tracked (9 mitigated, 2 accepted), 8 frameworks mapped
-4. LLM Compliance:        90/100 - EXCELLENT (first audit, no delta)
-5. Contribution Analysis:  25% Human / 75% AI (domain knowledge and architecture mostly human; code, tests, docs mostly AI)
+1. SAST/DAST Scan:        PASS - 0 critical, 0 high, 0 medium, 3 LOW (accepted), 3 INFO; 9 Claude Security findings (3 MEDIUM, 6 LOW) resolved in 0.1.2; 269 pattern-scanner matches triaged as false positives (0 high-confidence CRITICAL/HIGH)
+2. Supply Chain Audit:     PASS - SLSA Level 1, 1 LOW (runtime data source, allowlisted); SBOM drift now enforced in CI; Node 18/20/22/24 green
+3. CWE Mapping:           PASS - 15 CWEs or LLM risks tracked (12 mitigated, 3 accepted: CWE-22 CLI by design, CWE-1357, CWE-1427 residual), 8 frameworks mapped
+4. LLM Compliance:        94/100 - EXCELLENT (up from 90; all six cycle-1 follow-ups closed)
+5. Contribution Analysis:  25% Human / 75% AI (unchanged; cycle 2 human share is review and prioritisation)
 
 Overall: PASS
-Grade: A-
-Action Required: no for release; next cycle: SBOM drift check in CI, driving-use statement, Overpass location-disclosure note, relatives' consent note in family-history paragraph, name:fr/name:es tags, salience weight review
+Grade: A
+Action Required: no for release; next cycle: salience weights vs Graser 2016, wire generated MCP server handlers to lib, shorter skill descriptions, fixture provenance comment, signed provenance
 
-0.1.1 addendum (same day): localized name tags, scope-and-limits notes, allowlist rotation procedure, Node 24 and SBOM drift in CI; library 11/11, security 51/51, build 42/42, pytest 8/8; no new findings.
-0.1.2 addendum (same day): Claude Security scan of 23c2f70 (57 agents; 9 findings: 3 MEDIUM, 6 LOW; audits/CLAUDE-SECURITY-RESULTS-2026-10-17.md) all fixed: bounded whitespace atoms (ReDoS), repository CLI bin/wayfinding-audit.ts run by every command with NOT RUN labelling and data-block delimiting, fold-map offsets for non-Latin text, control and format character stripping on every output path, Codex post-check, mirror walk over the three allowlisted Overpass hosts, allowed-tools frontmatter on root commands; library 11/11, security 57/57, build 42/42, pytest 11/11; live Overpass fetch verified. No new findings.
-0.1.3 addendum (2026-10-18): fetchOverpassRaw and CLI --raw flag; real Overpass response captured as tests/fixtures/overpass-fairfax-38.861_-77.362-r200.json and parsed by a new library test (12/12); build 42/42, security 57/57, pytest 11/11. No new findings.
+Changes Since Cycle 1 (1f4f06f -> 5964921, 9 commits, 53 files, +5,462 / -216):
+  - 0.1.1: name:fr/name:es tags, scope-and-limits notes (driving, location disclosure, relatives' consent), allowlist rotation procedure, Node 24 and SBOM drift in CI
+  - 0.1.2: Claude Security scan response: bin/wayfinding-audit.ts run first by every command, NOT RUN labelling, data blocks, bounded regexes, fold-map offsets, stripUnsafe everywhere, Codex post-check, mirror walk, allowed-tools frontmatter
+  - 0.1.3: fetchOverpassRaw, CLI --raw, captured real Overpass response as a fixture with a library test
 
-Changes This Cycle (v0.1.0):
-  - Initial release: 4 skills, 6 commands, 2 templates, deterministic lib, CLI, en/fr/es
-  - Security test suite (51 tests) added alongside build (42) and library (10) tests; pytest sample tests (8)
-  - SECURITY.md contact corrected to a real channel
-  - Gate fixes: ASCII, CRLF, SHA-pinned actions, samples layout
+Tests at 5964921: build 42/42, library 12/12, security 57/57, pytest 11/11; npm audit 0; publish gate WARN (advisory prose notes only); plugin scan SAFE TO USE; live Overpass fetch verified.
+
+Scan outputs for this cycle are under audits/.mechanical/ (untracked).
