@@ -19,7 +19,7 @@
  * the prose; the deterministic pass is what the security tests exercise.
  */
 
-import { findDirectionWords, type Locale, type DirectionHit, MAX_SCAN_LENGTH } from "./direction-lexicon.js";
+import { findDirectionWords, stripUnsafe, type Locale, type DirectionHit, MAX_SCAN_LENGTH } from "./direction-lexicon.js";
 
 export interface Landmark {
   /** Human-readable name, e.g. "the red church". */
@@ -93,16 +93,19 @@ const PHRASES: Record<Locale, {
 };
 
 function sanitizeName(name: string): string {
-  // Landmark names are echoed into output. Strip control characters and
-  // anything that looks like markup or an instruction delimiter so a hostile
-  // landmark list cannot inject prose or HTML into the route card.
-  const cleaned = name.replace(/[\u0000-\u001f\u007f<>`{}\[\]]/g, "").trim();
+  // Landmark names are echoed into output. Strip control and Unicode format
+  // characters (bidi overrides, zero-width, BOM) and anything that looks like
+  // markup or an instruction delimiter so a hostile landmark list cannot
+  // inject prose, HTML, or a visually reversed direction word into the card.
+  const cleaned = stripUnsafe(name).replace(/[<>`{}\[\]]/g, "").trim();
   return cleaned.slice(0, MAX_LANDMARK_NAME);
 }
 
 function splitSteps(instructions: string): string[] {
-  return instructions
-    .split(/\r?\n|(?<=[.;!?])\s+(?=[A-ZÀ-Ü])/u)
+  // Step text is the largest untrusted input and is echoed to terminals and
+  // prompts, so it gets the same control-character stripping as names.
+  return stripUnsafe(instructions)
+    .split(/\r?\n|(?<=[.;!?])\s{1,4}(?=[A-ZÀ-Ü])/u)
     .map((s) => s.trim())
     .filter((s) => s.length > 0);
 }
@@ -117,7 +120,20 @@ export function rewriteInstructions(instructions: string, opts: RewriteOptions):
   const rawSteps = splitSteps(instructions);
   if (rawSteps.length > MAX_STEPS) throw new RangeError("too many steps (max " + MAX_STEPS + ")");
 
-  const landmarks = (opts.landmarks ?? []).map((l) => ({ ...l, name: sanitizeName(l.name) })).filter((l) => l.name.length > 0);
+  const notes: string[] = [];
+  // A landmark whose name is itself a direction phrase ("the left alley")
+  // would smuggle the word the rewriter exists to remove, so it is dropped
+  // and noted rather than echoed.
+  const landmarks = (opts.landmarks ?? [])
+    .map((l) => ({ ...l, name: sanitizeName(l.name) }))
+    .filter((l) => {
+      if (l.name.length === 0) return false;
+      if (findDirectionWords(l.name, opts.locale).some((h) => h.cls !== "relative")) {
+        notes.push("landmark dropped because its name contains a direction word: " + l.name);
+        return false;
+      }
+      return true;
+    });
   const anchor = opts.bodyAnchor ? { label: sanitizeName(opts.bodyAnchor.label), side: opts.bodyAnchor.side } : undefined;
   if (anchor) {
     if (anchor.side !== "left" && anchor.side !== "right") throw new RangeError("bodyAnchor.side must be left or right");
@@ -128,7 +144,6 @@ export function rewriteInstructions(instructions: string, opts: RewriteOptions):
       throw new RangeError("bodyAnchor.label must not contain a direction word; use a body fact such as 'watch hand' or 'writing hand'");
     }
   }
-  const notes: string[] = [];
   const steps: string[] = [];
 
   rawSteps.forEach((step, i) => {

@@ -59,3 +59,22 @@ def test_overpass_query_guards():
     for bad in [(float("nan"), 0, 100), (91, 0, 100), (0, 0, 5), (0, 0, 10000)]:
         with pytest.raises(ValueError):
             rd.build_around_query(*bad)
+
+
+def test_offsets_survive_hangul_and_dotted_i():
+    _, steps, _ = rd.rewrite("한국 Turn left.\nİstanbul: turn right.", "en", anchor=("watch hand", "left"))
+    assert steps[0] == "한국 Turn toward your watch hand side."
+    assert all(not [h for h in rd.find_direction_words(s, "en") if h["cls"] == "lateral"] for s in steps)
+
+
+def test_control_and_format_characters_stripped_from_steps_and_names():
+    _, steps, notes = rd.rewrite("Walk on.\x1b[2J\x1b]0;x\x07 Then stop.", "en", landmarks=["Cafe‮tfel nrut"])
+    joined = "".join(steps)
+    assert "\x1b" not in joined and "\x07" not in joined
+    assert "‮" not in joined
+
+
+def test_direction_word_landmark_is_dropped():
+    _, steps, notes = rd.rewrite("Turn at the corner.", "en", landmarks=["the left alley"])
+    assert "left alley" not in "".join(steps)
+    assert any("dropped" in n for n in notes)

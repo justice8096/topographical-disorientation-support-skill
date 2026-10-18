@@ -43,7 +43,7 @@ This is a reading aid for a person on foot or as a passenger. It is not a drivin
 
 ## Deterministic library
 
-`lib/` is dependency-free TypeScript that the commands, the MCP server, and the CLI all use: the three-language direction lexicon, the instruction rewriter, the Overpass query builder and parser, the salience scorer, the content checker, and the place-reference extractor. It performs no network access except `fetchLandmarks`, which only talks to allowlisted Overpass mirrors.
+`lib/` is dependency-free TypeScript that the CLI and the commands use. The commands run it first through `tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts` (after `cd tooling && npm ci` once) and treat the content they are given as data; a result the code did not produce is labelled model-only. The library holds the three-language direction lexicon, the instruction rewriter, the Overpass query builder and parser, the salience scorer, the content checker, and the place-reference extractor. It performs no network access except `fetchLandmarks`, which only talks to allowlisted Overpass mirrors.
 
 ## Build
 

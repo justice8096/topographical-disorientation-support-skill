@@ -100,6 +100,35 @@ export function foldForMatch(text: string): string {
   return text.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
 }
 
+/**
+ * Fold for matching while keeping an index map from each folded code unit
+ * back to the NFC code unit it came from. Needed because NFD can lengthen a
+ * string with non-mark code points (Hangul syllables decompose to jamo,
+ * several Indic vowel signs are spacing marks, and lower-casing a dotted
+ * capital I yields two code units), so folded offsets cannot be applied to
+ * the NFC text directly.
+ */
+export function foldWithMap(nfc: string): { folded: string; map: number[] } {
+  let folded = "";
+  const map: number[] = [];
+  for (let i = 0; i < nfc.length; i++) {
+    const ch = nfc[i];
+    const f = ch.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+    for (let k = 0; k < f.length; k++) map.push(i);
+    folded += f;
+  }
+  map.push(nfc.length);
+  return { folded, map };
+}
+
+/** Characters that must never reach an output: C0/C1 controls (except tab and newline) and Unicode format characters (bidi overrides, zero-width, BOM, line/paragraph separators). */
+export const UNSAFE_OUTPUT = /[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f\p{Cf}\u2028\u2029]/gu;
+
+/** Strip control and format characters from text that will be shown to a person or placed in a prompt. Keeps tab and newline. */
+export function stripUnsafe(text: string): string {
+  return text.replace(UNSAFE_OUTPUT, "");
+}
+
 function escapeRegex(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
@@ -145,24 +174,27 @@ function classify(word: string, locale?: Locale): { cls: DirectionClass; locale:
 export function findDirectionWords(text: string, locale?: Locale, includeCompassAbbrev = false): DirectionHit[] {
   if (typeof text !== "string") throw new TypeError("text must be a string");
   if (text.length > MAX_SCAN_LENGTH) throw new RangeError("input exceeds MAX_SCAN_LENGTH (" + MAX_SCAN_LENGTH + ")");
-  // Work on the NFC form so that index arithmetic on the folded string maps
-  // one-to-one onto the text we slice hits from. Hit indexes are therefore
-  // offsets into the NFC form of the input.
+  // Match on the folded form, but report every hit as an offset into the NFC
+  // form of the input, translated through the fold map, so callers can slice
+  // and replace in the text they actually hold.
   text = text.normalize("NFC");
-  const folded = foldForMatch(text);
+  const { folded, map } = foldWithMap(text);
   const hits: DirectionHit[] = [];
   const re = buildDirectionRegex(locale);
   let m: RegExpExecArray | null;
+  const push = (fm: RegExpExecArray, cls: DirectionClass, loc: Locale | "any") => {
+    const start = map[fm.index];
+    const end = map[fm.index + fm[0].length];
+    hits.push({ text: text.slice(start, end), index: start, cls, locale: loc });
+  };
   while ((m = re.exec(folded)) !== null) {
     const c = classify(m[0], locale);
-    hits.push({ text: text.slice(m.index, m.index + m[0].length), index: m.index, cls: c.cls, locale: c.locale });
+    push(m, c.cls, c.locale);
   }
   const clockRes = locale === "en" ? [CLOCK_EN] : locale === "fr" ? [CLOCK_FR] : locale === "es" ? [CLOCK_ES] : [CLOCK_EN, CLOCK_FR, CLOCK_ES];
   for (const cre of clockRes) {
     cre.lastIndex = 0;
-    while ((m = cre.exec(folded)) !== null) {
-      hits.push({ text: text.slice(m.index, m.index + m[0].length), index: m.index, cls: "clock", locale: locale ?? "any" });
-    }
+    while ((m = cre.exec(folded)) !== null) push(m, "clock", locale ?? "any");
   }
   if (includeCompassAbbrev) {
     COMPASS_ABBREV.lastIndex = 0;

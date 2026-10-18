@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "Topographical Disorientation Support Skill",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "Accommodation framework for developmental topographical disorientation (DTD, also called atopia): a lifelong, often familial inability to form a cognitive map of the environment, with unreliable binding between direction words (left, right, north, south) and physical directions, intact landmark recognition, and loss of deliberate directional simulation under stress. Treats DTD as a bypass condition: the product is the cognitive-prosthetics track (landmark-based instruction rewriting, body-anchored sides, heading-up map rules with explicit orientation anchors, a stress-mode fallback card, content checks that flag direction words without landmarks), with a deliberately thin and evidence-graded remediation track. Covers two optional comorbid profiles (viewpoint shift when looking up; orientation-invariant reading). Multi-jurisdiction accommodation framing by analogy, with the evidence grade stated: United States (ADA Title I, Section 504, ADA Title II/III), France (handicap cognitif pathway via MDPH, RQTH, bilan neuropsychologique), Spain (Ley General de Discapacidad RDL 1/2013, certificado de discapacidad). Locale support for English, French (desorientation topographique developpementale), and Spanish (desorientacion topografica del desarrollo). Includes deterministic tooling for map reading via OpenStreetMap vector data, landmark references from a geographic area (Overpass plus Graser 2016 salience scoring), and place references from text.",
     "author": "Justice",
     "license": "CC0-1.0",

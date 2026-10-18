@@ -71,8 +71,38 @@ def fold(text):
     return "".join(c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn").lower()
 
 
+def fold_with_map(nfc):
+    """Fold for matching and return (folded, map) where map[i] is the NFC index
+    of folded index i. NFD can lengthen text with non-mark code points (Hangul
+    jamo, some Indic vowel signs) and lower-casing a dotted capital I yields two
+    code points, so folded offsets cannot be applied to the NFC text directly."""
+    folded = []
+    index_map = []
+    for i, ch in enumerate(nfc):
+        f = fold(ch)
+        folded.append(f)
+        index_map.extend([i] * len(f))
+    index_map.append(len(nfc))
+    return "".join(folded), index_map
+
+
+def strip_unsafe(text):
+    """Remove control characters (except tab and newline) and Unicode format
+    characters (bidi overrides, zero-width, BOM) and line/paragraph separators
+    from anything that will be shown to a person or placed in a prompt."""
+    out = []
+    for c in text:
+        if c in "\t\n":
+            out.append(c)
+        elif unicodedata.category(c) in ("Cc", "Cf") or c in "\u2028\u2029":
+            continue
+        else:
+            out.append(c)
+    return "".join(out)
+
+
 def sanitize(name):
-    return re.sub(r"[\x00-\x1f\x7f<>`{}\[\]]", "", name).strip()[:120]
+    return re.sub(r"[<>`{}\[\]]", "", strip_unsafe(name)).strip()[:120]
 
 
 def build_regex(locale):
@@ -87,30 +117,42 @@ def find_direction_words(text, locale):
         raise TypeError("text must be a string")
     if len(text) > MAX_SCAN_LENGTH:
         raise ValueError("input exceeds MAX_SCAN_LENGTH")
-    folded = fold(unicodedata.normalize("NFC", text))
+    nfc = unicodedata.normalize("NFC", text)
+    folded, index_map = fold_with_map(nfc)
     hits = []
     for m in build_regex(locale).finditer(folded):
         word = m.group(0)
         cls = next((c for c, ws in LEXICON[locale].items() if word in ws), "lateral")
-        hits.append({"text": word, "index": m.start(), "end": m.end(), "cls": cls})
+        start, end = index_map[m.start()], index_map[m.end()]
+        hits.append({"text": word, "index": start, "end": end, "cls": cls})
     return hits
 
 
 def rewrite(instructions, locale, landmarks=None, anchor=None, start_facing=None, stress=False):
+    landmarks_in = landmarks
     if len(instructions) > MAX_SCAN_LENGTH:
         raise ValueError("instructions exceed MAX_SCAN_LENGTH")
     p = PHRASES[locale]
-    steps = [s.strip() for s in re.split(r"\r?\n|(?<=[.;!?])\s+(?=[A-ZÀ-Ü])", instructions) if s.strip()]
+    steps = [s.strip() for s in re.split(r"\r?\n|(?<=[.;!?])\s{1,4}(?=[A-Z\u00C0-\u00DC])", strip_unsafe(instructions)) if s.strip()]
     if len(steps) > 200:
         raise ValueError("too many steps")
-    landmarks = [sanitize(l) for l in (landmarks or []) if sanitize(l)]
+    notes = []
+    landmarks = []
+    for l in (landmarks_in or []):
+        name = sanitize(l)
+        if not name:
+            continue
+        if any(h["cls"] != "relative" for h in find_direction_words(name, locale)):
+            notes.append("landmark dropped because its name contains a direction word: " + name)
+            continue
+        landmarks.append(name)
     if anchor:
         label, side = anchor
         label = sanitize(label)
         if side not in ("left", "right") or not label or find_direction_words(label, locale):
             raise ValueError("anchor must be '<body fact>:<left|right>' and must not be a direction word")
         anchor = (label, side)
-    out, notes = [], []
+    out = []
     for i, step in enumerate(steps):
         hits = find_direction_words(step, locale)
         lm = landmarks[i] if i < len(landmarks) else None

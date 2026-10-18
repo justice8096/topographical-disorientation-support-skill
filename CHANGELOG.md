@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented here. Tags: [evidence] research-driven content change, [regulatory] legal or standards change, [defect] correction, [security] security fix or test, [tooling] build or test infrastructure.
 
+## [0.1.2] - 2026-10-17
+
+Response to the Claude Security scan of 23c2f70 (nine findings, three MEDIUM, six LOW; report in audits/CLAUDE-SECURITY-RESULTS-2026-10-17.md).
+
+### Fixed
+- [security] F1, F4: bounded whitespace atoms in the NAMED_RUN and `<system>` patterns; static test rejects adjacent unbounded `\s` quantifiers; timing test on long whitespace runs.
+- [security] F2, F3: commands now run the repository CLI (`bin/wayfinding-audit.ts`, new) before the model reads any content, print NOT RUN when they could not, wrap untrusted content in labelled data blocks, and reach Overpass only through the CLI, which walks the hardcoded allowlist of three mirrors in order; prose no longer claims controls the code did not run.
+- [security] F5: direction-word offsets are translated through a fold map in both the library and the Python sample, so Hangul, Indic and dotted-capital-I text no longer leaves direction words behind.
+- [security] F6, F9: every step, excerpt and CLI line is stripped of control and format characters; the CLI routes all output through one helper.
+- [security] F7: sanitisers strip Unicode format characters (bidi overrides, zero-width, BOM) and line separators in the library, the Python sample and the n8n Code node.
+- [security] F8: the Codex sample post-checks the final completion with the lexicon and refuses to print direction words; landmark names containing direction words are dropped by the rewriter in both languages.
+
 ## [0.1.1] - 2026-10-17
 
 ### Added

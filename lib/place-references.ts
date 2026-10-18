@@ -32,8 +32,14 @@ function escapeRegex(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-/** Proper-noun runs: two or more capitalised tokens, or one capitalised token following a category word. */
-const NAMED_RUN = /(?<![\p{L}])(?:\p{Lu}[\p{L}\p{N}'\u2019-]+)(?:\s+(?:de|du|des|la|le|les|del|of|the|y|et|and)\s+)?(?:\s+\p{Lu}[\p{L}\p{N}'\u2019-]+)+/gu;
+/**
+ * Proper-noun runs: two or more capitalised tokens, optionally joined by one
+ * lowercase connector. Every whitespace atom is bounded (at most three code
+ * units) and the connector does not consume the whitespace after it, so no
+ * two quantifiers compete for the same run and matching stays linear even on
+ * a document that is mostly spaces.
+ */
+const NAMED_RUN = /(?<![\p{L}])(?:\p{Lu}[\p{L}\p{N}'\u2019-]+)(?:\s{1,3}(?:de|du|des|la|le|les|del|of|the|y|et|and)(?=\s))?(?:\s{1,3}\p{Lu}[\p{L}\p{N}'\u2019-]+)+/gu;
 
 export function extractPlaceReferences(text: string, locale: Locale): PlaceReference[] {
   if (typeof text !== "string") throw new TypeError("text must be a string");

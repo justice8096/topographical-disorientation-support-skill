@@ -14,6 +14,8 @@
  *    card.
  */
 
+import { stripUnsafe } from "./direction-lexicon.js";
+
 export const OVERPASS_ENDPOINTS: readonly string[] = [
   "https://overpass-api.de/api/interpreter",
   "https://overpass.kumi.systems/api/interpreter",
@@ -109,7 +111,12 @@ export function assertAllowedEndpoint(url: string): void {
 
 function sanitizeName(name: unknown): string {
   if (typeof name !== "string") return "";
-  return name.replace(/[\u0000-\u001f\u007f<>`{}\[\]]/g, "").trim().slice(0, 120);
+  // Control characters, Unicode format characters (bidi overrides and
+  // isolates, zero-width characters, BOM), line/paragraph separators, and
+  // markup delimiters are all stripped: any OSM editor can set a name tag, and
+  // a right-to-left override can make an innocent-looking logical string
+  // render as a direction word.
+  return stripUnsafe(name).replace(/[<>`{}\[\]]/g, "").trim().slice(0, 120);
 }
 
 /**
@@ -155,6 +162,7 @@ export async function fetchLandmarks(
   query: string,
   endpoint: string = OVERPASS_ENDPOINTS[0],
   timeoutMs: number = DEFAULT_TIMEOUT_MS,
+  locale?: "en" | "fr" | "es",
 ): Promise<OsmLandmark[]> {
   assertAllowedEndpoint(endpoint);
   if (typeof query !== "string" || query.length > 10_000) throw new RangeError("query too large");
@@ -173,7 +181,7 @@ export async function fetchLandmarks(
     if (len > MAX_RESPONSE_BYTES) throw new RangeError("response exceeds MAX_RESPONSE_BYTES");
     const text = await res.text();
     if (text.length > MAX_RESPONSE_BYTES) throw new RangeError("response exceeds MAX_RESPONSE_BYTES");
-    return parseOverpassResponse(JSON.parse(text));
+    return parseOverpassResponse(JSON.parse(text), locale);
   } finally {
     clearTimeout(timer);
   }

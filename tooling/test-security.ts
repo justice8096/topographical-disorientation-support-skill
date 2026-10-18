@@ -96,6 +96,20 @@ async function main(): Promise<void> {
     const src = readFileSync(resolve(ROOT, "lib/content-check.ts"), "utf-8");
     assert(!/\([^)]*[+*]\)[+*]/.test(src), "nested quantifier pattern found in content-check.ts");
   });
+  test("no library regex has two unbounded whitespace quantifiers separated only by an optional atom", () => {
+    // Two \s+ or \s* atoms with nothing mandatory between them compete for
+    // the same whitespace run and backtrack quadratically (scan findings F1, F4).
+    for (const f of ["lib/direction-lexicon.ts", "lib/content-check.ts", "lib/place-references.ts", "lib/instruction-rewriter.ts"]) {
+      const src = readFileSync(resolve(ROOT, f), "utf-8");
+      assert(!/\\s[+*](?:\\\/\?|\(\?:[^)]*\)\?|\[[^\]]*\]\?)?\\s[+*]/.test(src), "adjacent unbounded \\s quantifiers in " + f);
+    }
+  });
+  test("long whitespace runs after a connector or a '<' complete under 1500 ms", () => {
+    const t0 = Date.now();
+    extractPlaceReferences("Ab y" + " ".repeat(190_000) + "x", "en");
+    checkContent("<" + " ".repeat(190_000) + "x", { locale: "en" });
+    assert(Date.now() - t0 < 1500, "whitespace-run scan too slow: " + (Date.now() - t0) + "ms");
+  });
 
   // ------------------------------------------------------------------
   suite("Input size limits");
@@ -185,6 +199,13 @@ async function main(): Promise<void> {
     assert(res[0].value === "bakerydrop", "value not sanitised: " + res[0].value);
     assert(!res[0].name.includes("<"), "angle bracket survived");
   });
+  test("bidi overrides, zero-width and format characters are stripped from OSM names", () => {
+    const res = parseOverpassResponse({ elements: [
+      { type: "node", id: 1, lat: 1, lon: 1, tags: { name: "Cafe\u202etfel nrut", amenity: "cafe" } },
+      { type: "node", id: 2, lat: 1, lon: 1, tags: { name: "Ba\u200bkery\ufeff\u2066x\u2069", shop: "bakery" } },
+    ] });
+    for (const r of res) assert(!/[\p{Cf}\u2028\u2029]/u.test(r.name), "format character survived: " + JSON.stringify(r.name));
+  });
   test("parser tolerates garbage input", () => {
     for (const g of [null, undefined, 1, "x", [], {}, { elements: "nope" }, { elements: null }]) {
       assert(Array.isArray(parseOverpassResponse(g)), "parser threw or returned non-array");
@@ -231,6 +252,25 @@ async function main(): Promise<void> {
       const residual = r.residualDirectionWords.filter((h) => h.cls === "cardinal");
       assert(residual.length === 0, locale + ": cardinal survived: " + r.steps.join(" | "));
     }
+  });
+  test("control and escape bytes in step text never reach the output", () => {
+    const r = rewriteInstructions("Walk to the bakery.\u001b[2J\u001b]0;evil\u0007\u001b[8m Then turn left.", { locale: "en" });
+    const all = r.anchorSentence + "\n" + r.steps.join("\n");
+    assert(!/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f-\u009f]/.test(all), "control byte survived in steps");
+    const c = checkContent("Turn left \u001b[8m now.", { locale: "en" });
+    for (const f of c.findings) assert(!/[\u0000-\u001f\u007f-\u009f]/.test(f.excerpt), "control byte survived in excerpt");
+  });
+  test("a landmark whose name is a direction phrase is dropped, not echoed", () => {
+    const r = rewriteInstructions("Turn at the corner.", { locale: "en", landmarks: [{ name: "the left alley", step: 1 }] });
+    assert(!r.steps.join(" ").includes("left alley"), "direction-word landmark echoed");
+    assert(r.notes.some((n) => n.includes("dropped")), "no note about the dropped landmark");
+  });
+  test("offsets survive text whose NFD form is longer than its NFC form", () => {
+    const r = rewriteInstructions("\ud55c\uad6d Turn left.", { locale: "en", bodyAnchor: { label: "watch hand", side: "left" } });
+    assert(r.steps[0] === "\ud55c\uad6d Turn toward your watch hand side.", "Hangul offset drift: " + r.steps[0]);
+    assert(r.residualDirectionWords.length === 0, "residual after Hangul");
+    const t = rewriteInstructions("\u0130stanbul: turn right.", { locale: "en", bodyAnchor: { label: "watch hand", side: "left" } });
+    assert(t.residualDirectionWords.length === 0, "residual after dotted capital I: " + t.steps[0]);
   });
   test("stress mode prepends the fallback header in each locale", () => {
     assert(rewriteInstructions("Go.", { locale: "en", stressMode: true }).steps[0].startsWith("STRESS MODE"), "en header missing");

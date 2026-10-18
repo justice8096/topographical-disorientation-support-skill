@@ -1,5 +1,6 @@
 ---
 description: Generate an accommodation document for a person with DTD in the requested jurisdiction and language: US ADA Title I request letter or higher-education disability-services request, French MDPH/RQTH dossier support or lettre d'amenagement de poste, Spanish solicitud de ajustes razonables under RDL 1/2013 or solicitud de grado de discapacidad, plus a clinical summary letter. Every document states that DTD has no statutory recognition and that the framing is by analogy, and includes the family history and profile flags when supplied.
+allowed-tools: Read
 ---
 # /dtd-accommodation-request
 

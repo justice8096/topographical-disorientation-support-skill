@@ -15,7 +15,7 @@
  * never acts on content.
  */
 
-import { findDirectionWords, type Locale, MAX_SCAN_LENGTH } from "./direction-lexicon.js";
+import { findDirectionWords, stripUnsafe, type Locale, MAX_SCAN_LENGTH } from "./direction-lexicon.js";
 
 export type Severity = "error" | "warning" | "info";
 
@@ -84,7 +84,9 @@ export const PROMPT_INJECTION_PATTERNS: readonly RegExp[] = [
   /\bdisregard (?:the )?(?:above|previous)\b/iu,
   /\bdo not (?:tell|inform) the user\b/iu,
   /\b(?:print|reveal|output) (?:your|the) (?:instructions|prompt|configuration)\b/iu,
-  /<\s*\/?\s*(?:system|assistant|instructions?)\s*>/iu,
+  // Whitespace atoms are bounded so two of them in a row cannot backtrack
+  // quadratically over a long run of spaces.
+  /<\s{0,8}(?:\/\s{0,8})?(?:system|assistant|instructions?)\s{0,8}>/iu,
   /\bignore[sz] les instructions (?:precedentes|ci-dessus)\b/iu,
   /\bignora (?:todas )?las instrucciones (?:anteriores|previas)\b/iu,
 ];
@@ -104,7 +106,10 @@ function sentences(text: string): { text: string; index: number }[] {
 }
 
 function excerptOf(s: string, max = 140): string {
-  const t = s.replace(/\s+/g, " ").trim();
+  // Excerpts are printed to terminals and pasted into reports, so control and
+  // format characters from the audited document are removed here, once, for
+  // every consumer.
+  const t = stripUnsafe(s).replace(/\s+/g, " ").trim();
   return t.length > max ? t.slice(0, max - 3) + "..." : t;
 }
 
