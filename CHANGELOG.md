@@ -2,6 +2,17 @@
 
 All notable changes to this project are documented here. Tags: [evidence] research-driven content change, [regulatory] legal or standards change, [defect] correction, [security] security fix or test, [tooling] build or test infrastructure.
 
+## [0.1.7] - 2026-10-18
+
+### Changed
+- Generated MCP server now bundles `lib/` and its rewrite-directions, wayfinding-content-check, place-references and landmark-route-script tools call it instead of returning a stub. area-landmarks and dtd-accommodation-request still return skill knowledge only (the first needs network, the second is document drafting).
+- Dyscalculia glosses: 14.6 and 42.9 percent given as about 1 in 7 and about 4 in 10; simulator recall figures given as fractions first.
+- Salience wording corrected: the weights in `lib/landmark-salience.ts` are this project's heuristic values, not figures from Graser (2016).
+
+### Known items
+- references/ split for citations is not done.
+- Codex sample run and the live allowed-tools permission check still need an OpenAI key and a live Claude Code session.
+
 ## [0.1.6] - 2026-10-18
 
 ### Fixed

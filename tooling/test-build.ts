@@ -430,6 +430,16 @@ function testMcpServer() {
     }
   });
 
+  test("MCP server bundles lib and wires deterministic handlers", () => {
+    const base = resolve(ROOT, "dist/mcp-server/src");
+    if (!existsSync(resolve(base, "lib/index.ts"))) throw new Error("lib not copied into mcp-server");
+    for (const [tool, fn] of [["rewrite_directions", "rewriteInstructions"], ["wayfinding_content_check", "checkContent"], ["place_references", "extractPlaceReferences"], ["landmark_route_script", "rankLandmarks"]]) {
+      const src = readFileSync(resolve(base, "tools/" + tool + ".ts"), "utf-8");
+      if (!src.includes(fn)) throw new Error(tool + " does not call " + fn);
+      if (src.includes("implementation pending")) throw new Error(tool + " is still a stub");
+    }
+  });
+
   test("MCP package.json has correct dependencies", () => {
     const pkg = readJSON(resolve(mcpDir, "package.json"));
     const deps = pkg.dependencies || {};

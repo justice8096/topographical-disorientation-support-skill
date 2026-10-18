@@ -1,12 +1,14 @@
 /**
  * Landmark salience scoring at a decision point.
  *
- * Reimplements the recipe in Graser (2016), "Developing an open pedestrian
- * landmark navigation model" (Walk21): a weighted sum of distance to the
- * decision point, category weight, same-side-as-turn bonus, before/after
- * position, and a visibility proxy. Category weights below are a starting
- * point and are meant to be tuned from user feedback; they are not the
- * original expert rankings.
+ * Follows the factors in Graser (2016), "Developing an Open Pedestrian
+ * Landmark Navigation Model": landmarks are extracted from OpenStreetMap,
+ * weighed, and selected. The scoring here is a weighted sum of distance to
+ * the decision point, category weight, same-side-as-turn bonus, before/after
+ * position, and a visibility proxy. All numeric weights (0.3/0.3/0.2/0.1/0.1
+ * and the category table) are this project's heuristic starting values. They
+ * were not taken from the paper, whose published abstract does not list them,
+ * and are meant to be tuned from user feedback.
  *
  * Pure functions, no I/O.
  */

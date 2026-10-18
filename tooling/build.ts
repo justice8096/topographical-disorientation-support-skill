@@ -399,6 +399,7 @@ function generateMcpServer(manifest: Manifest): void {
   ensureDir(resolve(ROOT, "dist/mcp-server/src/knowledge"));
 
   generateMcpTools(manifest);
+  copyDirRecursive(resolve(ROOT, "lib"), resolve(ROOT, "dist/mcp-server/src/lib"));
   generateMcpKnowledgeLoader();
   generateMcpIndex(manifest);
   generateMcpPackageJson(manifest);
@@ -427,10 +428,68 @@ function generateMcpServer(manifest: Manifest): void {
   logSuccess("MCP server generated");
 }
 
+
+const MCP_WIRED: Record<string, { imports: string[]; body: string[] }> = {
+  rewrite_directions: {
+    imports: ['import { rewriteInstructions } from "../lib/index.js";'],
+    body: [
+      '  let anchor: { label: string; side: "left" | "right" } | undefined;',
+      '  if (validated.body_anchor) {',
+      '    const i = validated.body_anchor.lastIndexOf(":");',
+      '    const side = validated.body_anchor.slice(i + 1).trim();',
+      '    if (i < 1 || (side !== "left" && side !== "right")) throw new Error("body_anchor must look like watch hand:left");',
+      '    anchor = { label: validated.body_anchor.slice(0, i).trim(), side };',
+      '  }',
+      '  const names = (validated.landmarks ?? "").split(",").map((x) => x.trim()).filter(Boolean);',
+      '  const result = rewriteInstructions(validated.instructions, {',
+      '    locale: (validated.locale ?? "en") as "en" | "fr" | "es",',
+      '    landmarks: names.map((name, k) => ({ name, step: k + 1 })),',
+      '    bodyAnchor: anchor,',
+      '    startFacing: validated.start_facing,',
+      '    stressMode: validated.stress_mode ?? false,',
+      '  });',
+      '  return JSON.stringify({ status: "success", command: "rewrite-directions", result }, null, 2);',
+    ],
+  },
+  wayfinding_content_check: {
+    imports: ['import { checkContent } from "../lib/index.js";'],
+    body: [
+      '  const report = checkContent(validated.content, {',
+      '    locale: (validated.locale ?? "en") as "en" | "fr" | "es",',
+      '    viewpointShiftProfile: validated.viewpoint_shift_profile ?? false,',
+      '    orientationInvarianceProfile: validated.orientation_invariance_profile ?? false,',
+      '  });',
+      '  return JSON.stringify({ status: "success", command: "wayfinding-content-check", report }, null, 2);',
+    ],
+  },
+  place_references: {
+    imports: ['import { extractPlaceReferences, matchReferences } from "../lib/index.js";'],
+    body: [
+      '  const locale = (validated.locale ?? "en") as "en" | "fr" | "es";',
+      '  const refs = extractPlaceReferences(validated.text, locale);',
+      '  const landmarks = validated.landmarks ? JSON.parse(validated.landmarks) : [];',
+      '  if (!Array.isArray(landmarks)) throw new Error("landmarks must be a JSON array");',
+      '  const matches = landmarks.length ? matchReferences(refs, landmarks, Number(validated.threshold ?? 0.6)) : [];',
+      '  return JSON.stringify({ status: "success", command: "place-references", references: refs, matches }, null, 2);',
+    ],
+  },
+  landmark_route_script: {
+    imports: ['import { rankLandmarks } from "../lib/index.js";'],
+    body: [
+      '  const points = JSON.parse(validated.decision_points);',
+      '  const landmarks = validated.landmarks ? JSON.parse(validated.landmarks) : [];',
+      '  if (!Array.isArray(points) || !Array.isArray(landmarks)) throw new Error("decision_points and landmarks must be JSON arrays");',
+      '  const steps = points.slice(0, 200).map((dp: any, k: number) => ({ step: k + 1, ranked: rankLandmarks(dp, landmarks, 3) }));',
+      '  return JSON.stringify({ status: "success", command: "landmark-route-script", steps }, null, 2);',
+    ],
+  },
+};
+
 function generateMcpTools(manifest: Manifest): void {
   for (const cmd of manifest.commands) {
     const toolName = cmd.name.replace(/-/g, "_");
     const requiredParams = cmd.parameters.required || [];
+    const wired = MCP_WIRED[toolName];
 
     const zodFields: string[] = [];
     const jsonSchemaProps: string[] = [];
@@ -458,7 +517,7 @@ function generateMcpTools(manifest: Manifest): void {
 
     const lines: string[] = [
       'import { z } from "zod";',
-      'import { loadSkillContent } from "../knowledge/loader.js";',
+      ...(wired ? wired.imports : ['import { loadSkillContent } from "../knowledge/loader.js";']),
       "",
       "export const " + toolName + "Schema = z.object({",
       ...zodFields,
@@ -468,15 +527,17 @@ function generateMcpTools(manifest: Manifest): void {
       "",
       "export async function handle(input: z.infer<typeof " + toolName + "Schema>): Promise<string> {",
       "  const validated = " + toolName + "Schema.parse(input);",
-      '  const skillContent = await loadSkillContent("' + cmd.name + '");',
-      "",
-      "  return JSON.stringify({",
-      '    status: "success",',
-      '    command: "' + cmd.name + '",',
-      '    message: "Tool implementation pending. Knowledge loaded.",',
-      "    skillPreview: skillContent.slice(0, 200),",
-      "    input: validated,",
-      "  }, null, 2);",
+      ...(wired ? wired.body : [
+        '  const skillContent = await loadSkillContent("' + cmd.name + '");',
+        "",
+        "  return JSON.stringify({",
+        '    status: "success",',
+        '    command: "' + cmd.name + '",',
+        '    message: "No deterministic handler for this command yet. Skill knowledge loaded.",',
+        "    skillPreview: skillContent.slice(0, 200),",
+        "    input: validated,",
+        "  }, null, 2);",
+      ]),
       "}",
     ];
 
