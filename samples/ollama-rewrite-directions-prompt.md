@@ -3,8 +3,8 @@
 Use a local model for the prose pass. The deterministic pass (direction-word detection, sanitising) runs first with the Python sample; the model only improves wording and never introduces direction words.
 
 ```bash
-# 1. Deterministic pass
-python3 ./rewrite_directions.py --locale en --landmarks "the red church,the fuel station,the bank" --anchor "watch hand:left" --facing "the red church" < directions.txt > card.txt
+# 1. Deterministic pass (run from the repository root)
+python3 samples/rewrite_directions.py --locale en --landmarks "the red church,the fuel station,the bank" --anchor "watch hand:left" --facing "the red church" < directions.txt > card.txt
 
 # 2. Prose pass with a local model
 ollama run llama3.1 "$(cat prompt.txt card.txt)"
@@ -29,7 +29,7 @@ CARD:
 Check the result with the CLI before giving it to anyone:
 
 ```bash
-node ../dist/cli/bin/audit.js check result.txt --locale en
+tooling/node_modules/.bin/tsx bin/wayfinding-audit.ts check result.txt --locale en
 ```
 
 A non-zero exit code means the model reintroduced a direction word.

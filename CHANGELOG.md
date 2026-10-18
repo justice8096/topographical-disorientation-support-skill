@@ -2,6 +2,18 @@
 
 All notable changes to this project are documented here. Tags: [evidence] research-driven content change, [regulatory] legal or standards change, [defect] correction, [security] security fix or test, [tooling] build or test infrastructure.
 
+## [0.1.4] - 2026-10-18
+
+Audit round: plugin security scan (SAFE TO USE), skill-doctor checkup, full dyslexia and dyscalculia content checks, n8n and Ollama sample runs on the homelab. Reports under audits/.
+
+### Fixed
+- samples/n8n-landmark-lookup-workflow.json: Webhook now accepts POST and responds through the Respond node (it only accepted GET and answered before the card was built); the scorer honours the requested radius instead of a hard-coded 120 m; explicit Accept and User-Agent headers (overpass-api.de answered 406 without them); the fetch walks the three allowlisted mirrors in order and returns `fetch: "NOT RUN"` with the query text when all fail.
+- samples/ollama-rewrite-directions-prompt.md and samples/codex-rewrite-directions.md: paths updated from the old examples/ layout to samples/rewrite_directions.py and bin/wayfinding-audit.ts.
+
+### Known (from this round, not yet fixed)
+- French and Spanish text carries no accents anywhere (READMEs, skills, commands, templates, rewriter phrases). Dyslexia gate FAIL for those locales; English unaffected.
+- The commands' CLI path resolves against the user's project, so a marketplace install always reports NOT RUN until the CLI is bundled and referenced through the plugin root (skill-doctor critical).
+
 ## [0.1.3] - 2026-10-18
 
 ### Added
