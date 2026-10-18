@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. Tags: [evidence] research-driven content change, [regulatory] legal or standards change, [defect] correction, [security] security fix or test, [tooling] build or test infrastructure.
 
+## [0.1.3] - 2026-10-18
+
+### Added
+- `fetchOverpassRaw` in lib/overpass.ts and a `--raw` flag on the CLI `landmarks` subcommand, so a real mirror response can be captured as a fixture under the same allowlist, timeout and size cap.
+- tests/fixtures/overpass-fairfax-38.861_-77.362-r200.json, a captured response, and a library test that parses it (ids, finite coordinates, sanitised names, way centres).
+
 ## [0.1.2] - 2026-10-17
 
 Response to the Claude Security scan of 23c2f70 (nine findings, three MEDIUM, six LOW; report in audits/CLAUDE-SECURITY-RESULTS-2026-10-17.md).

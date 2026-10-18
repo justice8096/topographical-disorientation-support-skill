@@ -17,6 +17,7 @@ Action Required: no for release; next cycle: SBOM drift check in CI, driving-use
 
 0.1.1 addendum (same day): localized name tags, scope-and-limits notes, allowlist rotation procedure, Node 24 and SBOM drift in CI; library 11/11, security 51/51, build 42/42, pytest 8/8; no new findings.
 0.1.2 addendum (same day): Claude Security scan of 23c2f70 (57 agents; 9 findings: 3 MEDIUM, 6 LOW; audits/CLAUDE-SECURITY-RESULTS-2026-10-17.md) all fixed: bounded whitespace atoms (ReDoS), repository CLI bin/wayfinding-audit.ts run by every command with NOT RUN labelling and data-block delimiting, fold-map offsets for non-Latin text, control and format character stripping on every output path, Codex post-check, mirror walk over the three allowlisted Overpass hosts, allowed-tools frontmatter on root commands; library 11/11, security 57/57, build 42/42, pytest 11/11; live Overpass fetch verified. No new findings.
+0.1.3 addendum (2026-10-18): fetchOverpassRaw and CLI --raw flag; real Overpass response captured as tests/fixtures/overpass-fairfax-38.861_-77.362-r200.json and parsed by a new library test (12/12); build 42/42, security 57/57, pytest 11/11. No new findings.
 
 Changes This Cycle (v0.1.0):
   - Initial release: 4 skills, 6 commands, 2 templates, deterministic lib, CLI, en/fr/es

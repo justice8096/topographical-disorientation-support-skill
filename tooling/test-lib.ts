@@ -7,6 +7,9 @@ import { rankLandmarks, turnDirection, sideOf, bearingDeg, haversineM } from "..
 import { checkContent } from "../lib/content-check.js";
 import { extractPlaceReferences, matchReferences, nameSimilarity } from "../lib/place-references.js";
 import { parseOverpassResponse, buildAroundQuery } from "../lib/overpass.js";
+import { readFileSync } from "node:fs";
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
 const verbose = process.argv.includes("--verbose");
 let passed = 0; const failures: string[] = [];
@@ -107,6 +110,26 @@ test("overpass parser prefers localized name tag when asked", () => {
   assert(parseOverpassResponse(json, "fr")[0].name === "Eglise Sainte-Marie", "fr name not preferred");
   assert(parseOverpassResponse(json, "es")[0].name === "Saint Mary Church", "fallback to name when name:es is absent");
   assert(parseOverpassResponse(json)[0].name === "Saint Mary Church", "no locale keeps name");
+});
+
+test("overpass parser handles a captured real response", () => {
+  // tests/fixtures/*.json are raw Overpass responses captured with
+  // `bin/wayfinding-audit.ts landmarks --center ... --raw`.
+  const here = dirname(fileURLToPath(import.meta.url));
+  const raw = readFileSync(resolve(here, "../tests/fixtures/overpass-fairfax-38.861_-77.362-r200.json"), "utf8");
+  const parsed = JSON.parse(raw);
+  assert(Array.isArray(parsed.elements) && parsed.elements.length > 0, "fixture has elements");
+  const lms = parseOverpassResponse(parsed, "fr");
+  assert(lms.length > 0 && lms.length <= parsed.elements.length, "parser returned landmarks");
+  for (const lm of lms) {
+    assert(typeof lm.id === "string" && /^(node|way|relation)\/\d+$/.test(lm.id), "id shape: " + lm.id);
+    assert(Number.isFinite(lm.lat) && Number.isFinite(lm.lon), "finite coordinates for " + lm.id);
+    assert(lm.name.length > 0 && !/[<>{}\[\]`\u0000-\u001f]/.test(lm.name), "name sanitised: " + lm.name);
+    assert(typeof lm.key === "string" && typeof lm.value === "string", "key/value present");
+  }
+  // Ways and relations carry a center in the fixture; the parser must use it.
+  const way = lms.find((l) => l.id.startsWith("way/"));
+  assert(!way || (Math.abs(way.lat - 38.861) < 0.01 && Math.abs(way.lon + 77.362) < 0.01), "way center used");
 });
 
 test("overpass query shape", () => {

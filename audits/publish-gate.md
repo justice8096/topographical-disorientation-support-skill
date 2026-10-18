@@ -1,6 +1,6 @@
 # Publish gate: topographical-disorientation-support-skill
 
-Run 2026-10-17 21:22. Overall: WARN. HEAD: 7e0c379a774e.
+Run 2026-10-18 05:15. Overall: WARN. HEAD: f7315edd62a4.
 
 Read it top down. [FAIL] blocks the flip to public. [warn] is a decision for the owner.
 
@@ -11,7 +11,7 @@ Read it top down. [FAIL] blocks the flip to public. [warn] is a decision for the
 - [ok]   supply: no manifests, workflows or pins to check.
 - [ok]   cwe: 16 source file(s), 0 dangerous call(s).
 - [warn] audit: post-commit-audit summary: PASS (commit 1f4f06f).
-- [warn] git: 74 tracked file(s), head 7e0c379a774e.
+- [warn] git: 77 tracked file(s), head f7315edd62a4.
 - [warn] docs: 4 note(s).
 
 ## gate
@@ -49,17 +49,17 @@ Read it top down. [FAIL] blocks the flip to public. [warn] is a decision for the
 
 ## audit
 
-- audit ran at commit 1f4f06f; HEAD is 7e0c379a774e. Re-run post-commit-audit after the last change.
+- audit ran at commit 1f4f06f; HEAD is f7315edd62a4. Re-run post-commit-audit after the last change.
 
 ## git
 
-- working tree has 28 uncommitted change(s) outside audits/; the hook requires a clean tree.
-- internal hostnames or private addresses in history (4 line(s)): 10.0.0.1
+- working tree has 11 uncommitted change(s) outside audits/; the hook requires a clean tree.
+- internal hostnames or private addresses in history (5 line(s)): 10.0.0.1
 - commit emails approved as public: justice8096@gmail.com
 
 ## docs
 
-- latest tag v0.1.1.
+- latest tag v0.1.2.
 - origin https://github.com/justice8096/topographical-disorientation-support-skill.git
 - GitHub says the repo is PUBLIC.
 - already public: the gate is now a cleanup list, not a lock.

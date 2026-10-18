@@ -1,0 +1,48 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-07-15T15:22:01Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "way",
+  "id": 446680180,
+  "center": {
+    "lat": 38.8620313,
+    "lon": -77.3599777
+  },
+  "tags": {
+    "addr:housenumber": "11901",
+    "addr:state": "VA",
+    "addr:street": "Route 50",
+    "brand": "Macy's",
+    "brand:wikidata": "Q629269",
+    "building": "retail",
+    "building:levels": "3",
+    "name": "Macy's",
+    "phone": "+1 571-432-2200",
+    "shop": "department_store"
+  }
+},
+{
+  "type": "relation",
+  "id": 6951384,
+  "center": {
+    "lat": 38.8600369,
+    "lon": -77.3643788
+  },
+  "tags": {
+    "brand": "Extended Stay America",
+    "brand:wikidata": "Q5421850",
+    "building": "yes",
+    "name": "Extended Stay America",
+    "tourism": "hotel",
+    "type": "multipolygon"
+  }
+}
+
+  ]
+}

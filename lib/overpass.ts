@@ -158,12 +158,17 @@ export function parseOverpassResponse(json: unknown, locale?: "en" | "fr" | "es"
  * without network (Ollama or Codex samples) should call buildAroundQuery and
  * run it elsewhere, then parseOverpassResponse on the result.
  */
-export async function fetchLandmarks(
+/**
+ * POST a query to one allowlisted mirror and return the raw response text,
+ * size-capped. Exposed so a real response can be captured as a test fixture
+ * (bin/wayfinding-audit.ts landmarks --raw); callers that want landmarks use
+ * fetchLandmarks, which parses and sanitises.
+ */
+export async function fetchOverpassRaw(
   query: string,
   endpoint: string = OVERPASS_ENDPOINTS[0],
   timeoutMs: number = DEFAULT_TIMEOUT_MS,
-  locale?: "en" | "fr" | "es",
-): Promise<OsmLandmark[]> {
+): Promise<string> {
   assertAllowedEndpoint(endpoint);
   if (typeof query !== "string" || query.length > 10_000) throw new RangeError("query too large");
   const ctrl = new AbortController();
@@ -181,8 +186,18 @@ export async function fetchLandmarks(
     if (len > MAX_RESPONSE_BYTES) throw new RangeError("response exceeds MAX_RESPONSE_BYTES");
     const text = await res.text();
     if (text.length > MAX_RESPONSE_BYTES) throw new RangeError("response exceeds MAX_RESPONSE_BYTES");
-    return parseOverpassResponse(JSON.parse(text), locale);
+    return text;
   } finally {
     clearTimeout(timer);
   }
+}
+
+export async function fetchLandmarks(
+  query: string,
+  endpoint: string = OVERPASS_ENDPOINTS[0],
+  timeoutMs: number = DEFAULT_TIMEOUT_MS,
+  locale?: "en" | "fr" | "es",
+): Promise<OsmLandmark[]> {
+  const text = await fetchOverpassRaw(query, endpoint, timeoutMs);
+  return parseOverpassResponse(JSON.parse(text), locale);
 }

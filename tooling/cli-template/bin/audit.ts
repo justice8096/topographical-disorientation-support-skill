@@ -22,7 +22,7 @@ import { resolve } from "path";
 import { checkContent } from "../src/lib/content-check";
 import { rewriteInstructions } from "../src/lib/instruction-rewriter";
 import { extractPlaceReferences, matchReferences } from "../src/lib/place-references";
-import { buildAroundQuery, buildBBoxQuery, parseOverpassResponse, fetchLandmarks, OVERPASS_ENDPOINTS } from "../src/lib/overpass";
+import { buildAroundQuery, buildBBoxQuery, parseOverpassResponse, fetchLandmarks, fetchOverpassRaw, OVERPASS_ENDPOINTS } from "../src/lib/overpass";
 import { stripUnsafe, type Locale } from "../src/lib/direction-lexicon";
 
 const MAX_FILE_BYTES = 2 * 1024 * 1024;
@@ -117,6 +117,14 @@ try {
       const errors: string[] = [];
       for (const endpoint of OVERPASS_ENDPOINTS) {
         try {
+          if (flag("raw")) {
+            // Raw server JSON for capturing a test fixture; still size-capped
+            // and allowlisted, and still passed through stripUnsafe by out().
+            const text = await fetchOverpassRaw(query, endpoint);
+            console.error("fetched from " + endpoint);
+            out(text);
+            return;
+          }
           const list = await fetchLandmarks(query, endpoint, undefined, loc);
           console.error("fetched from " + endpoint);
           console.log(JSON.stringify(list, null, 2));

@@ -336,7 +336,7 @@ async function main(): Promise<void> {
       for (const p of pats) assert(!p.test(c), "secret-like pattern in " + f);
     }
   });
-  test("library performs no network access except through fetchLandmarks", () => {
+  test("library performs no network access except through overpass.ts", () => {
     for (const f of files.filter((x) => x.includes(join("lib", "")) && x.endsWith(".ts"))) {
       const c = readFileSync(f, "utf-8");
       if (!f.endsWith("overpass.ts")) assert(!/\bfetch\(|\bhttp\.request|\bnet\.connect|child_process/.test(c), "unexpected I/O in " + f);
