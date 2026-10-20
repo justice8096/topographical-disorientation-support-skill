@@ -152,6 +152,14 @@ function testClaudePlugin() {
     }
   });
 
+  test("standards skill points to its references file and the file exists", () => {
+    const skill = readFileSync(resolve(ROOT, "skills/dtd-standards-compliance/SKILL.md"), "utf-8");
+    if (!skill.includes("references/phenotype-evidence.md")) throw new Error("SKILL.md does not point at references");
+    const ref = resolve(ROOT, "skills/dtd-standards-compliance/references/phenotype-evidence.md");
+    if (!existsSync(ref)) throw new Error("references file missing");
+    if (!readFileSync(ref, "utf-8").includes("Burles and Iaria")) throw new Error("evidence text missing");
+  });
+
   test("plugin.json lists all skills from manifest", () => {
     const plugin = readJSON(resolve(pluginDir, "plugin.json"));
     const pluginSkills = plugin.skills || [];
