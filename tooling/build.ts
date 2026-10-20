@@ -816,6 +816,8 @@ function syncRootCanonical(manifest: Manifest): void {
     ensureDir(dirname(rootPath));
     const newContent = newFm + "\n" + srcBody.replace(/^\n+/, "");
     writeFileSync(rootPath, newContent);
+    const refSrc = resolve(ROOT, "source/references/" + skill.name);
+    if (existsSync(refSrc)) copyDirRecursive(refSrc, resolve(dirname(rootPath), "references"));
   }
 
   logSuccess("Root canonical files synced from source");

@@ -2,6 +2,12 @@
 
 All notable changes to this project are documented here. Tags: [evidence] research-driven content change, [regulatory] legal or standards change, [defect] correction, [security] security fix or test, [tooling] build or test infrastructure.
 
+## [0.1.8] - 2026-10-18
+
+### Changed
+- dtd-standards-compliance: phenotype and heritability evidence moved to `skills/dtd-standards-compliance/references/phenotype-evidence.md` (source in `source/references/`, copied by the build). The skill keeps one plain summary and grade per finding. Odds ratio 2.91 glossed as about three times the odds.
+- test-security: the "library performs no network access" check now matches a `lib` path segment instead of any path containing "lib".
+
 ## [0.1.7] - 2026-10-18
 
 ### Changed
